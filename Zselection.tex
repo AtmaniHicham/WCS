@@ -1,0 +1,225 @@
+\section{Z analysis event selection and control plots}
+\label{sec:Zselection}
+
+\subsection{Event selection}
+\label{subsec:zselection}
+
+Candidate $Z \rightarrow \ell\ell$ events have the same single-lepton trigger requirements as the \Wboson\ analysis (either lepton can trigger the event). The primary, unprescaled triggers used in both the 5 and 13~\TeV\ datasets are $\texttt{HLT\_e15\_lhloose\_nod0\_L1EM12}$ and $\texttt{HLT\_mu14}$. These single lepton triggers require at least one reconstructed electron with \ET larger than 15~\GeV\ passing \emph{loose} identification requirements and one muon with \ET larger than 14~\GeV, respectively.
+
+Events are required to contain exactly two muon (electron) candidates satisfying the criteria described in Section~\ref{sec:objects}.
+Events with additional muons (electrons) with transverse momentum greater than 20~\GeV{} satisfying the medium (loose) ID criteria or events with only one muon (electron) are discarded.
+
+The two muon (electron) candidates are required to be of opposite charge with a dilepton invariant mass of $66<m_{\ell\ell}<116 \textrm{ GeV}$ so that the $m_{\ell\ell}$ distribution is centred around the \Zboson peak.
+
+For Z events it is possible to reconstruct the \ptz\ spectra with two observables: the dilepton spectra (\ptdilep ) and the hadronic recoil (\ut). In this \pTZ measurement, both observables are reconstructed in parallel in order to provide a crosscheck of the corresponding \Wboson results.
+
+In Tables~\ref{tab:Zee13} and~\ref{tab:Zmm13} the cut flow numbers for the $Z \rightarrow \ell\ell$ signal selection for the $\sqrt{s} = 13$ \lowmu dataset are shown; the equivalent numbers for the $\sqrt{s} = 5$ \lowmu dataset are shown in Tables~\ref{tab:Zee5} and~\ref{tab:Zmm5}.
+The yields for the signal and for the main electroweak and top backgrounds are obtained from the dedicated MC samples described in Ref.~\cite{Kretzschmar:2657141}.
+The estimate of the multi-jet background, which contains contributions from fake leptons produced in semi-leptonic decays of heavy quarks, in-flight pion decays, photon conversions, etc., is calculated using data-driven techniques described in Ref.~\cite{Xu:2657146}.
+
+\input{Ztable}
+% MOVED TO INT6
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%Multijets
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%\input{z_ch_multijet}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Control plots}
+\label{subsec:contolPlotsZ}
+
+Control plots for both the \Zee and \Zmm channels at 5 and 13 TeV are provided here after applying the event selection described above and all the corrections described in Section~\ref{sec:objects} and in Section~\ref{sec:physcorr}. 
+The signal MC is the \textsc{Powheg} + \textsc{Pythia8} MC described in Ref.~\cite{Kretzschmar:2657141}.
+%This set of control plots corresponds to the unfolding bias correction production where the nominal MC has been reweighted based on the corrections described in Section~\ref{sec:physcorr}.
+%Control plots from the production using the non-reweighted MC are shown in the appendix (\ref{sec:zpt_nonrew_cp}).
+Control plots using the same signal MC but without \pt modeling corrections are shown in the appendix (\ref{sec:zpt_nonrew_cp}).
+All of these control plots are normalised to their data integral.
+
+\subsubsection{$\sqrt{s} = 13$~\TeV\ dataset control plots}
+\label{ssubsec:Z_CP_MCrew}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% ************************* 13 TeV ****************************
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The plots in the left column (a, c) show the \Zee channel, whereas the plots in the right column (b, d) show the \Zmm channel.
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/SETUE_cut6_ee_13TeV_log_norm.pdf}\label{f:SETUE_Zee13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/SETUE_cut6_mumu_13TeV_log_norm.pdf}\label{f:SETUE_Zmm13}}
+\caption{$\Sigma \bar{E_T}$ distribution in the electron and muon \Zboson decay channels for the $\sqrt{s} = 13$~\TeV\ dataset. }\end{figure}
+%
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/SET_cut6_ee_13TeV_log_norm.pdf}\label{f:SETE_Zee13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/SET_cut6_mumu_13TeV_log_norm.pdf}\label{f:SETE_Zmm13}}
+\caption{$\Sigma{E_T}$ distribution in the electron and muon \Zboson decay channels for the $\sqrt{s} = 13$~\TeV\ dataset. }\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_Aug2021/mllGeV_cut6_ee_13TeV_log_norm.pdf}\label{f:mll_Zee13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_Aug2021/mllGeV_cut6_mumu_13TeV_log_norm.pdf}\label{f:mll_Zmm13}}
+\caption{Dilepton mass distribution in the electron and muon \Zboson decay channels for the $\sqrt{s} = 13$~\TeV\ dataset. }\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/elEtaSF_cut6_ee_13TeV_log_norm.pdf}\label{f:elEtaSF13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/muEtaSF_cut6_mumu_13TeV_log_norm.pdf}\label{f:muEtaSF13}}
+\caption{Lepton pseudorapidity distribution in the electron and muon \Zboson decay channels for the $\sqrt{s} = 13$~\TeV\ dataset. }\end{figure}
+
+
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/elPhi_cut6_ee_13TeV_log_norm.pdf}\label{f:elPhi13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/muPhi_cut6_mumu_13TeV_log_norm.pdf}\label{f:muPhi13}}
+
+\caption{Lepton phi distribution in the electron and muon \Zboson decay channels for the $\sqrt{s} = 13$~\TeV\ dataset. }\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/elPt_cut6_ee_13TeV_log_norm.pdf}\label{f:elPt13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/muPt_cut6_mumu_13TeV_log_norm.pdf}\label{f:muPt13}}
+
+\caption{Lepton transverse momentum distribution in the electron and muon \Zboson decay channels for the $\sqrt{s} = 13$~\TeV\ dataset. }\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/elPtL_cut6_ee_13TeV_log_norm.pdf}\label{f:elPtL13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/muPtL_cut6_mumu_13TeV_log_norm.pdf}\label{f:muPtL13}}
+
+\caption{Leading Lepton transverse momentum distribution in the electron and muon \Zboson decay channels for the $\sqrt{s} = 13$~\TeV\ dataset. }\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/elPtSL_cut6_ee_13TeV_log_norm.pdf}\label{f:elPtSL13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/muPtSL_cut6_mumu_13TeV_log_norm.pdf}\label{f:muPtSL13}}
+
+\caption{Sub-leading Lepton transverse momentum distribution in the electron and muon \Zboson decay channels for the $\sqrt{s} = 13$~\TeV\ dataset. }\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/ZpT_Reco_2GeVBin_cut6_ee_13TeV_log_norm.pdf}\label{f:ZpT_Zee13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/ZpT_Reco_2GeVBin_cut6_mumu_13TeV_log_norm.pdf}\label{f:ZpT_Zmm13}}
+\caption{Reconstructed \Zboson transverse momentum distribution using the dilepton pair in the electron and muon decay channels for the $\sqrt{s} = 13$~\TeV\ dataset. }\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/uT_5GeVBin_cut6_ee_13TeV_log_norm.pdf}\label{f:uT_Zee13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/uT_5GeVBin_cut6_mumu_13TeV_log_norm.pdf}\label{f:uT_Zmm13}}
+\caption{Hadronic recoil distribution of the \Zboson in the electron and muon decay channels for the $\sqrt{s} = 13$~\TeV\ dataset. }\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/uT_5GeVBin_cut6_ee_13TeV_log_norm.pdf}\label{f:uT_Zee13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/uT_5GeVBin_cut6_mumu_13TeV_log_norm.pdf}\label{f:uT_Zmm13}}
+\caption{Hadronic recoil distribution of the \Zboson in the electron and muon decay channels for the $\sqrt{s} = 13$~\TeV\ dataset. }\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_Aug2021/yll_cut6_ee_13TeV_log_norm.pdf}\label{f:yll_Zee13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_Aug2021/yll_cut6_mumu_13TeV_log_norm.pdf}\label{f:yll_Zmm13}}
+\caption{Rapidity of the \Zboson reconstructed from dilepton system in the electron and muon decay channels for the $\sqrt{s} = 13$~\TeV\ dataset. }\end{figure}
+%
+%
+
+\clearpage
+
+\subsubsection{$\sqrt{s} = 5$~\TeV\ control plots}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% ************************* 5 TeV ****************************
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The plots in the left column (a, c) show the \Zee channel, whereas the plots in the right column (b, d) show the \Zmm channel.
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/SETUE_cut6_ee_5TeV_log_norm.pdf}\label{f:SETUE_Zee5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/SETUE_cut6_mumu_5TeV_log_norm.pdf}\label{f:SETUE_Zmm5}}
+\caption{$\Sigma \bar{E_T}$ distribution in the electron and muon \Zboson decay channels for the $\sqrt{s} = 5$~\TeV\ dataset. }\end{figure}
+%
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/SET_cut6_ee_5TeV_log_norm.pdf}\label{f:SETE_Zee5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/SET_cut6_mumu_5TeV_log_norm.pdf}\label{f:SETE_Zmm5}}
+\caption{$\Sigma{E_T}$ distribution in the electron and muon \Zboson decay channels for the $\sqrt{s} = 5$~\TeV\ dataset. }\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_Aug2021/mllGeV_cut6_ee_5TeV_log_norm.pdf}\label{f:mll_Zee5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_Aug2021/mllGeV_cut6_ee_5TeV_log_norm.pdf}\label{f:mll_Zmm5}}
+\caption{Dilepton mass distribution in the electron and muon \Zboson decay channels for the $\sqrt{s} = 5$~\TeV\ dataset. }\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/elEtaSF_cut6_ee_5TeV_log_norm.pdf}\label{f:elEtaSF5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/muEtaSF_cut6_mumu_5TeV_log_norm.pdf}\label{f:muEtaSF5}}
+\caption{Lepton pseudorapidity distribution in the electron and muon \Zboson decay channels for the $\sqrt{s} = 5$~\TeV\ dataset. }\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/elEtaSF_cut6_ee_5TeV_log_norm.pdf}\label{f:elEtaSF5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/muEtaSF_cut6_mumu_5TeV_log_norm.pdf}\label{f:muEtaSF5}}
+\caption{Lepton pseudorapidity distribution in the electron and muon) \Zboson decay channels for the $\sqrt{s} = 5$~\TeV\ dataset. }\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/elPhi_cut6_ee_5TeV_log_norm.pdf}\label{f:elPhi5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/muPhi_cut6_mumu_5TeV_log_norm.pdf}\label{f:muPhi5}}
+\caption{Lepton phi distribution in the electron and muon \Zboson decay channels for the $\sqrt{s} = 5$~\TeV\ dataset. }\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/elPt_cut6_ee_5TeV_log_norm.pdf}\label{f:elPt5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/muPt_cut6_mumu_5TeV_log_norm.pdf}\label{f:muPt5}}
+\caption{Lepton transverse momentum distribution in the electron and muon \Zboson decay channels for the $\sqrt{s} = 5$~\TeV\ dataset. }\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/elPtL_cut6_ee_5TeV_log_norm.pdf}\label{f:elPtL5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/muPtL_cut6_mumu_5TeV_log_norm.pdf}\label{f:muPtL5}}
+
+\caption{Leading Lepton transverse momentum distribution in the electron and muon \Zboson decay channels for the $\sqrt{s} = 5$~\TeV\ dataset. }\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/elPtSL_cut6_ee_5TeV_log_norm.pdf}\label{f:elPtSL5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/muPtSL_cut6_mumu_5TeV_log_norm.pdf}\label{f:muPtSL5}}
+
+\caption{Sub-leading Lepton transverse momentum distribution in the electron and muon \Zboson decay channels for the $\sqrt{s} = 5$~\TeV\ dataset. }\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/ZpT_Reco_2GeVBin_cut6_ee_5TeV_log_norm.pdf}\label{f:ZpT_Zee5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/ZpT_Reco_2GeVBin_cut6_mumu_5TeV_log_norm.pdf}\label{f:ZpT_Zmm5}}
+\caption{Reconstructed \Zboson transverse momentum distribution using the dilepton pair in the electron and muon decay channels for the $\sqrt{s} = 5$~\TeV\ dataset. }\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/uT_5GeVBin_cut6_ee_5TeV_log_norm.pdf}\label{f:uT_Zee5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_May2021/uT_5GeVBin_cut6_mumu_5TeV_log_norm.pdf}\label{f:uT_Zmm5}}
+\caption{Hadronic recoil distribution for \Zboson events in the electron and muon decay channels for the $\sqrt{s} = 5$~\TeV\ dataset. }\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_Aug2021/yll_cut6_ee_5TeV_log_norm.pdf}\label{f:yll_Zee5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_ControlPlots/MC_Rew_Aug2021/yll_cut6_mumu_5TeV_log_norm.pdf}\label{f:yll_Zmm5}}
+\caption{Rapidity of the \Zboson reconstructed from dilepton system in the electron and muon decay channels for the $\sqrt{s} = 13$~\TeV\ dataset. }\end{figure}
+%
+%
+\clearpage
+
+%%%% ******

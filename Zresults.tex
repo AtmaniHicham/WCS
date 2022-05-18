@@ -1,0 +1,90 @@
+\subsection{Results}
+\label{sec:Zresult}
+
+Here we present the unfolded distributions for the \Zboson analysis. We begin with the unfolded differential cross-sections for both the dilepton transverse momentum $\left(p_{T}^{ll} \right)$ and the hadronic recoil $\left(u_{T}\right)$ along with their respective uncertainties in each \Zboson decay channel: \Zee and \Zmm. Our final result compares the normalized differential cross-section to various Monte Carlo generators. All normalized cross-sections are normalized by the integrated cross-section in the fiducial phase space. The results are shown separately for the 13 \TeV ~(\ref{ssec:Zunf13TeV}) and 5 \TeV ~(\ref{ssec:Zunf5TeV}) datasets. All \ptdilep results are unfolded with 2 iterations. The \ut results are unfolded with 5 iterations at 5 TeV with `5GeV` binning and 10 iterations at 13 TeV with '7GeV' binning. %Figure~\ref{fig:biasunc_min_13} shows that the total uncertainty is minimized when \ut is unfolded with approximately 5 iterations at 13 TeV.
+Two compatibility checks are performed in sections~\ref{sssec:compatibilityHighmu}~and~\ref{ssec:pTZcompatibility}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{$Z$ unfolded results at $\sqrt{s} = 13$~\TeV}
+\label{ssec:Zunf13TeV}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Figures~\ref{f:unf_pT_Zee13} and~\ref{f:unf_pT_Zmm13} show the differential cross section distributions of the dilepton transverse momentum for the \Zee and \Zmm channels, respectively. The nominal Monte Carlo generator (PowhegPythia8) overestimates the distribution at low $p_{T}$ i.e. $p_{T} < 10 \textrm{ GeV}$. This effect is consistent with what is seen at reconstructed-level (Figs.~\ref{f:ZpT_Zee13} and~\ref{f:ZpT_Zmm13}). Both channels then agree (within uncertainty) with the MC distribution until about 40 \GeV, when the MC begins to underestimate the unfolded distribution. This effect is also seen at reconstructed-level. The \Zmm channel (\ref{f:unf_pT_Zmm13}) shows a positive statistical fluctuation at 20 \GeV that is also seen at reconstructed-level (\ref{f:ZpT_Zmm13}).
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_unfolding_results/unfold_v20210511/XSec_v20210511_13TeV_Zee_2GeVBin_2iters.pdf}\label{f:unf_pT_Zee13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_unfolding_results/unfold_v20210511/XSec_v20210511_13TeV_Zmumu_2GeVBin_2iters.pdf}\label{f:unf_pT_Zmm13}}
+
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_unfolding_results/unfold_v20210511/XSec_v20210511_13TeV_Zee_finerT_Rebin7_uT_10iters.pdf}\label{f:MCData_Zee_uT13_rebin7}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_unfolding_results/unfold_v20210511/XSec_v20210511_13TeV_Zmumu_finerT_Rebin7_uT_10iters.pdf}\label{f:MCData_Zmm_uT13_rebin7}}
+
+\caption{Unfolded dilepton transverse momentum differential cross section distribution in the electron (left) and muon (right) \Zboson decay channels for the $\sqrt{s} = 13$~\TeV\ dataset. The cross section is shown in the upper panel and the lower panel shows the ratio of unfolded data to the nominal (reweighted) Powheg+Pythia8 MC. The uncertainties in the ratio plot are split to show the statistical uncertainty (black error bars), and experimental systematic uncertainies including luminosity (red band). The total uncertainty is the same total uncertainty as that shown in figures \ref{f:AlluncZee_pT13TeV} to \ref{f:AlluncZmm_uT13TeV_7GeV}.}\end{figure}
+
+
+Figures~\ref{f:MCData_Zee_uT13_rebin7} and ~\ref{f:MCData_Zmm_uT13_rebin7} show the differential cross section distributions of the hadronic recoil for the \Zee and \Zmm channels, respectively. Comparing the two unfolded observables $p_{T}^{ll}$ and $u_{T}$ and referring back to their corresponding correlation matrices (figs.~\ref{f:corrMatrixZee_pT13TeV} -~\ref{f:corrMatrixZmm_uT13TeV}), one can see the effect of the strongly correlated bins in the $u_{T}$ observable, leading to the sinusoidal pattern in its Bayesian-unfolded result.
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_unfolding_results/ComDataPred/XSec_Comp_13TeV_ee_2GeVBin.pdf}\label{f:MCData_Zee_pT13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_unfolding_results/ComDataPred/XSec_Comp_13TeV_mumu_2GeVBin.pdf}\label{f:MCData_Zmm_pT13}}
+
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_unfolding_results/ComDataPred/XSec_Comp_13TeV_ee_finerT_Rebin7_uT.pdf}\label{f:MCData_Zee_uT13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_unfolding_results/ComDataPred/XSec_Comp_13TeV_mumu_finerT_Rebin7_uT.pdf}\label{f:MCData_Zmm_uT13}}
+\caption{Comparison between various Monte Carlo generator predictions and the unfolded dilepton transverse momentum differential cross-section distribution in the electron (left) and muon (right) \Zboson decay channels for the $\sqrt{s} = 13$~\TeV\ dataset. The differential cross-section has been normalized by the total cross-section. The unfolded data and MC distributions are shown in the upper panel and the lower panel shows the ratio of the various distributions to the data. In the lower panel, the total systematic uncertainties are shown in light grey, and the total overall uncertainty (stat. plus sys.) is shown in dark grey.}\label{f:MCData_Z_13}
+\end{figure}
+
+
+Figures ~\ref{f:MCData_Zee_pT13}, ~\ref{f:MCData_Zmm_pT13} \& ~\ref{f:MCData_Zee_uT13}, ~\ref{f:MCData_Zmm_uT13} compare various Monte Carlo generator predictions for the differential \pTZ cross-section to the data as a function of \pT. The differential cross-sections are normalized by the total cross-section. We use the MCs Sherpa (v2.2.1), DYTurbo (to NNLL+NNLO), Powheg+Pythia8 AZNLO Tune (the nominal MC) and Pythia8 with AZ tune. At low \pT, Pythia8 with AZ tuning is most consistent with the data, while at high \pT the data is best represented by Sherpa.
+
+\clearpage
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{$Z$ unfolded results at $\sqrt{s} = 5$~\TeV}
+\label{ssec:Zunf5TeV}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_unfolding_results/unfold_v20210511/XSec_v20210511_5TeV_Zee_2GeVBin_2iters.pdf}\label{f:unf_pT_Zee5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_unfolding_results/unfold_v20210511/XSec_v20210511_5TeV_Zmumu_2GeVBin_2iters.pdf}
+\label{f:unf_pT_Zmm5}}
+
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_unfolding_results/unfold_v20210511/XSec_v20210511_5TeV_Zee_5GeVBin_uT_5iters.pdf}\label{f:unf_uT_Zee5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_unfolding_results/unfold_v20210511/XSec_v20210511_5TeV_Zmumu_5GeVBin_uT_5iters.pdf}\label{f:unf_uT_Zmm5}}
+\caption{Unfolded dilepton transverse momentum differential cross-section distribution in the electron (left) and muon (right) \Zboson decay channels for the $\sqrt{s} = 5$~\TeV\ dataset. The cross section is shown in the upper panel and the lower panel shows the ratio of unfolded data to the nominal (non-reweighted) Powheg+Pythia8 MC. The uncertainties in the ratio plot are split to show the statistical uncertainty (black error bars), and experimental systematic uncertainies including luminosity (red band). The total uncertainty is the same total uncertainty as that shown in figures \ref{f:AlluncZee_pT5TeV} to \ref{f:AlluncZmm_uT5TeV}.}\end{figure}
+
+Figures~\ref{f:unf_pT_Zee5} and~\ref{f:unf_pT_Zmm5} show the differential cross-section distributions of the dilepton transverse momentum for the \Zee and \Zmm channels, respectively, while figures~\ref{f:unf_uT_Zee5} and~\ref{f:unf_uT_Zmm5} show the differential cross-section distributions of the hadronic recoil for the \Zee and \Zmm channels.
+The unfolded results are consistent with the nominal MC aside from a statistical fluctuation at 30 \GeV\ that is also seen at reconstructed-level (Fig.~\ref{f:ZpT_Zee5} and~\ref{f:ZpT_Zmm5}). Due to its poorer resolution, the hadronic recoil result is once again highly regularized (strong bin-to-bin correlations as is shown in figs.~\ref{f:corrMatrixZee_uT5TeV} and~\ref{f:corrMatrixZmm_uT5TeV}) and so the unfolded data is not able to capture the shape as well as in the \ptll\ measurement.
+
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_unfolding_results/ComDataPred/XSec_Comp_5TeV_ee_2GeVBin.pdf}\label{f:MCData_Zee_pT5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_unfolding_results/ComDataPred/XSec_Comp_5TeV_mumu_2GeVBin.pdf}
+\label{f:MCData_Zmm_pT5}}
+
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_unfolding_results/ComDataPred/XSec_Comp_5TeV_ee_5GeVBin_uT.pdf}\label{f:MCData_Zee_uT5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_unfolding_results/ComDataPred/XSec_Comp_5TeV_mumu_5GeVBin_uT.pdf}
+\label{f:MCData_Zmm_uT5}}
+\caption{Comparison between various Monte Carlo generator predictions and the unfolded dilepton transverse momentum differential cross-section distribution in the electron (left) and muon (right) \Zboson decay channels for the $\sqrt{s} = 5$~\TeV\ dataset. The differential cross-section has been normalized by the total cross-section. The unfolded data and MC distributions are shown in the upper panel and the lower panel shows the ratio of the various distributions to the data. In the lower panel, the total systematic uncertainties are shown in light grey, and the total overall uncertainty (stat. plus sys.) is shown in dark grey.}\label{f:MCData_Z_5}
+\end{figure}
+
+Figures~\ref{f:MCData_Zee_pT5},~\ref{f:MCData_Zmm_pT5} \& \ref{f:MCData_Zee_uT5},~\ref{f:MCData_Zmm_uT5} compare various Monte Carlo generator predictions for the differential \pTZ cross-section to the data as a function of \pT in the 5 \TeV\ decay channels. The differential cross-sections are normalized by the total cross-section. The predictions at 5 \TeV\ are more consistent with the data than at 13 \TeV. At low \pT, both tunings of Pythia perform well. We see a difference in the generator predictions at high \pT between decay channels for both observables: in the \Zee channel DYTurbo and the Pythia8 AZ tuning perform well, whereas in the \Zmm channel only Sherpa performs well.
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% COMPATIBILITY  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{ZpTLowmuHighmu}
+\clearpage
+\input{ZpTuTCompatibility}
+%\input{ZeeMuMuCompatibility}

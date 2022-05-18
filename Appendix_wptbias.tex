@@ -1,0 +1,83 @@
+\section{\pt\ W bias studies}
+\label{sec:wpt_bias}
+In this appendix, a simpler method than what is used in the analysis is tried. Unfortunately, the closure of this method is not satisfactory, as will be shown below.
+
+In order to estimate how much the unfolding method is biased when applied to data, we need to quantify how much the result is influenced by the boson \pT distribution assumed by the generator used to calculate the migration matrix, the purity and the efficiency corrections. Therefore we construct a set of samples which assume different generator-level \pT distributions, while maintaining sufficient agreement at the detector level. A data-driven approach is commonly used based on data to simulation shape differences. In the data-driven approach, called in the following method 1, a reweighting of the truth distribution is performed on an event-by-event basis using the data to MC differences at the reco-level. The comparison of data (after background subtraction) and MC at reco-level of the \ut\ distribution is shown for $W^{-}\rightarrow e\nu$ at $\sqrt{s}=5, 13$ TeV in the dashed black curve of Figure~\ref{fig:recoil_dataMCReco}.
+In order to check if the truth and reco-level distributions are not very different, Figure~\ref{fig:bias_truth} shows the impact of the reweighting on the truth-level \ptw\ distribution for $W^{-}\rightarrow e\nu$ at $\sqrt{s}=5, 13$ TeV. Figure~\ref{fig:bias_reco} shows the impact of the reweighting on the reco-level distribution (\ut) for $W^{-}\rightarrow e\nu$ at $\sqrt{s}=5, 13$ TeV. After reweighting we check that the new reco-level distribution is indeed similar to the data, this is shown in the red curve of Figure~\ref{fig:recoil_dataMCReco}. The unfolded distributions are derived by unfolding the reweighted reco-level distributions using the non-reweighted original migration matrix, to emulate the unfolding of the data.
+
+In the data-driven approach, there is an assumption that a reweighting based on data/MC differences is enough to describe any possible differences at the truth level. However if this is not the case, the bias uncertainty will be underestimated. Another approach, called in the following method 2, was introduced based on reweighting the truth distribution until we reach a good agreement betweem data and MC at the reco-level quantified by the minimal $\chi^{2}$ up to \ut = 100 GeV. The level of agreement at the reco-level between data and MC is checked in the plain black curve of Figure~\ref{fig:recoil_dataMCReco}.
+%The impact of the reweighting at the truth (reco) level is shown in Figure~\ref{fig:bias_recotruth}.
+
+%The impact of these bias estimation methods on the unfolded measurements are discussed in Sections~\ref{sec:ptwbias} for the $W$ channels, and~\ref{ss:ZpT_stat_sys_unc} for the $Z$ channels.
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/WpT_Wminus_5TeV_cut7_MCrew_to_data_With_bkgsubtr_reco_nansi.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/WpT_Wminus_13TeV_cut7_MCrew_to_data_With_bkgsubtr_reco_nansi.pdf}}
+  \caption{Ratio between data (after background subtraction) and MC after selection cuts of the \ut\ distribution for $W^{-}\rightarrow e\nu$ at (a) $\sqrt{s}=5$ TeV and (b) $\sqrt{s}=13$ TeV. The dashed black curve is the nominal Powheg sample used in the analysis. The red (black) curve corresponds to the reco level MC where a reweighting is performed at a truth level according to method 1 (method 2).}
+  \label{fig:recoil_dataMCReco}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/WpT_Wminus_5TeV_finerT_cut0_MCrew_to_MCnom_truth_nansi.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/WpT_Wminus_13TeV_finerT_cut0_MCrew_to_MCnom_truth_nansi.pdf}}
+    \caption{Ratio of truth \ptw\ distributions, between the reweighted sample to the baseline sample, before any selection cut for $W^{-}\rightarrow e\nu$ at (a) $\sqrt{s}=5$ TeV and (b) $\sqrt{s}=13$ TeV. The red (black) curve corresponds to the truth-level MC where a reweighting is performed according to method 1 (method 2).}
+  \label{fig:bias_truth}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/WpT_Wminus_5TeV_cut7_MCrew_to_MCnom_reco_nansi.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/WpT_Wminus_13TeV_cut7_MCrew_to_MCnom_reco_nansi.pdf}}
+    \caption{Ratio of reconstructed \ut distributions, between the reweighted sample to the baseline sample, after selection cuts for $W^{-}\rightarrow e\nu$ at (a) $\sqrt{s}=5$ TeV and (b) $\sqrt{s}=13$ TeV. The red (black) curve corresponds to the reco-level MC where a reweighting is performed at a truth level according to method 1 (method 2).}
+  \label{fig:bias_reco}
+\end{figure}
+
+In order to be even more general in the bias uncertainty estimation, a similar procedure as method 2 is done for other MC samples: Pythia, Sherpa and DYRES. The difference in the true $p_{T}^W$ distribution between Powheg, Sherpa, DYRES and Pythia before any selection cuts is shown in Figure~\ref{fig:truthrewMC}.\\
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/wminusenu_WpT_Truth_5TeV_finerT_cut0_ThreeCurves.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/WpT_Truth_5TeV_Wminusenu_cut0.pdf}} \\
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/wminusenu_WpT_Truth_5TeV_finerT_cut0.pdf}}
+  \caption{Comparison of truth W-boson momentum distributions between Powheg, Pythia and Powheg reweighted to Pythia (a), DYRES (b) and Sherpa (c) before any selection cut for $W^{-}\rightarrow e\nu$ channel at 5 TeV.}
+  \label{fig:truthrewMC}
+\end{figure}
+
+The ratio of reweighted to non-reweighted \ptw\ distributions at truth level in the different MC, before any selection cut is given in fig.~\ref{fig:BiasrewOvernonRewTruth}.
+This figure shows that the considered variations are providing an envelope around the reweighting using method 2 with Powheg (black curve). The reweighting is also less pronounced for the 5~\TeV\ dataset than for the 13~\TeV\ one, simply because in this case the data are much closer too the baseline Monte-Carlo prediction for \ut.
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/BiasRew_Plots/WpT_Wminus_5TeV_finerT_cut0_MCrew_to_MCnom_truth.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/BiasRew_Plots/WpT_Wplus_5TeV_finerT_cut0_MCrew_to_MCnom_truth.pdf}} \\
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/BiasRew_Plots/WpT_Wminus_13TeV_finerT_cut0_MCrew_to_MCnom_truth.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/BiasRew_Plots/WpT_Wplus_13TeV_finerT_cut0_MCrew_to_MCnom_truth.pdf}}
+  \caption{Ratio of truth \ptw\ distributions, of each reweighted sample to the baseline sample, in the electron channel, before any selection cut.}
+  \label{fig:BiasrewOvernonRewTruth}
+\end{figure}
+
+The ratio of reweighted to non-reweighted \ut\ distributions after final cuts is given in fig.~\ref{fig:BiasrewOvernonRewReco}. The same comments as made above apply to this figure.
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/BiasRew_Plots/WpT_Wminus_5TeV_cut7_MCrew_to_MCnom_reco.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/BiasRew_Plots/WpT_Wplus_5TeV_cut7_MCrew_to_MCnom_reco.pdf}} \\
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/BiasRew_Plots/WpT_Wminus_13TeV_cut7_MCrew_to_MCnom_reco.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/BiasRew_Plots/WpT_Wplus_13TeV_cut7_MCrew_to_MCnom_reco.pdf}}
+  \caption{Ratio of \ut\ distributions, of each reweighted sample to the baseline sample, in the electron channel.}
+  \label{fig:BiasrewOvernonRewReco}
+\end{figure}
+
+To ensure the reweighted samples approximately match the distribution of \ut\ in the data, the ratio of those to the data after background subtraction is plotted on fig.~\ref{fig:BiasrewOverdataReco}. In almost all channels, the reweighting acts as expected and brings the \ut\ distribution of the prediction to the background-subtracted data within $\sim 1\%$ if one neglects statistical fluctuations. \textbf{It is however not the case for the \Wplus\ channel 13~\TeV}, where all attempts using this method fail. This is why it was not used in the analysis.
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/BiasRew_Plots/rat_to_data_WITH_bkg_subtraction/WpT_Wminus_5TeV_cut7_MCrew_to_data_With_bkgsubtr_reco.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/BiasRew_Plots/rat_to_data_WITH_bkg_subtraction/WpT_Wplus_5TeV_cut7_MCrew_to_data_With_bkgsubtr_reco.pdf}}\\
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/BiasRew_Plots/rat_to_data_WITH_bkg_subtraction/WpT_Wminus_13TeV_cut7_MCrew_to_data_With_bkgsubtr_reco.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/BiasRew_Plots/rat_to_data_WITH_bkg_subtraction/WpT_Wplus_13TeV_cut7_MCrew_to_data_With_bkgsubtr_reco.pdf}}
+  \caption{Ratio of \ut\ distributions, of each reweighted sample to the data after background subtraction, in the electron channel. The ratio of the nominal prediction to the data is also shown as a dotted curve.}
+  \label{fig:BiasrewOverdataReco}
+\end{figure}

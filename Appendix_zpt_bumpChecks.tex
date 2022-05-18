@@ -1,0 +1,68 @@
+\section{\ptz  10 GeV data/MC bump checks }
+\label{sec:zpt_bump}
+
+Additional checks were performed to investigate the `bump' in the \pTZ Data/MC ratio at $p_{T} \approx 10 \textrm{ GeV}$. This bump is most noticeable in the ratio panel of figures \ref{f:unf_pT_Zee13} and \ref{f:unf_pT_Zmm13}. The checks were performed using Data and the nominal PowhegPythia8 MC with the \pTZ microtree (a step before using the HistMaker package and before unfolding), manually applying the complete \Zboson event selection as outlined in section \ref{subsec:zselection}. The Data/MC ratio is plotted for these checks; the ratio is compared with and without Scale Factors being applied to the MC to also test if the SFs influence the bump. Three different binnings are used for this set of checks: the standard `2 GeV' \pTZ binning, the standard `5 GeV' \ut binning, and 1 GeV bins. The figures below, beginning with figure \ref{f:SFbumpcheck_Zee_pT13_1GeVbin} and showing this ratio for both energies, channels and observables, show that the SFs do not play a role in this bump, and that the bump appears to simply be an artifact of the data.
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_pTll_Zee_13TeV_1GeVbins.pdf}\label{f:SFbumpcheck_Zee_pT13_1GeVbin}}
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_pTll_Zee_13TeV_2GeVbins.pdf}\label{f:SFbumpcheck_Zee_pT13_2GeVbin}}
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_pTll_Zee_13TeV_5GeVbins.pdf}\label{f:SFbumpcheck_Zee_pT13_5GeVbin}}
+
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_pTll_Zmumu_13TeV_1GeVbins.pdf}\label{f:SFbumpcheck_Zmm_pT13_1GeVbin}}
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_pTll_Zmumu_13TeV_2GeVbins.pdf}\label{f:SFbumpcheck_Zmm_pT13_2GeVbin}}
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_pTll_Zmumu_13TeV_5GeVbins.pdf}\label{f:SFbumpcheck_Zmm_pT13_5GeVbin}}
+\caption{Data to MC ratio using the \pTZ microtree, applying \Zboson event selection manually. The ratio is compared with (black) and without (blue) Scale Factors applied to the MC. Figures (a) - (c) show the \ptdilep ratios for the \Zee decay channel at 13 TeV for 1, 2, and 5 GeV bins, respectively. Figures (d) - (f) show the corresponding plots for the \Zmm channel.}\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_uT_Zee_13TeV_1GeVbins.pdf}\label{f:SFbumpcheck_Zee_uT13_1GeVbin}}
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_uT_Zee_13TeV_2GeVbins.pdf}\label{f:SFbumpcheck_Zee_uT13_2GeVbin}}
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_uT_Zee_13TeV_5GeVbins.pdf}\label{f:SFbumpcheck_Zee_uT13_5GeVbin}}
+
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_uT_Zmumu_13TeV_1GeVbins.pdf}\label{f:SFbumpcheck_Zmm_uT13_1GeVbin}}
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_uT_Zmumu_13TeV_2GeVbins.pdf}\label{f:SFbumpcheck_Zmm_uT13_2GeVbin}}
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_uT_Zmumu_13TeV_5GeVbins.pdf}\label{f:SFbumpcheck_Zmm_uT13_5GeVbin}}
+\caption{Data to MC ratio using the \pTZ microtree, applying \Zboson event selection manually. The ratio is compared with (black) and without (blue) Scale Factors applied to the MC. Figures (a) - (c) show the \ut ratios for the \Zee decay channel at 5 TeV for 1, 2, and 5 GeV bins, respectively. Figures (d) - (f) show the corresponding plots for the \Zmm channel.}\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_pTll_Zee_5TeV_1GeVbins.pdf}\label{f:SFbumpcheck_Zee_pT5_1GeVbin}}
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_pTll_Zee_5TeV_2GeVbins.pdf}\label{f:SFbumpcheck_Zee_pT5_2GeVbin}}
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_pTll_Zee_5TeV_5GeVbins.pdf}\label{f:SFbumpcheck_Zee_pT5_5GeVbin}}
+
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_pTll_Zmumu_5TeV_1GeVbins.pdf}\label{f:SFbumpcheck_Zmm_pT5_1GeVbin}}
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_pTll_Zmumu_5TeV_2GeVbins.pdf}\label{f:SFbumpcheck_Zmm_pT5_2GeVbin}}
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_pTll_Zmumu_5TeV_5GeVbins.pdf}\label{f:SFbumpcheck_Zmm_pT5_5GeVbin}}
+\caption{Data to MC ratio using the \pTZ microtree, applying \Zboson event selection manually. The ratio is compared with (black) and without (blue) Scale Factors applied to the MC. Figures (a) - (c) show the \ptdilep ratios for the \Zee decay channel at 13 TeV for 1, 2, and 5 GeV bins, respectively. Figures (d) - (f) show the corresponding plots for the \Zmm channel.}\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_uT_Zee_5TeV_1GeVbins.pdf}\label{f:SFbumpcheck_Zee_uT5_1GeVbin}}
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_uT_Zee_5TeV_2GeVbins.pdf}\label{f:SFbumpcheck_Zee_uT5_2GeVbin}}
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_uT_Zee_5TeV_5GeVbins.pdf}\label{f:SFbumpcheck_Zee_uT5_5GeVbin}}
+
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_uT_Zmumu_5TeV_1GeVbins.pdf}\label{f:SFbumpcheck_Zmm_uT5_1GeVbin}}
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_uT_Zmumu_5TeV_2GeVbins.pdf}\label{f:SFbumpcheck_Zmm_uT5_2GeVbin}}
+\subfloat[]{\includegraphics[width=.33\textwidth]{figure/ZpT_bump_check/SFcomparison/DataMC_uT_Zmumu_5TeV_5GeVbins.pdf}\label{f:SFbumpcheck_Zmm_uT5_5GeVbin}}
+\caption{Data to MC ratio using the \pTZ microtree, applying \Zboson event selection manually. The ratio is compared with (black) and without (blue) Scale Factors applied to the MC. Figures (a) - (c) show the \ut ratios for the \Zee decay channel at 13 TeV for 1, 2, and 5 GeV bins, respectively. Figures (d) - (f) show the corresponding plots for the \Zmm channel.}\end{figure}
+
+One final check was performed to see if the \pTZ cut plays a role in this bump. Figures \ref{f:pT20bumpcheck_Zee_pT13} to \ref{f:pT20bumpcheck_Zmm_uT13} and \ref{f:pT20bumpcheck_Zee_pT5} to \ref{f:pT20bumpcheck_Zmm_uT5} show the Data/MC ratio with a relaxed $p_{T} > 20 \textrm{ GeV}$ cut (25 GeV is the standard cut) for both energies, channels, and observables. One can see that this also does not appear to affect the bump.
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_bump_check/pT20GeV/DataMC_pTll_relaxed_pT20GeV_Zee_13TeV_2GeVbins.pdf}\label{f:pT20bumpcheck_Zee_pT13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_bump_check/pT20GeV/DataMC_uT_relaxed_pT20GeV_Zee_13TeV_2GeVbins.pdf}\label{f:pT20bumpcheck_Zmm_pT13}}
+
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_bump_check/pT20GeV/DataMC_pTll_relaxed_pT20GeV_Zmumu_13TeV_2GeVbins.pdf}\label{f:pT20bumpcheck_Zee_uT13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_bump_check/pT20GeV/DataMC_uT_relaxed_pT20GeV_Zmumu_13TeV_2GeVbins.pdf}\label{f:pT20bumpcheck_Zmm_uT13}}
+\caption{Data to MC ratio using the \pTZ microtree, applying \Zboson event selection manually but with a relaxed \pT cut to 20 GeV instead of 25 GeV. Results are shown for both \Zee (top) and \Zmm (bottom) for both \ptdilep (left) and \ut (right) at 13 TeV. Scale Factors have not been applied to the MC, and the errors bars are the statistical error only.}\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_bump_check/pT20GeV/DataMC_pTll_relaxed_pT20GeV_Zee_5TeV_2GeVbins.pdf}\label{f:pT20bumpcheck_Zee_pT5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_bump_check/pT20GeV/DataMC_uT_relaxed_pT20GeV_Zee_5TeV_2GeVbins.pdf}\label{f:pT20bumpcheck_Zmm_pT5}}
+
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_bump_check/pT20GeV/DataMC_pTll_relaxed_pT20GeV_Zmumu_5TeV_2GeVbins.pdf}\label{f:pT20bumpcheck_Zee_uT5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/ZpT_bump_check/pT20GeV/DataMC_uT_relaxed_pT20GeV_Zmumu_5TeV_2GeVbins.pdf}\label{f:pT20bumpcheck_Zmm_uT5}}
+\caption{Data to MC ratio using the \pTZ microtree, applying \Zboson event selection manually but with a relaxed \pT cut to 20 GeV instead of 25 GeV. Results are shown for both \Zee (top) and \Zmm (bottom) for both \ptdilep (left) and \ut (right) at 5 TeV. Scale Factors have not been applied to the MC, and the errors bars are the statistical error only.}\end{figure}

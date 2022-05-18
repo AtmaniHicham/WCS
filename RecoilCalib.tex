@@ -1,0 +1,13 @@
+The detailed procedure to calibrate the hadronic recoil is described in~\cite{Li:2657182}. It is briefly summarised here. The calibration is obtained as a function of \setue\ and \ptv\ of the boson, since the hadronic recoil is mainly sensitive to these. Since the correction is obtained in \Zboson\ events, this dependence also allows to extrapolate to the \Wboson\ events, that have different \setue\ and \ptv\ distributions.
+%
+
+The procedure consists of three steps :
+\begin{itemize}
+	\item First, the \setue\ distribution in the Monte-Carlo should be well modelled and match that of the data. More precisely, it is crucial to model correctly the correlation between \setue\ and \ptv, since we want to have a good description of the activity as a function of our measured physics observable. This is achieved thanks to a 2-dimensional reweighting, obtained in \Zboson\ events. In the simulated \Wboson\ events, an additional reweighting of \setue\ in bins of \ut\ is applied. A further 1-dimensional reweighting is obtained for each process (\Wminus, \Wplus\ and \Zboson) to recover the initial underlying \pttruth\ spectrum.
+
+	\item Second, the direction of the recoil is corrected, taking the projections on $x$ and $y$ axes of the recoil in \Zboson\ events, and correcting for any data to MC differences.
+
+	\item Finally, response and resolution corrections are, once again, obtained in-situ in \Zboson\ events, where the parallel and perpendicular components can be extracted in the data as a function of \setue\ and \ptll, and compared to the Monte-Carlo to extract corrective coefficients.
+\end{itemize}
+
+This \Zboson\ boson based calibration is applied to \Wboson\ events ; uncertainties due to this extrapolation are included. A summary on these uncertainties, as well as their impact on the unfolded spectra, are discussed in section~\ref{subsec:uncsummary}.

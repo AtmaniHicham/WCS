@@ -1,0 +1,126 @@
+
+\section{Physics corrections}
+\label{sec:physcorr}
+
+The main signal event samples for $W$ and $Z$ production are generated
+using the \POWHEG\ event
+generator~\cite{Nason_2004,Frixione_2007,Alioli_2008,Alioli_2010}
+using the CT10~\cite{guzzi2011ct10} PDF, interfaced to \PYTHIAV{8}~\cite{pythia} using the
+AZNLO tune~\cite{STDM-2012-23}. These \POWPYTHIA\ samples are interfaced
+to \Photos~\cite{Golonka:2005pn} to simulate the effect of final state
+QED radiation. Further details on these samples, on the background simulated samples and on alternative simulated signal samples are provided in ref.~\cite{Kretzschmar:2657141}.
+%
+
+\subsection{Polarisation}
+
+The polarisation of the vector boson is entirely encoded in 8 $A_i$ coefficients.
+The angular correlations between the two decay leptons, arising from the polarisation of the considered vector boson, are not properly taken into account in our baseline simulation of \Wboson\ and \Zboson\ samples.
+\POWHEG\ is NLO accurate in QCD, and also suffers from a known feature in the limit where \pttruthv\ goes to 0 ($A_0$ becomes negative). It was shown in~\cite{Aad_2016} that NNLO predictions for the $A_i$s are correctly describing the measurements for the \Zboson\ at 8~\TeV. Therefore, as in the \mW\ analysis at 7~\TeV~\cite{Aaboud:2017svj}, the angular coefficients are reweighted to NNLO predictions. This is done using using the DYTURBO program, an optimised version
+of DYNNLO~\cite{Catani:2007vq,Catani:2009sm} together with the CT10NNLO PDF
+set~\cite{Gao_2014}. The full details on this reweighting are given in ref.~\cite{Kretzschmar:2657141}.
+%
+
+\subsection{\pt\ modelling correction}
+\label{sec:physcorrWpTrew}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[\Wmlnu.]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/BiasCorr/RewFactors_BiasCorrection_NonReweightedMC_13TeV_Wminuslnu.pdf}}
+  \subfloat[\Wplnu.]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/BiasCorr/RewFactors_BiasCorrection_NonReweightedMC_13TeV_Wpluslnu.pdf}}
+  \caption{Fitted truth reweighting functions $w_{T}$ (defined in chapter~\ref{sec:bias}) in the electron and muon channels at $\sqrt{s}=13$ TeV. The dashed lines represent the uncertainty on the reweighting functions.}
+  \label{fig:rewFuncBiasCorr13TeV}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[\Wmlnu.]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/BiasCorr/RewFactors_BiasCorrection_NonReweightedMC_5TeV_Wminuslnu.pdf}}
+  \subfloat[\Wplnu.]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/BiasCorr/RewFactors_BiasCorrection_NonReweightedMC_5TeV_Wpluslnu.pdf}}
+  \caption{Fitted truth reweighting functions $w_{T}$ (defined in chapter~\ref{sec:bias}) in the electron and muon channels at $\sqrt{s}=5$ TeV. The dashed lines represent the uncertainty on the reweighting functions.}
+  \label{fig:rewFuncBiasCorr5TeV}
+\end{figure}
+
+For each process (\Wplus, \Wminus, \Zboson), the boson \pt\ is reweighted using a procedure described in section~\ref{sec:bias} to maximise the agreement between data and simulation at detector level in the \ut distribution.
+This reweighting allows for a more reasonable prediction of the boson \pt\ in the baseline signal simulation, in particular at 13~\TeV\ where the initial agreement between data and the MC prediction is not satisfactory (see Appendices~\ref{sec:wpt_nonreweightedCP} and~\ref{sec:zpt_nonrew_cp}).
+
+%%% copy paste from \label{sec:unfolding}
+The best reweighting factors at truth level for each process at $\sqrt{s} = 13$ and $5$~\TeV\ are derived using a full data-driven approach described in detail in section~\ref{sec:bias} and are used to correct the baseline \POWHEG signals MC samples.
+In Figure \ref{fig:rewFuncBiasCorr13TeV}, examples of these truth reweighting factors for the electron and muon channels are shown: (a) presents the reweighting factors for the \Wminus channels, and (b) presents the reweighting factors for the \Wplus channels, both at $\sqrt{s} = 13$~\TeV. The corresponding plots at $\sqrt{s} = 5$~\TeV\ are shown in Figure \ref{fig:rewFuncBiasCorr5TeV}. Since the compatibility for these functions between the decay channels is satisfactory, the average of the two reweighting factors for the electron and muon channel is used for the correction.
+The effect of this \pt\ reweighting on the reconstructed \ut distributions is shown in Figure \ref{fig:datamc_MCreweighting_uT13TeV} and \ref{fig:datamc_MCreweighting_uT5TeV}.
+%The effect of this \pt\ reweighting on the reconstructed \ut distribution is shown in more details in Section~\ref{subsec:controlplots13} and \ref{subsec:controlplots5}
+%where the control plots for the W analysis are shown.% and in Section~\ref{sec:bias}.
+
+\begin{figure}[h]
+\centering
+\subfloat[\Wmmunu.]{\includegraphics[width=.4\textwidth]{figure/Plots_unfolding/RecoRew_sqrts13_Wminusmunu.pdf}}
+\subfloat[\Wpmunu.]{\includegraphics[width=.4\textwidth]{figure/Plots_unfolding/RecoRew_sqrts13_Wplusmunu.pdf}}
+
+\subfloat[\Wmenu.]{\includegraphics[width=.4\textwidth]{figure/Plots_unfolding/RecoRew_sqrts13_Wminusenu.pdf}}
+\subfloat[\Wpenu.]{\includegraphics[width=.4\textwidth]{figure/Plots_unfolding/RecoRew_sqrts13_Wplusenu.pdf}}
+\caption{Comparison between the ratio of data and MC simulation at reconstruction level of the \ut distributions before (red line) and after the \pt\ reweighting (black line) at $\sqrt{s} = 13$~\TeV\ . The error bars represent statistical uncertainty. }
+\label{fig:datamc_MCreweighting_uT13TeV}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[\Wmmunu.]{\includegraphics[width=.4\textwidth]{figure/Plots_unfolding/RecoRew_sqrts5_Wminusmunu.pdf}}
+\subfloat[\Wpmunu.]{\includegraphics[width=.4\textwidth]{figure/Plots_unfolding/RecoRew_sqrts5_Wplusmunu.pdf}}
+
+\subfloat[\Wmenu.]{\includegraphics[width=.4\textwidth]{figure/Plots_unfolding/RecoRew_sqrts5_Wminusenu.pdf}}
+\subfloat[\Wpenu.]{\includegraphics[width=.4\textwidth]{figure/Plots_unfolding/RecoRew_sqrts5_Wplusenu.pdf}}
+\caption{Comparison between the ratio of data and MC simulation at reconstruction level of the \ut distributions before (red line) and after the \pt\ reweighting (black line) at $\sqrt{s} = 5$~\TeV\ . The error bars represent statistical uncertainty. }
+\label{fig:datamc_MCreweighting_uT5TeV}
+\end{figure}
+
+%\subsection{ \pt\ modelling correction for Z events}
+%\label{sec:physcorrZpTrew}
+
+\begin{figure}[h]
+\centering
+\subfloat[13~\TeV.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/RewMC/FuncComparison_13TeV_nonrewMC_v20200828.pdf}}
+\subfloat[5~\TeV.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/RewMC/FuncComparison_5TeV_nonrewMC_v20200828.pdf}}\\
+\caption{Best reweighting functions for electron (blue) and muon (red) channels used to correct the truth \ptz\ spectrum ( more details in Section~\ref{sec:bias} ). The dashed lines represent the uncertainty in the reweighting functions.}
+\label{fig:rew_sf_zpt}
+\end{figure}
+
+For the \Zboson\ process a similar data driven approach is used, and is also described in Section~\ref{sec:bias}. Here the obtained reweighting factor at truth level maximises the agreement between data and simulation at detector level for the \ptdilep  distribution (in the \Wboson, the \ut\ distribution is used).  Figure~\ref{fig:rew_sf_zpt} shows the resulting best reweighting factors applied at the \Zboson\ signal MC simulated at $\sqrt{s} = 13$~\TeV\ and $\sqrt{s} = 5$~\TeV\ respectively. The averaged reweighting factor is used in the analysis, as for the \Wboson.
+Figure~\ref{fig:datamc_nominalMC} shows the data over MC ratio at reconstruction level for both the  \ptdilep and \ut distribution for the \Zee\ channel at 13~\TeV\ and for the \Zmm\ channel 5~\TeV\ dataset before and after applying this reweighting factor.
+%The effect of this reweighting it is also visible in the \Zboson\ control plots shown in Section~\ref{subsec:contolPlotsZ}.
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee, \ptll, 13~\TeV.]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_13TeV_Zee_2GeVBin_2pTiters_15uTiters_pTll.pdf}}
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_13TeV_Zmumu_2GeVBin_2pTiters_15uTiters_pTll.pdf}}\\
+\subfloat[\Zee, \ut, 13~\TeV.]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_13TeV_Zee_5GeVBin_2pTiters_15uTiters_uT.pdf}}
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_13TeV_Zmumu_5GeVBin_2pTiters_15uTiters_uT.pdf}}
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_5TeV_Zee_2GeVBin_2pTiters_4uTiters_pTll.pdf}}
+
+\subfloat[\Zmm, \ptll, 5~\TeV.]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_5TeV_Zmumu_2GeVBin_2pTiters_4uTiters_pTll.pdf}}
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_5TeV_Zee_5GeVBin_2pTiters_4uTiters_uT.pdf}}
+\subfloat[\Zmm, \ut, 5~\TeV.]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_5TeV_Zmumu_5GeVBin_2pTiters_4uTiters_uT.pdf}}
+\caption{Comparison between the ratio of data and MC simulation at reconstruction level of the \ptdilep and \ut distributions before (black line) and after the \pt\ reweighting (red line) for \Zee channel at $\sqrt{s} = 13$~\TeV\ and for \Zmm channel at $\sqrt{s} = 5$~\TeV\ using baseline binning. }
+\label{fig:datamc_nominalMC}
+\end{figure}
+%
+%
+%
+%
+%\begin{figure}[h]
+%\centering
+%\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_13TeV_Zee_2GeVBin_2pTiters_15uTiters_pTll.pdf}}
+%%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_13TeV_Zmumu_2GeVBin_2pTiters_15uTiters_pTll.pdf}}\\
+%\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_13TeV_Zee_5GeVBin_2pTiters_15uTiters_uT.pdf}}
+%%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_13TeV_Zmumu_5GeVBin_2pTiters_15uTiters_uT.pdf}}
+%\caption{Comparison between ratio of data and MC simulation at reconstruction level of the dilepton \pt and \ut distributions before (dashed line) and after the \pt\ reweighting (solid line) for \Zee channels at $\sqrt{s} = 13$~\TeV\ using baseline binning. }
+%\label{fig:datamc_nominalMC_13}
+%\end{figure}
+%
+%\begin{figure}[h]
+%\centering
+%%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_5TeV_Zee_2GeVBin_2pTiters_4uTiters_pTll.pdf}}
+%\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_5TeV_Zmumu_2GeVBin_2pTiters_4uTiters_pTll.pdf}}
+%%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_5TeV_Zee_5GeVBin_2pTiters_4uTiters_uT.pdf}}
+%\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_5TeV_Zmumu_5GeVBin_2pTiters_4uTiters_uT.pdf}}
+%\caption{Comparison between ratio of data and MC simulation at reconstruction level of the dilepton \pt and \ut distributions before (dashed line) and after reweighting (solid line) for \Zmm channels at $\sqrt{s} = 5$~\TeV\ using baseline binning. }
+%\label{fig:datamc_nominalMC_5}
+%\end{figure}
+%

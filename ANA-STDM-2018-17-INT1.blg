@@ -1,0 +1,9 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'ANA-STDM-2018-17-INT1.blg'
+[75] biber-darwin:340> INFO - === Wed May 18, 2022, 15:50:07
+[88] Biber.pm:415> INFO - Reading 'ANA-STDM-2018-17-INT1.bcf'
+[167] Biber.pm:952> INFO - Found 0 citekeys in bib section 0
+[172] Utils.pm:395> WARN - The file 'ANA-STDM-2018-17-INT1.bcf' does not contain any citations!
+[180] bbl.pm:654> INFO - Writing 'ANA-STDM-2018-17-INT1.bbl' with encoding 'UTF-8'
+[181] bbl.pm:757> INFO - Output to ANA-STDM-2018-17-INT1.bbl
+[181] Biber.pm:128> INFO - WARNINGS: 1

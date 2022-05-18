@@ -1,0 +1,158 @@
+%-------------------------------------------------------------------------------
+\section{Data and MC samples}
+\label{sec:samples}
+%-------------------------------------------------------------------------------
+\subsection{Data samples}
+This analysis is based on the data collected in Run 2 by the ATLAS detector, with an integrated luminosity of 139 $fb^{-1}$, a luminosity uncertainty of 1.7 $\%$ and a 25 ns bunch spacing configuration, correspond to the period between 2015 and 2018. The data collected are divided into different runs, which pass data qualité checks "The Good Runs Lists - GRL", runs recorded during periods when the detector components were not operatinf normally are rejected. Table \ref{table1} shows the GRL used for this analysis:
+
+\begin{table}[!htbp]
+  \centering
+    \begin{tabularx}{\textwidth}{lXlX}
+    \toprule
+    {Year}  &  {Luminosity ($fb^{-1}$})   &  {GRL} \\
+    \midrule
+    2015          & 3.2          & \normalsize{\shortstack{data15$\_$13TeV.periodAllYear$\_$DetStatus-v89-pro21-02$\_$Unknown$\_$PHYS$\_$\\StandardGRL$\_$ All$\_$Good$\_$25ns.xml}} \\ 
+    2016          & 33           & \normalsize{\shortstack{data16$\_$13TeV.periodAllYear$\_$DetStatus-v89-pro21-01$\_$DQDefects-00-02-04$\_$\\PHYS$\_$StandardGRL$\_$All$\_$Good$\_$25ns.xml}} \\ 
+    2017          & 44.3         & \normalsize{\shortstack{data17$\_$13TeV.periodAllYear$\_$DetStatus-v99-pro22-01$\_$Unknown$\_$PHYS$\_$\\StandardGRL$\_$All$\_$Good$\_$25ns$\_$Triggerno17e33prim.xml}} \\ 
+    2018          & 58.4         & \normalsize{\shortstack{data18$\_$13TeV.periodAllYear$\_$DetStatus-v102-pro22-04$\_$Unknown$\_$PHYS$\_$\\StandardGRL$\_$All$\_$Good$\_$25ns$\_$Triggerno17e33prim.xml}} \\ 
+    \bottomrule
+    \end{tabularx}%
+  \caption{Good-Runs-Lists used for ggF-2jets differential analysis.}
+  \label{table1}%
+ \end{table}%
+
+In addition to the GRL described above, the HWW analysis uses: single electron, single muon and dilepton triggers \cite{Aggarwal2743995}, separately for each year as shown in table \ref{table2}. These triggers are based on the release 21 recommendations \cite{siteTrigger}, with two levels: Level 1 trigger, and High Level Trigger (HLT). In order to maximaze the trigger effeciency, sevral triggers are used for single lepton, corresponds to different trigger periods. Also the dilepton trigger is used to increase the efficiency at low $p_{T}$ \cite{Aggarwal2743995}. Keywords "tight", "medium" and "loose" in HLT trigger corresponds to the identification criteria, while the letter "i" indicates the isolation requirement\cite{Aggarwal2716687}.
+
+
+\begin{table}[!htbp]
+  \centering
+\begin{tabular}{|l|l|l|l|}
+\hline & \multicolumn{3}{|c|}{ Triggers } \\
+\hline Year & Single-e & Single- $\mu$ & Dilepton \\
+\hline 2015 & HLT$\_$e24$\_$lhmedium$\_$L1EM20VH, & HLT$\_$mu20$\_$iloose$\_$L1MU15, & HLT$\_$e17$\_$lhloose$\_$mu14, \\
+& HLT$\_$e60$\_$lhmedium, & HLT$\_$mu50 & HLT$\_$e7$\_$lhmedium$\_$mu24 \\
+& HLT$\_$e120$\_$lhloose & & \\
+\hline 2016 & HLT$\_$e26$\_$lhtight$\_$nod0$\_$ivarloose, & HLT$\_$mu26$\_$ivarmedium, & HLT$\_$e17$\_$lhloose$\_$nod0$\_$mu14, \\
+& HLT$\_$e60$\_$lhmedium$\_$nod0, & HLT$\_$mu50 & HLT$\_$e7$\_$lhmedium$\_$nod0$\_$mu24 \\
+& HLT$\_$e140$\_$lhloose$\_$nod0 & & \\
+\hline 2017 & HLT$\_$e26$\_$lhtight$\_$nod0$\_$ivarloose, & HLT$\_$mu26$\_$ivarmedium, & HLT$\_$e17$\_$lhloose$\_$nod0$\_$mu14, \\
+& HLT$\_$e60$\_$lhmedium$\_$nod0, & HLT$\_$mu50 & HLT$\_$e7$\_$lhmedium$\_$nod0$\_$mu24 \\
+& HLT$\_$e140$\_$lhloose$\_$nod0 & & \\
+\hline 2018 & HLT$\_$e26$\_$lhtight$\_$nod0$\_$ivarloose, & HLT$\_$mu26$\_$ivarmedium, & HLT$\_$e17$\_$lhloose$\_$nod0$\_$mu14, \\
+& HLT$\_$e60$\_$lhmedium$\_$nod0, & HLT$\_$mu50 & HLT$\_$e7$\_$lhmedium$\_$nod0$\_$mu24 \\
+& HLT$\_$e140$\_$lhloose$\_$nod0 & & \\
+\hline
+\end{tabular}
+\caption{Trigger selection in the HWW analysis.}
+\label{table2}%
+ \end{table}%
+
+
+
+\subsection{MC samples}
+
+Higgs boson production and decay into pairs of $W$ bosons o are simulated for each of the three main production modes: gluon-gluon fusion (ggF) processes \cite{Aggarwal2743995}, vector boson fusion (VBF) \cite{Abidi2752167} or in association with a $W$ or $Z$ boson ($VH$). The ggF events are modelled with Powheg \cite{2004}, interfaced with Pythia 8\cite{Frixione_2007}. The ggF predictions are based on NNLO for 0-jet events, NLO for1-jet events and LO for 2-jets events in QCD \cite{2010,Abidi2752167}. For ggF-2jets, the parton distributions function (PDF) PDF4LHC15 is used for the hard scattering process \cite{Aggarwal2743995}. An overview of the simulation tools used to generate signal is described in table \textcolor{blue}{4} of \cite{Aggarwal2743995}
+
+
+The main sources of SM background includes, events from the production of top quarks, diboson, $Z$+jets, $W$+jets and multijets:  The $WW$ samples are generated using SHERPA, using NNPDF3.0 PDFs, at LO accuracy for ggF-2jets. The $WZ$ is generated with Sherpa (as ZZ events), using the CT10 PDFs, at LO accuracy for ggF-2jets. The top-quark pair production is also simulated with POWHEG using NNPDF3.0 PDFs, interfaced with PyThia 8. The associated production of top quarks with $W$ bosons is modelled using the PowhegBox
+
+
+
+
+\textcolor{red}{The uncertainties due to the parton shower and hadronisation model for the ggF and VBF Higgs boson  signal samples are evaluated using the events in the nominal sample generated with Powheg but interfacedto an alternative showering program Herwig 7 [30, 31] instead of Pythia. To estimate the uncertainty related to the matching between the matrix element and the parton shower for ggF and VBF production, MC events produced with the MadGraph [32] generator and interfaced to Herwig 7 are used. They are accurate to NLO in QCD corrections and utilise the NNPDF30-nlo-as-0118 [33] parton distribution function (PDF) set. In both cases, the H7UE set of tuned parameters [31] and the MMHT2014LO PDF set [34] are used for the underlying eventv.}
+
+
+\newpage
+\subsection{Observables and binning}
+
+Observables used in the analysis are described in this section. For $N_{jets} >= 2$; the discriminating variable between signal and SM background processes is the dilepton transverse mass, defined as:
+
+\begin{equation}
+m_{\mathrm{T}}=\sqrt{\left(E_{\mathrm{T}}^{\ell \ell}+E_{\mathrm{T}}^{\mathrm{miss}}\right)^{2}-\left|\boldsymbol{p}_{\mathrm{T}}^{\ell \ell}+\boldsymbol{E}_{\mathrm{T}}^{\mathrm{miss}}\right|^{2}},
+\end{equation}
+
+where $E_{\mathrm{T}}^{\ell \ell}=\sqrt{\left|\boldsymbol{p}_{\mathrm{T}}^{\ell \ell}\right|^{2}+m_{\ell \ell}^{2}}$, $\boldsymbol{p}_{\mathrm{T}}^{\ell \ell}$ is the vector sum of lepton transverse momentum. Sevrals observed are used to extract the Higgs boson differential and double-differential cross sections, which are used to compare the results with the theoretical cross ections predictions \cite{20131}. The processus $ H \rightarrow WW \rightarrow \ell \nu \ell \nu$ in $pp$ can be described using:
+
+\begin{itemize}
+\item Higgs kinematics: \textcolor{red}{descibe the utility of H} The transverse momentum $\boldsymbol{p}_{\mathrm{T}}^{H}$, the rapidity $Y_{H}$.
+\item Leptons kinematics: \textcolor{red}{descibe the utility of H} The transverse momentum $\boldsymbol{p}_{\mathrm{T}}^{\ell \ell}$, the invariant mass $M_{ll}$, the rapidity $Y_{ll}$, the difference in opening angle $\Delta \phi_{ll}$, and  $cos \theta{*}$ defined by $|tanh(\Delta \eta_{\ell\ell}/2)|$.
+\item Jets kinematics:  r\textcolor{red}{descibe the utility of H} apidity of the leading jet ($Y_{j0}$), and eta of the leading jet ($\eta_{j0}$).
+\end{itemize}
+
+
+
+\textcolor{red}{describe the double differential cross sections}
+
+
+
+
+\begin{table}[!htbp]
+  \centering
+    \begin{tabularx}{\textwidth}{lclc}
+    \toprule
+    \midrule
+    {Observable}     &  {Definition} \\  
+    \midrule
+    \midrule
+
+    $\boldsymbol{p}_{\mathrm{T}}^{H}$          &  \\ 
+    $Y_{H}$          &  \\ 
+    \midrule
+    $\boldsymbol{p}_{\mathrm{T}}^{\ell \ell}$          &  \\ 
+    $M_{ll}$          &  \\ 
+    $Y_{ll}$          &  \\ 
+     $\Delta \phi_{ll}$          &  \\ 
+    $cos \theta{*}$         &  \\ 
+    \midrule
+    $Y_{j0}$          &  \\ 
+    $\eta_{j0}$          &  \\ 
+
+    
+    \bottomrule
+    \end{tabularx}%
+  \caption{List of all the observables measured in the analysis for the 2jet .}
+  \label{table1}%
+ \end{table}%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

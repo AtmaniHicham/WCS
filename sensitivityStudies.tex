@@ -1,0 +1,125 @@
+\section{Sensitivity studies}
+\label{sec:sensitivity}
+\textbf{At the moment the studies performed in this appendix are not really used in the baseline analysis. They were performed a long time ago and should be re-updated.}
+
+Sensitivity studies are performed using pseudo-data and aimed to estimate an optimal binning and bias in the unfolding procedure for the \ptw\ measurement with \lowmu\ data. The pseudo-data are obtained using simulated pseudo-experiments (toy Monte Carlo), where, for each pseudo-experiment, the \ptw\ reconstructed spectrum was statistically fluctuated in each bin using the Poisson distribution.
+
+\subsection{Unfolding Methodology}
+\label{app:unfoldMeth}
+Different techniques and tools were exploited for the unfolding. In particular, the following methods were considered:
+\begin{itemize}
+\item \textbf{regularized}: Bayesian iterative unfolding~\cite{DAgostini:1994fjx,DAgostini:2010hil} using the \textsf{RooUnfold}~\cite{Adye:2011gm} package
+\item \textbf{unregularized}: Matrix inversion using the \textsf{RooFit}~\cite{Verkerke:2003ir} package.
+\end{itemize}
+
+From the definition of the regularized method, the specification of an initial distribution ("prior") is required. Accordingly,  the bias from a potential mismodelling of the truth distribution in the Monte Carlo simulations can alter the unfolding results through the prior. For that reason, the regularization parameter, $i.e.$ the number of iterations, needs to be chosen to find the best possible balance between the size of the statistical uncertainty and the dependence on the prior in the unfolded result. Indeed, with an increasing number of iterations, the influence of the initial prior is expected to decrease, while the statistical uncertainty will augment.
+
+The unregularized method uses the maximum likelihood (ML) technique and returns an unbiased result that has no dependence on the number of iterations.
+
+The migration matrices used for the unfolding relate truth and reconstructed distributions. They are constructed using \POWHEG+\PYTHIAV{8} samples by requiring the events to pass both event selections, from reconstructed and truth level selections defined in section~\ref{sec:selection}.
+
+The pseudo-data are corrected for the reconstruction efficiency ($\epsilon$) and the truth distribution for the fiducial acceptance ($Acc$), where
+\begin{itemize}
+\item \textit{the efficiency correction} is defined as the fraction of events passing reconstructed and truth level selections ($N^{\text{reco, truth}}$) to the number of events that meet the selection criteria at reconstructed level ($N^{\text{reco}}$):
+\begin{equation}
+\epsilon= \frac{N^{\text{reco, truth}}}{N^{\text{reco}}}
+\end{equation}
+\item \textit{the acceptance correction} is defined as a fraction of events passing reconstructed and truth level selections ($N^{\text{reco, truth}}$) to the number of events that meet the selection criteria at truth level ($N^{\text{truth}}$):
+\begin{equation}
+Acc = \frac{ N^{\text{reco, truth}} }{ N^{\text{truth}} }
+\end{equation}
+\end{itemize}
+
+
+\subsection{Binning Optimization}
+\label{app:binningOpt}
+The binning optimisation is performed separately for the $\sqrt{s} = 5$~\TeV\ and $\sqrt{s} = 13$~\TeV\ datasets, since the hadronic recoil resolution is different between the two. The aim is to achieve a statistical sensitivity of 1\% in the unfolded result in the low \pt\ region, while obtaining a purity not lower than around 50-60\%.
+
+The optimization is performed using the RooFit package. The selected binning for the truth spectrum which allows to achieve a 1\% uncertainty in the first bin is listed in Table~\ref{tab:Binning}. The corresponding reconstructed bins are as two reconstructed bins per one truth bin.
+
+The reconstructed and truth distributions following the selected binning are shown in Figures~\ref{fig:5bins} and~\ref{fig:13bins} for $\sqrt{s} = 5$~\TeV\ and $\sqrt{s} = 13$~\TeV, respectively.
+%the statistical uncertainties after unfolding with the number of iterations
+%
+
+\begin{table}[htbp]
+   \centering
+   \begin{tabular}{lp{8cm}}
+    \toprule
+    Centre-of-mass energy  & Binning \\
+    \midrule
+   $\sqrt{s} = 5$~\TeV\  & [0.0, 5.0, 10.0, 15.0, 21.0, 29.0, 40.0, 52.0, 64.0, 77.0, 92.0, 115.0, 145.0, 175.0, 220.0, 600.0] \\
+   $\sqrt{s} = 13$~\TeV\ & [0.0, 6.0, 17.0, 28.0, 40.0, 55.0, 75.0, 95.0, 120.0, 145.0, 175.0, 220.0, 600.0] \\
+
+    \bottomrule
+    \end{tabular}
+   \caption{Binning for \Wplus and \Wminus measurement for truth spectrum at $\sqrt{s} = 5$~\TeV\  and $\sqrt{s} = 13$~\TeV\ .}
+   \label{tab:Binning}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/SensitivityStudies/WptPlots_5TeV_WenuM_bins_5TeV_mod9.pdf}\label{fig:5bins}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/SensitivityStudies/WptPlots_13TeV_WenuM_bins_mod10.pdf}\label{fig:13bins}}
+\caption{Optimized binning for \ptw at reconstructed and generated levels for the $\sqrt{s} = 5$~\TeV\ (a) and $\sqrt{s} = 13$~\TeV\ (b) datasets. }\end{figure}
+
+\subsection{Bias studies and statistical uncertainties}
+Several approaches in a prior bias estimation, in the regularized method, were evaluated and tested by modifying the truth distribution (prior) and taking it into an account in the migration matrices. The following cases were studied:
+
+\begin{itemize}
+\item \textbf{Flat prior}: the original truth distribution taken as a flat from the averaged truth distribution (see Figure~\ref{fig:flatprior} and applied as ratio (see Figure~\ref{fig:flatprior_ratio}) to the corresponding migration matrix. The estimated bias for 4 and 50 numbers of iterations is shown in Figures~\ref{fig:flatbias_4it},~\ref{fig:flatbias_50it}. It demonstrates, that this method introduces a big bias which not converges with 50 numbers of iterations.
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{Landau prior}: the original truth distribution is modified with the Landau function keeping the first bin unchanged and the last one with 5\% modification (see Figure~\ref{fig:landauprior}) and applied as the ratio (see Figure~\ref{fig:landauprior_ratio}) to the corresponding migration matrix. The estimated bias for 4 and 50 numbers of iteration is shown in Figures~\ref{fig:landaubias_4it},~\ref{fig:landaubias_50it} and demonstrates that this method introduce a smaller bias than previous method, but not converges with 50 numbers of iterations as well. Similar results were obtained using the exponential function.
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{2\% shift}: the original truth distribution is modified by 2\%  (see Figure~\ref{fig:shiftprior}) and the difference is applied as the ratio (see Figure~\ref{fig:shiftprior_ratio}) to the corresponding migration matrix. The estimated bias for 4 and 10 numbers of iterations is shown in Figures~\ref{fig:landaubias_4it},~\ref{fig:landaubias_50it} and demonstrates that this method introduce not big bias which is converged with 10 iterations across the bins. Similar results were obtained with 5\% shift. This method is selected for the further studies in the optimization of the regularized parameter.
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{Reweighting}:  the data (without background subtraction) and Monte Carlo shapes are compared at the reconstructed level and fitted with the polynomial function (see Figure~\ref{fig:rewprior}). Afterwards, the shape of the true Monte Carlo is reweighted using that function.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.36\textwidth]{figure/SensitivityStudies/bias/MatrixT_flat_avarage.pdf}\label{fig:flatprior}}
+\subfloat[]{\includegraphics[width=.365\textwidth]{figure/SensitivityStudies/bias/ratio_flat_avarage.pdf}
+\label{fig:flatprior_ratio}}\\
+\subfloat[]{\includegraphics[width=.36\textwidth]{figure/SensitivityStudies/bias/13TeV_landau_4iter_MatrixT3.pdf}\label{fig:landauprior}}
+\subfloat[]{\includegraphics[width=.365\textwidth]{figure/SensitivityStudies/bias/13TeV_landau_4iter_ratio.pdf}\label{fig:landauprior_ratio}}\\
+\subfloat[]{\includegraphics[width=.36\textwidth]{figure/SensitivityStudies/bias/13TeV_shift2_4iter_MatrixT.pdf}\label{fig:shiftprior}}
+\subfloat[]{\includegraphics[width=.365\textwidth]{figure/SensitivityStudies/bias/13TeV_shift2_4iter_ratio.pdf}\label{fig:shiftprior_ratio}}\\
+\subfloat[]{\includegraphics[width=.3\textwidth]{figure/SensitivityStudies/bias/rew_13TeV.pdf}\label{fig:rewprior}}\\
+\caption{ Original truth distribution (blue) and modified one (yellow) using a flat (a), landau function (c),  2\% shift (e),  and the corresponding ratios between original and modified distributions (b), (d), (f) for $\sqrt{s} = 13$~\TeV\ binning. Ratio between the data and reconstructed MC and the fit (g). }\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.54\textwidth]{figure/SensitivityStudies/bias/13TeV_Flat_avarage.pdf}\label{fig:flatbias_4it}}
+\subfloat[]{\includegraphics[width=.54\textwidth]{figure/SensitivityStudies/bias/13TeV_Flat_avarage_50iter.pdf}\label{fig:flatbias_50it}}\\
+\subfloat[]{\includegraphics[width=.54\textwidth]{figure/SensitivityStudies/bias/13TeV_landau_4iter.pdf}\label{fig:landaubias_4it}}
+\subfloat[]{\includegraphics[width=.54\textwidth]{figure/SensitivityStudies/bias/13TeV_landau_50iter.pdf}\label{fig:landaubias_50it}}\\
+\subfloat[]{\includegraphics[width=.53\textwidth]{figure/SensitivityStudies/bias/bias_1_shift2.pdf}
+\label{fig:shiftbias_4it}}
+\subfloat[]{\includegraphics[width=.53\textwidth]{figure/SensitivityStudies/bias/bias_10_shift2.pdf}\label{fig:shiftbias_50it}}\\
+\subfloat[]{\includegraphics[width=.54\textwidth]{figure/SensitivityStudies/bias/bias_1_rew.pdf}\label{fig:rewbias_4it}}
+\subfloat[]{\includegraphics[width=.54\textwidth]{figure/SensitivityStudies/bias/bias_5_rew.pdf}\label{fig:rewbias_5it}}
+
+\caption{Estimated bias (black line) for $\sqrt{s} = 13$~\TeV\ binning using the following prior: a flat prior after 4 iterations (a) and 50 iterations (b),  a landau  prior after 4 iterations (c) and 50 iterations (d), 2\% shift of the truth distribution after 4 iterations (e) and 10 iterations (f),  reweighting of the truth distribution after 4 iterations (g) and 5 iterations (h). }\end{figure}
+
+The statistical uncertainties in the unfolded results are extracted as the square root of the diagonal entries in the covariance matrix of the unfolding returned by \textsf{RooUnfold}. A toy Monte Carlo method is propagated for the calculation of the statistical uncertainties. The effect of the number of iteration on the prior bias and the statistical uncertainty for the \Wmenu channel at $\sqrt{s} = 13$~\TeV\  is shown in Figure~\ref{fig:bias_stat_regularized}.  It shows that the statistical uncertainty increases from 0.2\% to 0.4\% in the first bin and 0.2\% to 0.3\% in the second bins while the bias is changed from 1.4\% to 0.7\% in the first bins and from  0.4\% to 0.5\% in the second bin.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=.8\textwidth]{figure/SensitivityStudies/StatUnc_Bias_13TeV_Wmenu.pdf}
+\caption{Effect of the number of iteration on the prior bias and the statistical uncertainty for the \Wmenu channel at $\sqrt{s} = 13$~\TeV\ . }
+\label{fig:bias_stat_regularized}
+\end{figure}
+
+In addition, the slope studies are performed by looking at ratio of the first two bins and comparing iterative method with the matrix inversion method from the \textsf{RooUnfold} and shown in Figure~\ref{fig:slope}. The ratio is calculated for the unfolded distribution for each toy (N=5000). It shows, that two methods agree within the uncertainties (statistical component of the Monte Carlo is not included) and how statistical uncertainty on the pseudo-data is increasing and the bias decreasing with the number of iteration.
+\begin{figure}[h]
+\centering
+\includegraphics[width=.7\textwidth]{figure/SensitivityStudies/Slope_vs_iterations.pdf}
+\caption{Slope of the first two bins of the unfolded distribution as the function of the number of iteration \Wmenu channel at $\sqrt{s} = 13$~\TeV\ . }
+\label{fig:slope}
+\end{figure}

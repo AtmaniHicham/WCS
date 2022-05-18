@@ -1,0 +1,326 @@
+\subsubsection{Unfolding bias uncertainty}
+\label{sec:ptwbias_unc}
+After the $w_{T}(p_{T}^{W})$, defined in Eq.~\ref{eq:Wnom}, is applied to the baseline \POWHEG signal MC samples (cf. section~\ref{sec:physcorrWpTrew}), good agreement between data and MC $u_{T}$ distributions is observed (this can be seen in panel \textit{b} of Figures~\ref{fig:rewBias5Wpe} - \ref{fig:rewBias13Wmmu}).
+%Old bias closure
+%This is shown in Figure \ref{fig:closurebias} for the \Wenu\ channel at $\sqrt{s}=13$ TeV. The quoted bias uncertainty is only the one coming from the fit, and is shown for 15 iterations, which is used for the final result after the optimisation described later in this section. \\
+%\begin{figure}[h]
+ % \centering
+  %  \subfloat[\Wmenu, 13~\TeV.]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/bias_sqrts13_iter15_Wminusenu_July_biasdyturbo_ct10nnpdf_pol_corr_unc_finalCheckCorr.pdf}}
+ %   \subfloat[\Wpenu, 13~\TeV.]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/bias_sqrts13_iter15_Wplusenu_July_biasdyturbo_ct10nnpdf_pol_corr_unc_finalCheckCorr.pdf}}
+  %\caption{Remaining unfolding bias and its fit uncertainty after the bias correction in the \Wenu\ channel at $\sqrt{s}=13$ TeV.}
+  %\label{fig:closurebias}
+%\end{figure}
+There are then several sources of uncertainties that follow that are used to stress-test the unfolding process, with reweighting procedures similar to that which is described at the start of section~\ref{sec:bias}. These uncertainties are designed be physical ($i.e.$ without crazy jumps in the varied truth spectra), and to be representative of the largest possible variations allowed by the data at reconstructed level (\ut).
+The following three types of variations are considered:
+\begin{enumerate}
+  \item The fit function parameter variations (\textbf{fit uncertainty}). These come directly from the fit parameter uncertainties and were mentioned in Section~\ref{sec:bias}.
+  \item The choice of the parameterisation for $w_{T}$ (\textbf{parametrisation uncertainty}). Alternative $w_{T}$ weighting functions were tested, in the limit where they resulted in a decent data-to-MC agreement for \ut\ once the MC was reweighted. For both 13 and 5 TeV, the nominal weighting function is given by Equation~\ref{eq:Wnom} (denoted as \textit{Nominal} or \textit{CT10/NNPDF}). At 13 TeV, the alternative weighting functions are Equations~\ref{eq:Wgauspol} (\textit{Gaus. $\times$ Pol.}) and \ref{eq:Wexpopol} (\textit{Expo. $\times$ Pol.}). At 5 TeV, the alternative weighting function is Equation~\ref{eq:Wdblgaus} (\textit{2 Gaus. + Pol.}).
+  \item The choice of the baseline truth level \ptw\ at a given rapidity from where the analysis begins (\textbf{Initial (\ptw, y) distribution}). To be physics driven, four alternative predictions are considered to vary this assumption. For each of them, the baseline signal MC (\POWPYTHIA) is first corrected with a 2D-reweighting to match their ($p_{T}$, $y$) distribution. The alternative predictions are \textit{DYTurboNNPDF 3.0}, \textit{DYTurboCT10}, \textit{Herwig7}, and \textit{Pythia}. \textit{Sherpa} was also initially considered but was discarded due to its unphysical spectra.
+\end{enumerate}
+Each uncertainty component is explained in detail below. The plots with unfolded relative differences and bias uncertainties are all unfolded with 25 iterations, and are displayed in 7 GeV bins for 13 TeV and 6 GeV bins for 5 TeV. These values were determined by the optimisation procedure that is outlined in~\ref{subsubsec:optimisation}.
+
+\textbf{Fit Uncertainty}
+
+The fit uncertainty is determined by first re-doing the reweighting procedure using the corrected migration matrix (and efficiency/purity corrections) in the MC. This should produce a new reweighting factor of approximately 1, however it is not exactly equal to 1, because the reweighting function used for the bias correction is an average of the electron and muon channels.
+The initial reweighting factor for each channel is consistent within error (as can be seen in Figures~\ref{fig:rewFuncBiasCorr13TeV} and \ref{fig:rewFuncBiasCorr5TeV}) so an average is taken for the MC reweighting (the bias correction), and this leads to a small non-closure when looking at the channels individually to determine the fit uncertainty.
+The `bias correction closure' reweighting factors can be seen in Figures~\ref{fig:rewFuncBiasClosure13TeV} and \ref{fig:rewFuncBiasClosure5TeV} for 13~and~5~\TeV\ respectively.
+The uncertainty is obtained by individually fluctuating each fit parameter within its uncertainty, but taking into account the correlation between the three parameters each time. This leads to three nuisance parameters (NP); the quadratical sum of the three NPs gives the errors shown in Figures~\ref{fig:rewFuncBiasClosure13TeV} and \ref{fig:rewFuncBiasClosure5TeV}.
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/BiasCorr/RewFactors_BiasCorrection_ReweightedMC_13TeV_Wminuslnu.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/BiasCorr/RewFactors_BiasCorrection_ReweightedMC_13TeV_Wpluslnu.pdf}}
+  \caption{Fitted bias closure truth reweighting functions $w_{T}$ obtained after $\chi^2$ minimisation in the electron and muon channels at $\sqrt{s}=13$ TeV. The dashed lines represent the uncertainty on the reweighting functions. (a) shows the $W^{-} \rightarrow l^{-} \nu$ channels, while (b) shows the $W^{+} \rightarrow l^{+} \nu$ channels.}
+  \label{fig:rewFuncBiasClosure13TeV}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/BiasCorr/RewFactors_BiasCorrection_ReweightedMC_5TeV_Wminuslnu.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/BiasCorr/RewFactors_BiasCorrection_ReweightedMC_5TeV_Wpluslnu.pdf}}
+  \caption{Fitted bias closure truth reweighting functions $w_{T}$ obtained after $\chi^2$ minimisation in the electron and muon channels at $\sqrt{s}=5$ TeV. The dashed lines represent the uncertainty on the reweighting functions. (a) shows the $W^{-} \rightarrow l^{-} \nu$ channels, while (b) shows the $W^{+} \rightarrow l^{+} \nu$ channels.}
+  \label{fig:rewFuncBiasClosure5TeV}
+\end{figure}
+
+After this second reweighting step, the newly reweighted reconstructed-level $p_{T}$ spectrum is unfolded as pseudo-data using the original non-reweighted migration matrix. The relative difference between this unfolded pseudo-data and the original $p_{T}^{truth}$ is the bias closure. To obtain each of the three NPs, this same procedure is followed, but with each of the three varied reconstructed-level $p_{T}$ spectra. Each NP is treated individually as a component of the total bias uncertainty. The relative difference plots showing bias correction closure and the three NPs can be seen in Figures~\ref{fig:Wbias_unc_fit13} and \ref{fig:Wbias_unc_fit5} for 13 and 5 TeV, respectively.
+
+\begin{figure}[h]
+  \centering
+  \subfloat[$W^{-}\rightarrow e^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_fit/unfParamRelDiffs_Rebin7_13TeV_Wminusenu_25iters.pdf}}
+  \subfloat[$W^{+}\rightarrow e^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_fit/unfParamRelDiffs_Rebin7_13TeV_Wplusenu_25iters.pdf}} \\
+  \subfloat[$W^{-}\rightarrow \mu^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_fit/unfParamRelDiffs_Rebin7_13TeV_Wminusmunu_25iters.pdf}}
+  \subfloat[$W^{+}\rightarrow \mu^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_fit/unfParamRelDiffs_Rebin7_13TeV_Wplusmunu_25iters.pdf}}
+  \caption{Fit uncertainty at 13~\TeV~based on unfolding the reweighted reconstructed-level \pt spectrum as pseudo-data and taking the relative difference with respect to the original non-reweighted $p_{T}^{truth}$ spectrum, as described in the beginning of section \ref{sec:ptwbias_unc}. The bias correction closure is shown in black, and each of the three nuisance parameters (NPs) are shown with coloured, dashed lines. The uncertainty for each NP is taken relative to 0, not relative to the closure.}
+  \label{fig:Wbias_unc_fit13}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[$W^{-}\rightarrow e^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_fit/unfParamRelDiffs_Rebin6_5TeV_Wminusenu_25iters.pdf}}
+  \subfloat[$W^{+}\rightarrow e^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_fit/unfParamRelDiffs_Rebin6_5TeV_Wplusenu_25iters.pdf}} \\
+  \subfloat[$W^{-}\rightarrow \mu^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_fit/unfParamRelDiffs_Rebin6_5TeV_Wminusmunu_25iters.pdf}}
+  \subfloat[$W^{+}\rightarrow \mu^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_fit/unfParamRelDiffs_Rebin6_5TeV_Wplusmunu_25iters.pdf}}
+  \caption{Fit uncertainty at 5~\TeV~based on unfolding the reweighted reconstructed-level \pt spectrum as pseudo-data and taking the relative difference with respect to the original non-reweighted $p_{T}^{truth}$ spectrum, as described in the beginning of section \ref{sec:ptwbias_unc}. The bias correction closure is shown in black, and each of the three nuisance parameters (NPs) are shown with coloured, dashed lines. The uncertainty for each NP is taken relative to 0, not relative to the closure.}
+  \label{fig:Wbias_unc_fit5}
+\end{figure}
+
+
+\textbf{Parametrisation Uncertainty}
+
+The parametrisation uncertainty is determined by following the same reweighting procedure as outlined in~\ref{sec:bias}, but with the alternative weighting functions $w_{T}$ as discussed above instead of the nominal weighting function.
+The reweighting factors for the nominal and alternative functions, along with the Data-to-MC agreement before and after reweighting, are shown in Figures~\ref{fig:FuncRewFactor13TeV} \& \ref{fig:WDataMC_nom13} and Figures~\ref{fig:FuncRewFactor5TeV} \& \ref{fig:WDataMC_nom5}, for 13 and 5 TeV, respectively.
+\textcolor{red}{There is still a problem with the double gaus at 5~\TeV, we need to get a better fit convergence there.}
+\begin{figure}[h]
+  \centering
+  \subfloat[$W^{-} \rightarrow l^{-}\nu$, 13~\TeV.]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/Function/RewFactors_13TeV_Wminuslnu.pdf}}
+  \subfloat[$W^{+} \rightarrow l^{+}\nu$, 13~\TeV.]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/Function/RewFactors_13TeV_Wpluslnu.pdf}}
+ \caption{Fitted reweighting functions, $w_{T}$, obtained after $\chi^2$ minimisation for both the electron and muon channels at 13~TeV. The ratio panel shows the ratio of each reweighting function with respect to the NNPDF/CT10 $W\mu\nu$ reweighting function.}
+  \label{fig:FuncRewFactor13TeV}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[$W^{-}\rightarrow e^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/DataMC_100GeV/DataMC_Func_13TeV_Wminusenu_.pdf}}
+  \subfloat[$W^{+}\rightarrow e^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/DataMC_100GeV/DataMC_Func_13TeV_Wplusenu_.pdf}} \\
+  \subfloat[$W^{-}\rightarrow \mu^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/DataMC_100GeV/DataMC_Func_13TeV_Wminusmunu_.pdf}}
+  \subfloat[$W^{+}\rightarrow \mu^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/DataMC_100GeV/DataMC_Func_13TeV_Wplusmunu_.pdf}}
+  \caption{Data to MC ratios before and after reweighting at 13~TeV. The \textit{2 Gaus. + Pol.} and \textit{Gaus. + Pol.} functions are excluded due to their worse agreement after reweighting.}
+  \label{fig:WDataMC_nom13}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[$W^{-} \rightarrow l^{-}\nu$, 5~\TeV.]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/Function/RewFactors_5TeV_Wminuslnu.pdf}}
+  \subfloat[$W^{+} \rightarrow l^{+}\nu$, 5~\TeV.]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/Function/RewFactors_5TeV_Wpluslnu.pdf}}
+ \caption{Fitted reweighting functions, $w_{T}$, obtained after $\chi^2$ minimisation for both the electron and muon channels at 5~TeV. The ratio panel shows the ratio of each reweighting function with respect to the NNPDF/CT10 $W\mu\nu$ reweighting function.}
+  \label{fig:FuncRewFactor5TeV}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[$W^{-}\rightarrow e^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/DataMC_100GeV/DataMC_Func_5TeV_Wminusenu_.pdf}}
+  \subfloat[$W^{+}\rightarrow e^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/DataMC_100GeV/DataMC_Func_5TeV_Wplusenu_.pdf}} \\
+  \subfloat[$W^{-}\rightarrow \mu^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/DataMC_100GeV/DataMC_Func_5TeV_Wminusmunu_.pdf}}
+  \subfloat[$W^{+}\rightarrow \mu^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/DataMC_100GeV/DataMC_Func_5TeV_Wplusmunu_.pdf}}
+  \caption{Data to MC ratios before and after reweighting at 5~TeV. The \textit{2nd Order Pol.} and \textit{Gaus. + Pol.} functions are excluded due to their worse agreement after reweighting.}
+  \label{fig:WDataMC_nom5}
+\end{figure}
+
+After each alternative reweighting, the data is unfolded with each reweighted migration matrix and the relative difference is taken with respective to the data unfolded with the original non-reweighted migration matrix. The uncertainty is the spread between the relative differences of the alternative functions. At 13~\TeV, this is the difference between the \textit{Gaus. $\times$ Pol.} relative difference and the \textit{Expo. $\times$ Pol.} relative difference. At 5~\TeV, the uncertainty is the difference between the \textit{2 Gaus. + Pol.} relative difference and the nominal \textit{CT10/NNPDF} relative difference.
+
+\begin{figure}[h]
+  \centering
+  \subfloat[$W^{-}\rightarrow e^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_param/unfFuncRelDiffs_Rebin7_13TeV_Wminusenu_25iters.pdf}}
+  \subfloat[$W^{+}\rightarrow e^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_param/unfFuncRelDiffs_Rebin7_13TeV_Wplusenu_25iters.pdf}} \\
+  \subfloat[$W^{-}\rightarrow \mu^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_param/unfFuncRelDiffs_Rebin7_13TeV_Wminusmunu_25iters.pdf}}
+  \subfloat[$W^{+}\rightarrow \mu^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_param/unfFuncRelDiffs_Rebin7_13TeV_Wplusmunu_25iters.pdf}}
+  \caption{Parametrisation uncertainty relative differences at 13~\TeV~based on unfolding the data with a given reweighted migration matrix and taking the relative difference with respect to the data unfolded with the original non-reweighted migration matrix, as described in the \textbf{Parametrisation Uncertainty} section of \ref{sec:ptwbias_unc}. The relative difference where the data is unfolded with the migration matrix that has been reweighted using the nominal reweighting function is shown in red, while the same thing but with the two alternative functions are shown in blue and green. The black line is 0 by design. The true uncertainty that is propagated is the difference between the two alternative functions (the blue and green curves).}
+  \label{fig:Wbias_unc_param13}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[$W^{-}\rightarrow e^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_param/unfFuncRelDiffs_Rebin6_5TeV_Wminusenu_25iters.pdf}}
+  \subfloat[$W^{+}\rightarrow e^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_param/unfFuncRelDiffs_Rebin6_5TeV_Wplusenu_25iters.pdf}} \\
+  \subfloat[$W^{-}\rightarrow \mu^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_param/unfFuncRelDiffs_Rebin6_5TeV_Wminusmunu_25iters.pdf}}
+  \subfloat[$W^{+}\rightarrow \mu^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_param/unfFuncRelDiffs_Rebin6_5TeV_Wplusmunu_25iters.pdf}}
+  \caption{Parametrisation uncertainty relative differences at 5~\TeV~based on unfolding the data with a given reweighted migration matrix and taking the relative difference with respect to the data unfolded with the original non-reweighted migration matrix, as described in the \textbf{Parametrisation Uncertainty} section of \ref{sec:ptwbias_unc}. The relative difference where the data is unfolded with the migration matrix that has been reweighted using the nominal reweighting function is shown in red, while the same thing but with the alternative function is shown in magenta. The black line is 0 by design. The true uncertainty that is propagated is the difference between the alternative function and the nominal function (the red and magenta curves).}
+  \label{fig:Wbias_unc_param5}
+\end{figure}
+
+
+\textbf{Initial (\ptw, y) distribution}
+
+This uncertainty variation is determined by once again following the same reweighting procedure as outlined in Section~\ref{sec:bias}, but beginning with a different 2D-reweighted prediction instead of the nominal MC.
+Following this, each alternative weighting function $w_{T}$ is tested for each MC, along with additional weighting functions given in the list of weighting function equations (Equations~\ref{eq:Wpol}~--~\ref{eq:Wnom}).
+Functions that were excluded for the nominal MC but that show better Data/MC agreement after reweighting for alternative MCs are considered.
+Figures~\ref{fig:WDataMC_altMCsWmenu13}~--~\ref{fig:WDataMC_altMCsWpmunu13} show the Data-to-MC agreement before and after reweighting for the nominal and each alternative MC, for each weighting function that was under consideration, at 13~\TeV.
+Figures~\ref{fig:WDataMC_altMCsWmenu5}~--~\ref{fig:WDataMC_altMCsWpmunu5} show the same but at 5~\TeV.
+
+\begin{figure}[h]
+  \centering
+  \subfloat[Nominal MC]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wminusenu_.pdf}}
+  \subfloat[DYTurboCT10]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wminusenu_DYTurboCT10.pdf}}
+  \subfloat[DYTurboNNPDF3.0]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wminusenu_DYTurboNNPDF30.pdf}} \\
+  \subfloat[Herwig7]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wminusenu_Herwig7.pdf}}
+  \subfloat[Pythia]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wminusenu_Pythia.pdf}}
+  \caption{Data to MC ratios before and after reweighting in the $W^{-}\rightarrow e^{-} \nu$ channel at 13~TeV. The nominal MC along with each of the alternative MCs are shown.}
+  \label{fig:WDataMC_altMCsWmenu13}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[Nominal MC]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wplusenu_.pdf}}
+  \subfloat[DYTurboCT10]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wplusenu_DYTurboCT10.pdf}}
+  \subfloat[DYTurboNNPDF3.0]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wplusenu_DYTurboNNPDF30.pdf}} \\
+  \subfloat[Herwig7]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wplusenu_Herwig7.pdf}}
+  \subfloat[Pythia]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wplusenu_Pythia.pdf}}
+  \caption{Data to MC ratios before and after reweighting in the $W^{+}\rightarrow e^{+} \nu$ channel at 13~TeV. The nominal MC along with each of the alternative MCs are shown.}
+  \label{fig:WDataMC_altMCsWpenu13}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[Nominal MC]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wminusmunu_.pdf}}
+  \subfloat[DYTurboCT10]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wminusmunu_DYTurboCT10.pdf}}
+  \subfloat[DYTurboNNPDF3.0]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wminusmunu_DYTurboNNPDF30.pdf}} \\
+  \subfloat[Herwig7]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wminusmunu_Herwig7.pdf}}
+  \subfloat[Pythia]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wminusmunu_Pythia.pdf}}
+  \caption{Data to MC ratios before and after reweighting in the $W^{-}\rightarrow \mu^{-} \nu$ channel at 13~TeV. The nominal MC along with each of the alternative MCs are shown.}
+  \label{fig:WDataMC_altMCsWmmunu13}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[Nominal MC]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wplusmunu_.pdf}}
+  \subfloat[DYTurboCT10]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wplusmunu_DYTurboCT10.pdf}}
+  \subfloat[DYTurboNNPDF3.0]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wplusmunu_DYTurboNNPDF30.pdf}} \\
+  \subfloat[Herwig7]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wplusmunu_Herwig7.pdf}}
+  \subfloat[Pythia]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_13TeV_Wplusmunu_Pythia.pdf}}
+  \caption{Data to MC ratios before and after reweighting in the $W^{+}\rightarrow \mu^{+} \nu$ channel at 13~TeV. The nominal MC along with each of the alternative MCs are shown.}
+  \label{fig:WDataMC_altMCsWpmunu13}
+\end{figure}
+
+
+\begin{figure}[h]
+  \centering
+  \subfloat[Nominal MC]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wminusenu_.pdf}}
+  \subfloat[DYTurboCT10]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wminusenu_DYTurboCT10.pdf}}
+  \subfloat[DYTurboNNPDF3.0]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wminusenu_DYTurboNNPDF30.pdf}} \\
+  \subfloat[Herwig7]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wminusenu_Herwig7.pdf}}
+  \subfloat[Pythia]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wminusenu_Pythia.pdf}}
+  \caption{Data to MC ratios before and after reweighting in the $W^{-}\rightarrow e^{-} \nu$ channel at 5~TeV. The nominal MC along with each of the alternative MCs are shown.}
+  \label{fig:WDataMC_altMCsWmenu5}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[Nominal MC]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wplusenu_.pdf}}
+  \subfloat[DYTurboCT10]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wplusenu_DYTurboCT10.pdf}}
+  \subfloat[DYTurboNNPDF3.0]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wplusenu_DYTurboNNPDF30.pdf}} \\
+  \subfloat[Herwig7]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wplusenu_Herwig7.pdf}}
+  \subfloat[Pythia]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wplusenu_Pythia.pdf}}
+  \caption{Data to MC ratios before and after reweighting in the $W^{+}\rightarrow e^{+} \nu$ channel at 5~TeV. The nominal MC along with each of the alternative MCs are shown.}
+  \label{fig:WDataMC_altMCsWpenu5}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[Nominal MC]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wminusmunu_.pdf}}
+  \subfloat[DYTurboCT10]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wminusmunu_DYTurboCT10.pdf}}
+  \subfloat[DYTurboNNPDF3.0]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wminusmunu_DYTurboNNPDF30.pdf}} \\
+  \subfloat[Herwig7]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wminusmunu_Herwig7.pdf}}
+  \subfloat[Pythia]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wminusmunu_Pythia.pdf}}
+  \caption{Data to MC ratios before and after reweighting in the $W^{-}\rightarrow \mu^{-} \nu$ channel at 5~TeV. The nominal MC along with each of the alternative MCs are shown.}
+  \label{fig:WDataMC_altMCsWmmunu5}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[Nominal MC]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wplusmunu_.pdf}}
+  \subfloat[DYTurboCT10]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wplusmunu_DYTurboCT10.pdf}}
+  \subfloat[DYTurboNNPDF3.0]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wplusmunu_DYTurboNNPDF30.pdf}} \\
+  \subfloat[Herwig7]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wplusmunu_Herwig7.pdf}}
+  \subfloat[Pythia]{\includegraphics[width=.33\textwidth]{figure/W_bias/DataMC_30GeV/DataMC_Func_5TeV_Wplusmunu_Pythia.pdf}}
+  \caption{Data to MC ratios before and after reweighting in the $W^{+}\rightarrow \mu^{+} \nu$ channel at 5~TeV. The nominal MC along with each of the alternative MCs are shown.}
+  \label{fig:WDataMC_altMCsWpmunu5}
+\end{figure}
+
+
+For each MC, the weighting function that maximises the Data-to-MC agreement in the first 20 GeV is chosen as the best weighting function for that MC and the others are discarded. This maximisation is done separately for each $W$ decay channel. The resulting best reweighting factors are shown in Figures~\ref{fig:WMC_RewFactor13} and \ref{fig:WMC_RewFactor5} for 13 and 5 TeV, respectively.
+
+\begin{figure}[h]
+  \centering
+  \subfloat[$W^{-}\rightarrow e^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/MC/RewFactors_MC_13TeV_Wminusenu.pdf}}
+  \subfloat[$W^{+}\rightarrow e^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/MC/RewFactors_MC_13TeV_Wplusenu.pdf}} \\
+  \subfloat[$W^{-}\rightarrow \mu^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/MC/RewFactors_MC_13TeV_Wminusmunu.pdf}}
+  \subfloat[$W^{+}\rightarrow \mu^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/MC/RewFactors_MC_13TeV_Wplusmunu.pdf}}
+  \caption{Fitted reweighting functions, $w_{T}$, obtained after $\chi^2$ minimisation for both the electron and muon channels at 13~TeV. Each plot shows the nominal MC reweighting factor, along with each alternative MC and its corresponding reweighting factor.}
+  \label{fig:WMC_RewFactor13}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[$W^{-}\rightarrow e^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/MC/RewFactors_MC_5TeV_Wminusenu.pdf}}
+  \subfloat[$W^{+}\rightarrow e^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/MC/RewFactors_MC_5TeV_Wplusenu.pdf}} \\
+  \subfloat[$W^{-}\rightarrow \mu^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/MC/RewFactors_MC_5TeV_Wminusmunu.pdf}}
+  \subfloat[$W^{+}\rightarrow \mu^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/Rew_Factor/MC/RewFactors_MC_5TeV_Wplusmunu.pdf}}
+  \caption{Fitted reweighting functions, $w_{T}$, obtained after $\chi^2$ minimisation for both the electron and muon channels at 5~TeV. Each plot shows the nominal MC reweighting factor, along with each alternative MC and its corresponding reweighting factor.}
+  \label{fig:WMC_RewFactor5}
+\end{figure}
+
+Once each alternative MC has been reweighted, the uncertainty can be determined. To do this, the data is once again unfolded, but this time with the reweighted migration matrix from each alternative MC. The uncertainty for each MC is then the relative difference between this unfolded data and the data unfolded with the nominal MC (that has been reweighted using the nominal weighting function). These relative differences are shown in Figures~\ref{fig:Wbias_unc_MC13} and \ref{fig:Wbias_unc_MC5} for 13 and 5 TeV, respectively. The uncertainty for each MC for each bin is then simply the bin content itself $i.e.$ no additional difference is needed.
+\textcolor{red}{We note that a more rigorous quantitative analysis of the Data-to-MC agreement is underway for the alternative MCs, and it may be possible to discard more alternative MCs in addition to Sherpa to further reduce the uncertainty in the near future.}
+
+
+\begin{figure}[h]
+  \centering
+  \subfloat[$W^{-}\rightarrow e^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_MC/unfMCsRelDiffs_Rebin7_13TeV_Wminusenu_25iters.pdf}}
+  \subfloat[$W^{+}\rightarrow e^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_MC/unfMCsRelDiffs_Rebin7_13TeV_Wplusenu_25iters.pdf}} \\
+  \subfloat[$W^{-}\rightarrow \mu^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_MC/unfMCsRelDiffs_Rebin7_13TeV_Wminusmunu_25iters.pdf}}
+  \subfloat[$W^{+}\rightarrow \mu^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_MC/unfMCsRelDiffs_Rebin7_13TeV_Wplusmunu_25iters.pdf}}
+  \caption{Relative differences between the data unfolded with each 2D-reweighted ($p_{T}, y$) alternative MC and the data unfolded with the nominal reweighted MC, at 13~\TeV.}
+  \label{fig:Wbias_unc_MC13}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[$W^{-}\rightarrow e^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_MC/unfMCsRelDiffs_Rebin6_5TeV_Wminusenu_25iters.pdf}}
+  \subfloat[$W^{+}\rightarrow e^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_MC/unfMCsRelDiffs_Rebin6_5TeV_Wplusenu_25iters.pdf}} \\
+  \subfloat[$W^{-}\rightarrow \mu^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_MC/unfMCsRelDiffs_Rebin6_5TeV_Wminusmunu_25iters.pdf}}
+  \subfloat[$W^{+}\rightarrow \mu^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_MC/unfMCsRelDiffs_Rebin6_5TeV_Wplusmunu_25iters.pdf}}
+  \caption{Relative differences between the data unfolded with each 2D-reweighted ($p_{T}, y$) alternative MC and the data unfolded with the nominal reweighted MC, at 5~\TeV.}
+  \label{fig:Wbias_unc_MC5}
+\end{figure}
+
+The parametrisation and initial (\ptw, y) variations are similar stress-tests of the unfolding procedure, although using different methods. In both cases, one ends up with a reweighted (\ptw, y) spectrum that best matches the data reconstructed-level distribution before performing the unfolding. These two types of uncertainties essentially vary the starting point of this reweighted prediction.
+
+
+%After examining the parametrisation uncertainty and the MC choice uncertainty, it was determined that there was `double-counting' of uncertainties due to the overlap of these two uncertainty sources, because the same types of variations are being tested when considering the alternative weighting functions $w_{T}$ and the alternative MCs and their respective reweightings.
+%It is especially important to note that the choice of MC uncertainty discussed here is independent from the generator uncertainty presented in \ref{sec:genunc}.
+
+Therefore, these two uncertainty sources (the parametrisation uncertainty and the initial (\ptw, y) uncertainty) are shown on one combined relative difference plot, where the parametrisation uncertainty has been properly calculated based on the difference between the alternative weighting function curves as outlined above.
+The uncertainty that contributes to the total bias uncertainty is then the maximum uncertainty per bin out of each MC or parametrisation uncertainty, a so-called `envelope'. Figures~\ref{fig:Wbias_unc_env13} (13~\TeV) and \ref{fig:Wbias_unc_env5} (5~\TeV) show each of these uncertainties from which the maximum uncertainty or `envelope' is determined.
+
+\begin{figure}[h]
+  \centering
+  \subfloat[$W^{-}\rightarrow e^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_envelope/unfEnvelope_Rebin7_13TeV_Wminusenu_25iters.pdf}}
+  \subfloat[$W^{+}\rightarrow e^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_envelope/unfEnvelope_Rebin7_13TeV_Wplusenu_25iters.pdf}} \\
+  \subfloat[$W^{-}\rightarrow \mu^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_envelope/unfEnvelope_Rebin7_13TeV_Wminusmunu_25iters.pdf}}
+  \subfloat[$W^{+}\rightarrow \mu^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_envelope/unfEnvelope_Rebin7_13TeV_Wplusmunu_25iters.pdf}}
+  \caption{Maximum uncertainty combining the parametrisation and alternative MCs at 13~\TeV. The uncertainty that is propagated through the unfolding process is the `envelope' - the black dashed line.}
+  \label{fig:Wbias_unc_env13}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[$W^{-}\rightarrow e^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_envelope/unfEnvelope_Rebin6_5TeV_Wminusenu_25iters.pdf}}
+  \subfloat[$W^{+}\rightarrow e^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_envelope/unfEnvelope_Rebin6_5TeV_Wplusenu_25iters.pdf}} \\
+  \subfloat[$W^{-}\rightarrow \mu^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_envelope/unfEnvelope_Rebin6_5TeV_Wminusmunu_25iters.pdf}}
+  \subfloat[$W^{+}\rightarrow \mu^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/RelDiff/Unc_envelope/unfEnvelope_Rebin6_5TeV_Wplusmunu_25iters.pdf}}
+  \caption{Maximum uncertainty combining the parametrisation and alternative MCs at 5~\TeV. The uncertainty that is propagated through the unfolding process is the `envelope' - the black dashed line.}
+  \label{fig:Wbias_unc_env5}
+\end{figure}
+
+
+The `envelope' uncertainty is the final component of the bias that must be estimated. This is now referred to as the parametrisation uncertainty. The parametrisation uncertainty, along with the three NPs coming from the nominal fit function parameter variations, are the four overall components of the bias uncertainty that are propagated through the unfolding process. When propagated, the signs of these uncertainties are maintained. However for visualization purposes, the absolute values of each of these four uncertainties are taken and plotted, and then they are summed in quadrature to obtain a total bias uncertainty. Figures~\ref{fig:Wbias_unc_tot13} and \ref{fig:Wbias_unc_tot5} show these four components along with the total bias uncertainty at 13 and 5 TeV, respectively. At 13 TeV, the total bias uncertainty is less than 1\% in all channels. \textcolor{red}{We are hopeful that further quantitative analysis on the Data-to-MC $\chi^{2}$ minimisation can reduce the total bias uncertainty to less than 1\% at 5 TeV soon as well.}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[$W^{-}\rightarrow e^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/TotalBias/TotalBiasUnc_13TeV_Wminusenu_25iters_7GeVbins.pdf}}
+  \subfloat[$W^{+}\rightarrow e^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/TotalBias/TotalBiasUnc_13TeV_Wplusenu_25iters_7GeVbins.pdf}} \\
+  \subfloat[$W^{-}\rightarrow \mu^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/TotalBias/TotalBiasUnc_13TeV_Wminusmunu_25iters_7GeVbins.pdf}}
+  \subfloat[$W^{+}\rightarrow \mu^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/TotalBias/TotalBiasUnc_13TeV_Wplusmunu_25iters_7GeVbins.pdf}}
+  \caption{Total bias uncertainty at 13~\TeV. Each dashed line is summed in quadrature to obtain the total bias uncertainty in solid black.}
+  \label{fig:Wbias_unc_tot13}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[$W^{-}\rightarrow e^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/TotalBias/TotalBiasUnc_5TeV_Wminusenu_25iters_6GeVbins.pdf}}
+  \subfloat[$W^{+}\rightarrow e^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/TotalBias/TotalBiasUnc_5TeV_Wplusenu_25iters_6GeVbins.pdf}} \\
+  \subfloat[$W^{-}\rightarrow \mu^{-} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/TotalBias/TotalBiasUnc_5TeV_Wminusmunu_25iters_6GeVbins.pdf}}
+  \subfloat[$W^{+}\rightarrow \mu^{+} \nu$]{\includegraphics[width=.49\textwidth]{figure/W_bias/TotalBias/TotalBiasUnc_5TeV_Wplusmunu_25iters_6GeVbins.pdf}}
+  \caption{Total bias uncertainty at 5~\TeV. Each dashed line is summed in quadrature to obtain the total bias uncertainty in solid black.}
+  \label{fig:Wbias_unc_tot5}
+\end{figure}

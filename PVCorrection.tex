@@ -1,0 +1,26 @@
+The association of the signal leptons to the primary vertex is performed through impact parameters requirements, as indicated above.
+The probability to reconstruct a primary vertex associated with the hard interaction in \Wboson\ boson events will depend on
+the hadronic activity produced in addition to the \Wboson\ boson, $i.e.$ the hadronic recoil and the underlying event. In this respect, the single lepton from the
+\Wboson\ boson decay is not sufficient to reconstruct a primary vertex. In addition, the track associated to the lepton might not
+fulfill the track requirements in the vertex finding. This can be especially the case for electrons. In this case, the reconstructed
+vertex might not be selected as the event primary vertex over vertices due to pileup.
+By contrast, in \Zboson\ boson selected events, largely used to calibrate the \Wboson\ analyses under study, the presence of two reconstructed leptons ensures that there is almost no selection inefficiency due to the effects mentioned before.
+Thus a purely \Zboson-based calibration will not correct for this effect. Furthermore,
+the efficiency of this requirement of a primary vertex with an associated single lepton in
+\Wboson\ events is not well reproduced in our simulation.
+This can be for example inferred from figure~\ref{fig:n_Z}, that shows a different fraction of events with 0 and 1 additional tracks matched to the $z$-position of the hard interaction in the data as compared to the MC simulations in \Zmm\ events.
+\begin{figure}[hb]
+\begin{center}
+\subfloat[Fraction of events with 0 additional track.]{\label{fig:n_Z_b}\includegraphics[width=0.42\textwidth]{figure/pvlep/frag0_vs_pt.pdf}}\hspace*{10pt}
+\subfloat[Fraction of events with 1 additional track.]{\label{fig:n_Z_c}\includegraphics[width=0.42\textwidth]{figure/pvlep/frag1_vs_pt.pdf}}
+\caption{Fraction of additional tracks matched to the hard interaction in $z$ as a function of \ptmm\ in \Zmm\ events at 13~\TeV.\label{fig:n_Z}}
+\end{center}
+\end{figure}
+
+Therefore, a dedicated correction of this effect is required.
+The full details of this correction are explained in~\cite{Kretzschmar:2657141}.
+It relies on the extraction of the efficiency to match the lepton to the primary vertex as a function of boson \pt, by using three categories of events : with 0, 1 or $>1$ additional matched track to the $z$-position of the hard interaction.
+The inefficiency in each category is extracted in \Wboson\ simulation, while the fraction of events belonging to each category can be extracted in \Zboson\ events, separately for the data and for the simulation.
+
+One has to note that the mismodeling of this efficiency can be largely explained by a difference in the modeling of underlying event, and that the
+uncertainty on this correction is conservatively taken into account by looking at the difference in the results when using either \SHERPA\ or \POWPYTHIA (generator systematic uncertainty). One can refer to~\cite{Kretzschmar:2657141} for more details on this.

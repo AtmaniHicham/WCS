@@ -1,0 +1,122 @@
+\section{Bin-by-bin and Bayesian unfolding \ptz uncertainties comparison}
+\label{sec:uncComparison}
+
+As described in Section~\ref{sec:Zunfolding}, for the \ptz\ analysis both the bin-by-bin and Bayesian unfolding methods are used to extract the final results. In this section the total uncertainties for the bin-by-bin and Bayesian unfolding results are compared for each \Zboson boson decay channel.
+
+The bin-by-bin statistical and systematic uncertainties are compared to those of the Bayesian iterative unfolding method using the chosen number of unfolding iterations as a function of $p_{T}$. Figure~\ref{f:ZuncBinBayes13} shows this comparison for both \ptdilep and \ut in both the \Zee and \Zmm channels at 13 TeV; Figure~\ref{f:ZuncBinBayes5} shows this same comparison at 5 TeV. The systematic uncertainty is always larger for Bayesian unfolding compared to bin-by-bin unfolding because the systematic uncertainties themselves are the same for bin-by-bin and Bayesian unfolding, and they have weak dependence on the number of unfolding iterations. Therefore the Bayesian-unfolded systematic uncertainty will always be larger than the bin-by-bin systematic uncertainty because the Bayesian uncertainty also includes the uncertainty from the unfolding bias. The statistical uncertainty is similar between the two methods when looking at \ptdilep. This is because the purity is high for \ptdilep (see Figure~\ref{fig:purityZ}) so the bin-to-bin migration is small, leading to a small statistical uncertainty for the bin-by-bin unfolding method. The purity is low for \ut, so Bayesian unfolding is necessary and one can clearly see that Bayesian unfolding reduces the statistical uncertainty compared to bin-by-bin unfolding. Since Bayesian unfolding is the best unfolding method to employ for \ut, Bayesian unfolding is also used for \ptdilep for consistency since both bin-by-bin and Bayesian unfolding are valid unfolding methods for this observable.
+
+%As also explain in Section~\ref{sec:bias}, as the number of unfolding iterations increases, the unfolding bias decreases but the statistical uncertainty increases. In order to choose the number of unfolding iterations to be used for the final results, a balance between the bias and statistical uncertainty must be found. A possible way to do this is to tune the number of Bayesian iteration to minimise the impact of the unfolding bias without increasing the statistical uncertainty above the bin by bin unfolded level.
+%\textbf{TODO : This is likely to be changed in the future, it is probably better to optimize on the total sum of stat+syst+bias - although the number will likely stay $\sim$the same.}
+
+%The choice for the number of unfolding iterations is explained in this section.
+
+%In Figure~\ref{fig:13TeVCom} (\Zee channel) and Figure~\ref{fig:13TeVComut} (\Zmm channel) the evolution of the uncertainties on the \ptz\ spectra for the 13 TeV dataset are shown in the case of \ptdilep and \ut unfolded distribution. Each subplot shows a different number of Bayesian unfolding iterations: one, two, four, and eight. Therefore only the Bayesian unfolding uncertainty curves change for each subplot as bin by bin unfolding is unaffected by the number of Bayesian unfolding iterations. Figure~\ref{fig:5TeVCom} (\Zee channel) and Figure~\ref{fig:5TeVComut} (\Zmm channle) are showing the same thing for the 5~TeV results.
+
+%The statistical and systematic uncertainties plots are used to choose the appropriate number of Bayesian unfolding iterations for $p_{T}^{ll}$ and $u_{T}$. Figures~\ref{f:uncZee_pT13TeV_1iter} -~\ref{f:uncZee_pT13TeV_8iter},~\ref{f:uncZmm_pT13TeV_1iter} -~\ref{f:uncZmm_pT13TeV_8iter}, and~\ref{f:uncZee_pT5TeV_1iter} -~\ref{f:uncZee_pT5TeV_8iter}, show that the unfolding bias on $p_{T}^{ll}$ drops to $\leq 0.1 \%$ (other than the first bin) after two iterations, with a negligible change in the bias after increasing to four or eight iterations. Moreover, after two iterations, the statistical uncertainty on both Bayesian and bin by bin unfolding is approximately equal such that increasing the number of iterations overestimates the statistical uncertainty. %Therefore, we choose to unfold $p_{T}^{ll}$ with two iterations for our final results.
+%On the contrary, similar plots resulted from the unfolding of the \ut distribution (in Figures ~\ref{f:uncZee_uT13TeV_1iter} - ~\ref{f:uncZee_uT13TeV_8iter}, ~\ref{f:uncZmm_uT13TeV_1iter} - ~\ref{f:uncZmm_uT13TeV_8iter}, and ~\ref{f:uncZee_uT5TeV_1iter} - ~\ref{f:uncZee_uT5TeV_8iter}) show that the unfolding bias uncertainty is much larger than each corresponding bias on $p_{T}^{ll}$. The purity of $u_{T}$ is much worse than that of $p_{T}^{ll}$ (see figure~\ref{fig:purityZ}), so the $u_{T}$ bias is necessarily larger.
+%We still want to reduce the bias without overestimating the statistical uncertainty. At four iterations, the bias is $\leq 0.5 \%$ for low \pT and the statistical uncertainty is properly estimated, so we choose four iterations when unfolding the hadronic recoil.
+
+%The unfolding bias at ~5~TeV is less high due to better resolution of the hadronic recoil and a consequent amelioration of the purity of $u_{T}$ distribution. Consequently a lower number of iteration is needed to keep the unfolding bias uncertainty on the \ut distribution at reasonable level ( Figure~\ref{f:uncZee_uT5TeV_4iter},~\ref{f:uncZmm_uT5TeV_4iter}) .
+
+%%%%%%%%%%%%%%
+%%%%% 13 TeV %%%%%
+%%%%%%%%%%%%%%
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_Sys_BinBayes_unc_pTll_Zee_13TeV_2GeVbins_5uTiters.pdf}\label{f:StatSysBinBayesZee_pT13TeV}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_Sys_BinBayes_unc_pTll_Zmumu_13TeV_2GeVbins_5uTiters.pdf}\label{f:StatSysBinBayesZmm_pT13TeV}}
+
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_Sys_BinBayes_unc_uT_Zee_13TeV_2GeVbins_5uTiters.pdf}\label{f:StatSysBinBayesZee_uT13TeV}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_Sys_BinBayes_unc_uT_Zmumu_13TeV_2GeVbins_5uTiters.pdf}\label{f:StatSysBinBayesZmm_uT13TeV}}
+\caption{Comparison of the total unfolded statistical and systematic uncertainties for bin-by-bin unfolding and Bayesian unfolding. Both \ptdilep and \ut are compared for both \Zboson decay channels for the $\sqrt{s} = 13$~\TeV\ dataset. Subplot (a) and (b) show the \Zee and \Zmm $p_{T}^{ll}$ uncertainties and subplot (c) and (d) show the corresponding $u_{T}$ uncertainties.}
+\label{f:ZuncBinBayes13}
+\end{figure}
+
+
+%%%%%%%%%%%%%%
+%%%%% 5 TeV %%%%%
+%%%%%%%%%%%%%%
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_Sys_BinBayes_unc_pTll_Zee_5TeV_2GeVbins_2uTiters.pdf}\label{f:StatSysBinBayesZee_pT5TeV}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_Sys_BinBayes_unc_pTll_Zmumu_5TeV_2GeVbins_2uTiters.pdf}\label{f:StatSysBinBayesZmm_pT5TeV}}
+
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_Sys_BinBayes_unc_uT_Zee_5TeV_2GeVbins_2uTiters.pdf}\label{f:StatSysBinBayesZee_uT5TeV}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_Sys_BinBayes_unc_uT_Zmumu_5TeV_2GeVbins_2uTiters.pdf}\label{f:StatSysBinBayesZmm_uT5TeV}}
+\caption{Comparison of the total unfolded statistical and systematic uncertainties for bin-by-bin unfolding and Bayesian unfolding. Both \ptdilep and \ut are compared for both \Zboson decay channels for the $\sqrt{s} = 5$~\TeV\ dataset. Subplot (a) and (b) show the \Zee and \Zmm $p_{T}^{ll}$ uncertainties and subplot (c) and (d) show the corresponding $u_{T}$ uncertainties.}
+\label{f:ZuncBinBayes5}
+\end{figure}
+
+%%%%%%%%%%%%%%
+%%%%% 13 TeV %%%%%
+%%%%%%%%%%%%%%
+
+%\begin{figure}[h]
+%\centering
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_sys_pT_Zee_13TeV_2GeVbins_1iters.pdf}\label{f:uncZee_pT13TeV_1iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_sys_pT_Zee_13TeV_2GeVbins_2iters.pdf}\label{f:uncZee_pT13TeV_2iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_sys_pT_Zee_13TeV_2GeVbins_4iters.pdf}\label{f:uncZee_pT13TeV_4iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_sys_pT_Zee_13TeV_2GeVbins_8iters.pdf}\label{f:uncZee_pT13TeV_8iter}}
+%
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_sys_uT_Zee_13TeV_2GeVbins_1iters.pdf}\label{f:uncZee_uT13TeV_1iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_sys_uT_Zee_13TeV_2GeVbins_2iters.pdf}\label{f:uncZee_uT13TeV_2iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_sys_uT_Zee_13TeV_2GeVbins_4iters.pdf}\label{f:uncZee_uT13TeV_4iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_sys_uT_Zee_13TeV_2GeVbins_8iters.pdf}\label{f:uncZee_uT13TeV_8iter}}
+%\caption{
+ %Total unfolded statistical, systematic, and bias uncertainties on the dilepton transverse momentum in the \Zee channel for the $\sqrt{s} = 13$~\TeV\ dataset. The uncertainties are shown as a percentage of the unfolded data per \pT and $u_{T}$ bin respectively. The uncertainties from bin by bin and Bayesian unfolding are compared. Each column shows how the Bayesian unfolding uncertainties change as the number of unfolding iterations increases from 1, 2, 4, and 8, respectively.}
+%   \label{fig:13TeVCom}
+%\end{figure}
+%
+%\begin{figure}[!h]
+%\centering
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_sys_pT_Zmumu_13TeV_2GeVbins_1iters.pdf}\label{f:uncZmm_pT13TeV_1iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_sys_pT_Zmumu_13TeV_2GeVbins_2iters.pdf}\label{f:uncZmm_pT13TeV_2iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_sys_pT_Zmumu_13TeV_2GeVbins_4iters.pdf}\label{f:uncZmm_pT13TeV_4iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_sys_pT_Zmumu_13TeV_2GeVbins_8iters.pdf}\label{f:uncZmm_pT13TeV_8iter}}
+%
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_sys_uT_Zmumu_13TeV_2GeVbins_1iters.pdf}\label{f:uncZmm_uT13TeV_1iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_sys_uT_Zmumu_13TeV_2GeVbins_2iters.pdf}\label{f:uncZmm_uT13TeV_2iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_sys_uT_Zmumu_13TeV_2GeVbins_4iters.pdf}\label{f:uncZmm_uT13TeV_4iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/13TeV/Stat_sys_uT_Zmumu_13TeV_2GeVbins_8iters.pdf}\label{f:uncZmm_uT13TeV_8iter}}
+%\caption{
+% Total unfolded statistical, systematic, and bias uncertainties on the dilepton transverse momentum in the \Zmm channel for the $\sqrt{s} = 13$~\TeV\ dataset. The uncertainties are shown as a percentage of the unfolded data per \pT and $u_{T}$ bin respectively. The uncertainties from bin by bin and Bayesian unfolding are compared.  Each column shows how the Bayesian unfolding uncertainties change as the number of unfolding iterations increases from 1, 2, 4, and 8, respectively.}
+%    \label{fig:13TeVComut}
+%\end{figure}
+
+%%%%%%%%%%%%%%%
+%%%%%   5 TeV %%%%%%
+%%%%%%%%%%%%%%%
+
+%\begin{figure}[h]
+%\centering
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_sys_pT_Zee_5TeV_2GeVbins_1iters.pdf}\label{f:uncZee_pT5TeV_1iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_sys_pT_Zee_5TeV_2GeVbins_2iters.pdf}\label{f:uncZee_pT5TeV_2iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_sys_pT_Zee_5TeV_2GeVbins_4iters.pdf}\label{f:uncZee_pT5TeV_4iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_sys_pT_Zee_5TeV_2GeVbins_8iters.pdf}\label{f:uncZee_pT5TeV_8iter}}
+%
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_sys_uT_Zee_5TeV_2GeVbins_1iters.pdf}\label{f:uncZee_uT5TeV_1iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_sys_uT_Zee_5TeV_2GeVbins_2iters.pdf}\label{f:uncZee_uT5TeV_2iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_sys_uT_Zee_5TeV_2GeVbins_4iters.pdf}\label{f:uncZee_uT5TeV_4iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_sys_uT_Zee_5TeV_2GeVbins_8iters.pdf}\label{f:uncZee_uT5TeV_8iter}}
+%\caption{
+% Total unfolded statistical, systematic, and bias uncertainties on the dilepton transverse momentum in the \Zee channel for the $\sqrt{s} = 5$~\TeV\ dataset. The uncertainties are shown as a percentage of the unfolded data per \pT bin. The uncertainties from bin by bin and Bayesian unfolding are compared. Subplot (a), (b), (c), and (d) show how the Bayesian unfolding uncertainties change as the number of unfolding iterations increases from 1, 2, 4, and 8, respectively.}
+%    \label{fig:5TeVCom}
+%\end{figure}
+%
+%\begin{figure}[h]
+%\centering
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_sys_pT_Zmumu_5TeV_2GeVbins_1iters.pdf}\label{f:uncZmm_pT5TeV_1iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_sys_pT_Zmumu_5TeV_2GeVbins_2iters.pdf}\label{f:uncZmm_pT5TeV_2iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_sys_pT_Zmumu_5TeV_2GeVbins_4iters.pdf}\label{f:uncZmm_pT5TeV_4iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_sys_pT_Zmumu_5TeV_2GeVbins_8iters.pdf}\label{f:uncZmm_pT5TeV_8iter}}
+%
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_sys_uT_Zmumu_5TeV_2GeVbins_1iters.pdf}\label{f:uncZmm_uT5TeV_1iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_sys_uT_Zmumu_5TeV_2GeVbins_2iters.pdf}\label{f:uncZmm_uT5TeV_2iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_sys_uT_Zmumu_5TeV_2GeVbins_4iters.pdf}\label{f:uncZmm_uT5TeV_4iter}}
+%\subfloat[]{\includegraphics[width=.27\textwidth]{figure/Z_Plots_uncertainties/5TeV/Stat_sys_uT_Zmumu_5TeV_2GeVbins_8iters.pdf}\label{f:uncZmm_uT5TeV_8iter}}
+%\caption{
+%Total unfolded statistical, systematic, and bias uncertainties on the dilepton transverse momentum in the \Zmm channel for the $\sqrt{s} = 5$~\TeV\ dataset. The uncertainties are shown as a percentage of the unfolded data per \pT bin. The uncertainties from bin by bin and Bayesian unfolding are compared. Subplot (a), (b), (c), and (d) show how the Bayesian unfolding uncertainties change as the number of unfolding iterations increases from 1, 2, 4, and 8, respectively.}
+%   \label{fig:5TeVComut}
+%\end{figure}

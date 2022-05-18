@@ -1,0 +1,182 @@
+\subsection{Multi-jet (MJ) background estimation}
+\label{subsec:zmjbackground}
+In \Zboson boson decay measurements, background events can be divided into two categories: (1) the electroweak (EW) and top backgrounds where prompt leptons from EW and top processes are reconstructed as \Zboson boson events, and (2) the so-called multi-jet (MJ) background where jets fake leptons. The EW and top backgrounds are obtained from MC samples. The fake lepton component (MJ), which mostly consists of semi-leptonic decays of heavy quarks, in-flight pion decays, and photon conversions, is obtained using data-driven techniques. Despite the large production cross-section, the MJ background for \Zboson events is expected to be small because of the clean environment of the \lowmu dataset. Moreover, \Zboson event selection requires two opposite-sign, well-identified and isolated leptons, which suppresses the MJ background more than that of the \Wboson event selection which cannot have a same-sign or opposite-sign requirement.
+
+\subsubsection{General procedure}
+\label{sssec:ZMJ_procedure}
+
+The data-driven estimation of the MJ background is based on the so-called ABCD method. The ABCD method requires two selections that form part of the definition of the signal region (SR), \textit{A}, which can be inverted in order to define three further control regions~(CR): \textit{B}, \textit{C}, and \textit{D}. These control regions should be rich in events produced from background processes that we are trying to estimate with this method i.e. MJ events. The key discriminating variable to define each region is the isolation ( \texttt{ptvarcone20}/\pT ) of the sub-leading lepton. We define a lepton to be \textit{isolated} if \texttt{ptvarcone20}/\pT < 0.1 and anti-isolated if \texttt{ptvarcone20}/\pT > 0.1. In the electron channel, the most important discriminating variable to define the SR versus the CR is the Electron ID operating point: Medium electrons (SR) and Loose not Medium electrons (CR). In the muon channel, this important discriminating variable becomes the sign of the dilepton pair: opposite-sign muons (SR) are inverted to same-sign muons (CR). The details of each region for each \Zboson decay channel follows.
+
+In the \Zmm channel, the four regions are defined as the following:
+\begin{itemize}
+\item \textit{A} (SR): opposite-sign, both muons isolated, both $p_{T}^{\mu} > 25 \textrm{ GeV}$.
+\item \textit{B}: same as \textit{A} but the sub-leading muon is anti-isolated.
+\item \textit{C}: same-sign, both muons isolated, muon \pT requirement is relaxed to $p_{T}^{\mu} > 20 \textrm{ GeV}$.
+\item \textit{D}: same as \textit{C} but the sub-leading muon is anti-isolated.
+\end{itemize}
+
+In the \Zee channel, we found that the CR was too signal-dominated to extract a MJ estimate using the standard selection, so we exclude the \Zboson mass peak of 81 - 101 GeV from our selection to reduce this signal contamination. Instead, we look at events in the \Zboson mass ranges of [66, 81] GeV and [101, 116] GeV (our standard \Zboson mass window for event selection is [66, 116] GeV). The leading electron must also pass the Medium ID working point requirement for each region. The four regions are defined as the following:
+
+\begin{itemize}
+\item \textit{A} (SR): opposite sign, both electrons isolated, sub-leading electron passes Medium ID, both $p_{T}^{e} > 25 \textrm{ GeV}$. 
+\item \textit{B}: same as \textit{A} but the sub-leading electron is anti-isolated.
+\item \textit{C}: no sign requirement or leading electron isolation requirement, sub-leading electron satisfies the Loose not Medium ID, electron \pT requirement is relaxed to $p_{T}^{e} > 20 \textrm{ GeV}$.
+\item \textit{D}: same as \textit{C} but the sub-leading electron is anti-isolated.
+\end{itemize}
+
+Multi-jet events in the \textit{B}, \textit{C} and \textit{D} regions are estimated by subtracting the prompt MC component from the data and then integrating (separately for each region), and then the MJ fraction is linearly extrapolated to the signal region (region \textit{A}) using the ABCD method to estimate the number of MJ events in the signal region: $N_{MJ}^{SR} = N_{MJ}^{B} \times \frac{N_{MJ}^{C}}{N_{MJ}^{D}}$. In the \Zee channel where we exclude the \Zboson mass peak, after obtaining $N_{MJ}^{SR}$ we multiply this number by 50./30. to linearly extrapolate to include the 20 bins that were excluded.
+
+Figure \ref{f:Iso_Zmm} shows the isolation spectra of the sub-leading lepton in the \Zmm channel for data and MC at 5 and 13~TeV, respectively. Each region is labeled and corresponds to the above list. "Signal Region" denotes the isolation spectrum that contains regions \textit{A} and \textit{B}, while "Control Region" denotes the isolation spectrum that contains regions \textit{C} and \textit{D}. Similar plots but for the \Zee channel are shown in figure \ref{f:Iso_Zee}. 
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[trim={0, 4cm, 0, 4cm},clip,width=.4\textwidth]{figure/ZpT_MJPlots/Zmumu_SR_Logy_isolation_5TeV.pdf}}
+\subfloat[]{\includegraphics[trim={0, 4cm, 0, 4cm},clip,width=.4\textwidth]{figure/ZpT_MJPlots/Zmumu_CR_Logy_isolation_5TeV.pdf}}
+
+\subfloat[]{\includegraphics[trim={0, 4cm, 0, 4cm},clip,width=.4\textwidth]{figure/ZpT_MJPlots/Zmumu_SR_Logy_isolation_13TeV.pdf}}
+\subfloat[]{\includegraphics[trim={0, 4cm, 0, 4cm},clip,width=.4\textwidth]{figure/ZpT_MJPlots/Zmumu_CR_Logy_isolation_13TeV.pdf}}
+
+\caption{Isolation variable $p_{T}^{cone \Delta R=0.2}/p_{T}^{\mu}$ for the sub-leading muon candidate in Data (black) and MC (blue) at 5~TeV (top) and 13~TeV (bottom). The estimated number of MJ events in the full phase space of the SR is calculated by subtracting the MC events from the Data events in each region to find $N_{MJ}$, and then solving for $N_{MJ}^{SR} = N_{MJ}^{B} \times \frac{N_{MJ}^{C}}{N_{MJ}^{D}}$.}
+\label{f:Iso_Zmm}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[trim={0, 4cm, 0, 4cm},clip,width=.4\textwidth]{figure/ZpT_MJPlots/Zee_SR_Logy_isolation_5TeV.pdf}}
+\subfloat[]{\includegraphics[trim={0, 4cm, 0, 4cm},clip,width=.4\textwidth]{figure/ZpT_MJPlots/Zee_CR_Logy_isolation_5TeV.pdf}}
+
+\subfloat[]{\includegraphics[trim={0, 4cm, 0, 4cm},clip,width=.4\textwidth]{figure/ZpT_MJPlots/Zee_SR_Logy_isolation_13TeV.pdf}}
+\subfloat[]{\includegraphics[trim={0, 4cm, 0, 4cm},clip,width=.4\textwidth]{figure/ZpT_MJPlots/Zee_CR_Logy_isolation_13TeV.pdf}}
+
+\caption{Isolation variable $p_{T}^{cone \Delta R=0.2}/p_{T}^{e}$ for the sub-leading electron candidate in Data (black) and MC (blue) at 5~TeV (top) and 13~TeV (bottom). The estimated number of MJ events in the full phase space of the SR is calculated by subtracting the MC events from the Data events in each region to find $N_{MJ}$, and then solving for $N_{MJ}^{SR} = N_{MJ}^{B} \times \frac{N_{MJ}^{C}}{N_{MJ}^{D}}$.}
+\label{f:Iso_Zee}
+\end{figure}
+
+\subsubsection{Nominal MJ background estimate}
+
+The integrated MJ estimate in each region is shown in Tables \ref{tab:MJ_numbers_Zmm} (\Zmm) and \ref{tab:MJ_numbers_Zee} (\Zee). We also present some auxiliary information in each region to better understand the MJ numbers: the ratio of MJ events to the number of data events, presented as $N_{MJ}/N_{Data}$, and the ratio of non-signal MC events to the total number of MC events, presented as $\left(MC_{tot} - MC_{sig}\right)/MC_{tot}$. $N_{MJ}/N_{Data}$ helps to explain the expected percentage of MJ events in each region, while $\left(MC_{tot} - MC_{sig}\right)/MC_{tot}$ shows the percentage of signal events in each region. The error is taken to be the $\sqrt{N}$ in each bin, and then the integrated error is calculated via standard error propagation.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{\Zmm at 5 TeV} & A (SR) & B & C & D \\
+\hline
+$N_{MJ}$ & $15.9 \pm 7.9$ & $97 \pm 28$ & $12.6 \pm 4.7$ & $77 \pm 11$ \\
+\hline
+$N_{MJ}/N_{Data}$ & $0.00022 \pm 0.00011$ & $0.128 \pm 0.038$ & $0.57 \pm 0.25$ & $0.64 \pm 0.11$ \\
+\hline
+$\left(MC_{tot} - MC_{sig}\right)/MC_{tot}$ & $0.0038 \pm 0.0012$ & $0.076 \pm 0.013$ & $0.964 \pm 0.080$ & $0.971 \pm 0.068$ \\
+\hline
+\hline
+\textbf{\Zmm at 13 TeV} & A (SR) & B & C & D \\
+\hline
+$N_{MJ}$ & $177 \pm 44$ & $725 \pm 60$ & $53 \pm 11$ & $216 \pm 25$ \\
+\hline
+$N_{MJ}/N_{Data}$ & $0.00079 \pm 0.00020$ & $0.212 \pm 0.018$ & $0.52 \pm 0.12$ & $0.384 \pm 0.047$ \\
+\hline
+$\left(MC_{tot} - MC_{sig}\right)/MC_{tot}$ & $0.01099 \pm 0.00068$ & $0.1475 \pm 0.0064$ & $0.980 \pm 0.103$ & $0.974 \pm 0.030$ \\
+\hline
+\end{tabular}
+\caption{Multi-jet events, MJ event fraction, and MC signal contamination in each of the four regions for \Zmm at 5 and 13 TeV.}
+\label{tab:MJ_numbers_Zmm}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{\Zee at 5 TeV} & A (SR) & B & C & D \\
+\hline
+$N_{MJ}$ & $23 \pm 28$ & $6.2^{+0}_{-6.5} $ & $48 \pm 21$ & $12.7 \pm 5.5$ \\
+\hline
+$N_{MJ}/N_{Data}$ & $0.0 \pm 0.0063$ & $0.0 \pm 0.17$ & $0.106 \pm 0.048$ & $0.43 \pm 0.20$ \\
+\hline
+$\left(MC_{tot} - MC_{sig}\right)/MC_{tot}$ & $0.0167 \pm 0.0038$ & $0.052 \pm 0.047$ & $0.027 \pm 0.013$ & $0.298 \pm 0.059$ \\
+\hline
+\hline
+\textbf{\Zee at 13 TeV} & A (SR) & B & C & D \\
+\hline
+$N_{MJ}$ & $66 \pm 41$ & $24 \pm 14$ & $192 \pm 37$ & $70 \pm 12$ \\
+\hline
+$N_{MJ}/N_{Data}$ & $0.0050 \pm 0.0032$ & $0.136 \pm 0.078$ & $0.149 \pm 0.029$ & $0.492 \pm 0.095$ \\
+\hline
+$\left(MC_{tot} - MC_{sig}\right)/MC_{tot}$ & $0.0339 \pm 0.0029$ & $0.133 \pm 0.027$ & $0.0423 \pm 0.0098$ & $0.425 \pm 0.039$ \\
+\hline
+\end{tabular}
+\caption{Multi-jet events, MJ event fraction, and MC signal contamination in each of the four regions for \Zee at 5 and 13 TeV. Note that these are the raw numbers, so the nominal $N_{MJ}$ estimate in region \textit{A} must be multiplied by 50./30. to account for the removed \Zboson mass peak as explained in section \ref{sssec:ZMJ_procedure}.}
+\label{tab:MJ_numbers_Zee}
+\end{table}
+
+Due to the low pile-up data and $Z \rightarrow ll$ event selection, the extrapolated number of expected MJ events is small, but measurable. In the \Zmm channel, we see that the inverted control regions \textit{C} and \textit{D} are dominated by background MCs (low signal contamination) regardless of the isolation requirement, while regions \textit{A} and \textit{B} are almost entirely signal MC-dominated. In the \Zee channel, because of the low statistics and minimal expected MJ events, it was difficult to find an inverted region that had a similar signal contamination and MJ event fraction in both the isolated (\textit{C}) and anti-isolated (\textit{D}) regions like we see in the \Zmm channel. Additionally, the low statistics at 5 TeV in the \Zee channel lead to a nominal MJ event estimate that is consistent with 0, originating from an MJ event estimate that is consistent with 0 in region \textit{B}. We cannot divide by 0, so instead we shift this value up by one standard deviation (shown by the region \textit{B} number $6.2^{+0}_{-6.5} $) and then continue with the ABCD method to get an upper limit on the expected number of MJ events in this region with the nominal number of events being 0. The final nominal MJ event estimates for each channel are summarized in Table~\ref{tab:MJ_numbers_summary}.
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Channel} & \textbf{Nominal MJ Events} \\
+\hline
+\Zmm at 5 TeV & $15.9 \pm 7.9$ \\
+\hline
+\Zmm at 13 TeV & $177 \pm 44$ \\
+\hline
+\hline
+\Zee at 5 TeV & $0^{+87}_{-0}$ \\
+\hline
+\Zee at 13 TeV & $110 \pm 68$ \\
+\hline
+\end{tabular}
+\caption{Summary of estimated number of MJ events for each \Zboson decay channel.}
+\label{tab:MJ_numbers_summary}
+\end{table}
+
+In all channels, the MJ event estimate is $\lesssim O(10^{-4})$ with respect to the expected signal. 
+
+\subsubsection{MJ events in full phase space}
+
+Given the good agreement between data and MC predictions that we see in figs.~\ref{f:Iso_Zmm} and~\ref{f:Iso_Zee}, the total MJ event count is small (see table~\ref{tab:MJ_numbers_summary}), so the total number of MJ events are estimated in the full analysis phase space and distributed throughout the final observables $\left( p_{T}^{ll} \textrm{ or } u_{T} \right)$ following the shape obtained from the inverted control region.
+
+All events in the inverted CR (regions \textit{C} and \textit{D}) are used to find a shape to distribute the number of expected MJ events throughout the \ptdilep\ and \ut\ distributions separately. To suppress statistical fluctuations, the \ptdilep\ and \ut\ inverted CR distributions are fit to a Landau function, which peaks at $p_{T} \approx 10 \textrm{ GeV}$. This shape is then normalized to the total number of MJ events for each channel and included in the nominal backgrounds. The MJ background uncertainty is propagated through the unfolding process using the same fitting procedure, but the shape is normalized to the MJ uncertainty for each channel instead of its nominal value. For the \Zee channel at 5 TeV where there are no nominal MJ events, no nominal MJ background is included, but the shape fitting method is still used to propagate the uncertainty.
+
+Figure~\ref{f:MJshape_fit_pT} shows the MJ \ptdilep spectra and corresponding Landau fit in the inverted control region for the \Zmm and \Zee channels. Figure~\ref{f:MJshape_fit_uT} shows the same MJ spectra but for \ut . The integrated event numbers are the same in each channel for \ptdilep\ and \ut\ because they are measurements of the same MJ events.
+
+Figures~\ref{f:MJ_dist_Zuu} (\Zmm) and~\ref{f:MJ_dist_Zee} (\Zee) show the shape of the nominal MJ distribution for both \Zboson decay channels in both the \ptdilep\ and \ut\ distributions at 5 and 13 TeV. For \Zee at 5 TeV, the distribution is the upper limit on the number of MJ events since the nominal estimate is zero events.
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_MJPlots/Zmumu_pTll_MJ_CR_fit_5TeV_5GeVbins.pdf}}
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_MJPlots/Zmumu_pTll_MJ_CR_fit_13TeV_5GeVbins.pdf}}
+
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_MJPlots/Zee_pTll_MJ_CR_fit_5TeV_5GeVbins.pdf}}
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_MJPlots/Zee_pTll_MJ_CR_fit_13TeV_5GeVbins.pdf}}
+\caption{Multi-jet shape fit in the \Zmm (top) and \Zee (bottom) control regions for \ptdilep\ at 5 (left) and 13 (right) TeV.}
+\label{f:MJshape_fit_pT}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_MJPlots/Zmumu_uT_MJ_CR_fit_5TeV_5GeVbins.pdf}}
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_MJPlots/Zmumu_uT_MJ_CR_fit_13TeV_5GeVbins.pdf}}
+
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_MJPlots/Zee_uT_MJ_CR_fit_5TeV_5GeVbins.pdf}}
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_MJPlots/Zee_uT_MJ_CR_fit_13TeV_5GeVbins.pdf}}
+\caption{Multi-jet shape fit in the \Zmm (top) and \Zee (bottom) control regions for \ut\ at 5 (left) and 13 (right) TeV.}
+\label{f:MJshape_fit_uT}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_MJPlots/MJ_pTuT_shape_scaled_Zee_13TeV_5GeVbins.pdf}}
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_MJPlots/MJ_pTuT_shape_scaled_Zee_5TeV_5GeVbins.pdf}}
+\caption{Multi-jet distributions for \Zee at 5 (left) and 13 (right) TeV.}
+\label{f:MJ_dist_Zee}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_MJPlots/MJ_pTuT_shape_scaled_Zmumu_13TeV_5GeVbins.pdf}}
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_MJPlots/MJ_pTuT_shape_scaled_Zmumu_5TeV_5GeVbins.pdf}}
+\caption{Multi-jet distributions for \Zmm at 5 (left) and 13 (right) TeV.}
+\label{f:MJ_dist_Zuu}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage

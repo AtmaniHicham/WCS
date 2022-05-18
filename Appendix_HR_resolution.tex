@@ -1,0 +1,47 @@
+\section{Statistical Model}
+
+
+\begin{description}
+\item[Definition of hypotheses test]:
+ 
+\begin{itemize}
+  \item $H_{0}$: non signal $\mu$ =0,
+  \item $H_{1}$: signal + background $\mu$ > 0,
+\end{itemize}
+
+\item[LikeLihood]: 
+
+\begin{equation}
+\mathcal{L(\mu)} = \mu * \mathcal{L}(x)_{sig} + \mathcal{L}(x)_{bkg}
+\end{equation}
+
+\item[Statistical test]:
+\begin{center}
+\begin{equation}
+t_{0} = - 2 * log \frac{\mathcal{L(\mu=O)} }{\mathcal{L(\hat{\mu})} }
+\end{equation}
+\end{center}
+
+you get $\hat{\mu}$ by fitting $\mathcal{L(\hat{\mu})}$ to data $\rightarrow$ $\hat{\mu}$ best fited value $\rightarrow$ $t_{0}^{obs}$.
+
+\item[What is the distribution of $t_{0}$]:
+
+\begin{enumerate}
+\item Toys $\rightarrow$ generated MC
+\item asymptotic $\rightarrow$ to distribution is approximated with $\chi_{2}$
+\end{enumerate}
+
+\item[we define the test level $\alpha$ $\rightarrow$ $t_{0}^{\alpha}$]:
+
+\begin{enumerate}
+\item If $t_{obs}$ $>$ $t_{0}^{\alpha}$ $\rightarrow$ $H_{1}$ conserved.
+\item If $t_{obs}$ $<$ $t_{0}^{\alpha}$ $\rightarrow$ $H_{1}$ rejected.
+\end{enumerate}
+
+\item[Level of confidence]: 5 $\%$ level:
+\begin{enumerate}
+\item pvalue > 5 $\%$ $\rightarrow$ $H_{1}$ rejected.
+\item pvalue < 5 $\%$ $\rightarrow$ $H_{1}$ conserved.
+\end{enumerate}
+
+\end{description}

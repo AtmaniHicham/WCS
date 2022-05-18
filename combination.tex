@@ -1,0 +1,229 @@
+
+
+\subsection{Statistical procedure}
+
+The $\chi^2$ to be minimized is:
+\begin{equation}
+  \chi^2 = \bm{(X - \bar{X})^T C^{-1} (X - \bar{X})}
+\end{equation}
+where $X$ is the joint histogram of measured N-bin distributions in the electron and muon channels, i.e
+the 2N-sized vector $\bm{X} = \{X_1^e, ..., X_n^e ; X_1^\mu , ..., X_n^\mu\}$, $\bm{\bar{X}} = \{\bar{X}_1 , ..., \bar{X}_n ; \bar{X}_1 , ..., \bar{X}_n\}$ is the vector of averages to be
+determined, and $\bm{C^{-1}}$ is the complete, $2N\times 2N$ covariance matrix :
+\begin{equation}
+  \bm{C} =
+  \begin{pmatrix}
+    C^e & C^{e\mu} \\
+    C^{e\mu} & C^\mu
+  \end{pmatrix}
+\end{equation}
+The $N\times N$ covariance matrices $C^e$ and $C^\mu$ are derived as described in Section~\ref{sec:errprop}. $C^{e\mu}$ reflects the sources of uncertainty that correlate both channels.
+The $\chi^2$ minimization and combined uncertainty calculation is analytically. The analytical solution is:
+\begin{equation}
+  \bm{\bar{X} = (H^T C^{-1} H)^{-1} H^T C^{-1} X},
+\end{equation}
+where $\bm H$ is a $2N \times N$ matrix specifying the structure of the linear system:
+\begin{equation}
+  \bm{H} =
+  \begin{pmatrix}
+    1 & & 0 \\
+    & \ddots & \\
+    0 & & 1 \\
+    1 & & 0 \\
+    & \ddots & \\
+    0 & & 1
+  \end{pmatrix}.
+\end{equation}
+The $2N$ lines represent the measured electron and muon distributions; the $N$ columns represent the combined spectrum; $H_{ij}=1$ when measurement $i$ contributes to the combined value $j$, and 0 otherwise.
+
+
+Finally, the covariance matrix of the combined meaurement is given by:
+\begin{equation}
+  \bm{\bar{C} = (H^T C^{-1} H)^{-1}}.
+\end{equation}
+
+
+\subsection{Uncertainty model and correlations}
+
+The complete uncertainty model comprises \textcolor{red}{XYZ} sources of systematic uncertainty, which are listed in Table~\ref{tab:sources}.
+
+Electron calibration refers to the data-driven determination of the energy scale and resolution corrections; electron efficiencies denote
+scale factors for reconstruction, identification, isolation and trigger. Muon calibration uncertainties include momentum scale and resolution corrections, and the uncertainty in the determination of sagitta bias corrections. There are scale factors for muon reconstruction, isolation and trigger efficiencies. Recoil calibration uncertainties include all corrections to the recoil response and resolution.
+
+Electroweak and Top background uncertainties cover uncertainties in the predictions of the $W$, $Z$, di-boson and top production cross sections. The uncertainty in the Multijet background includes uncertainties on the distribution and the total yield.
+
+The unfolding bias represent the uncertainty induced by the freedom in the \ptw distribution assumed in the MC used to determine the migration matrices and selection efficiencies. The generator systematic uncertainty reflects the impact of alternate fragmentation and hadronization models, for a given \ptw distribution.
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{lcc}
+    \toprule
+    Uncertainty category & Nb. of sources at 5~TeV & Nb. of sources at 13~TeV \\
+    \midrule
+    Electron calibration & \\
+    Electron efficiencies & \\
+    Muon calibration & \\
+    Muon efficiencies & \\
+    Recoil calibration & \\
+    EW \& Top backgrounds & \\
+    Multijet background & \\
+    Unfolding bias & \\
+    Generator & \\
+    \bottomrule
+  \end{tabular}
+  \caption{Sources of systematic uncertainties at 5~and 13~TeV.\label{tab:sources}}
+\end{table}
+
+The corresponding correlations are summarized in Table~\ref{tab:correl}. Correlation assumptions are used for the combination of electron- and muon-channel results for a given process, and for cross-section ratios and integrals.
+
+The unfolding procedure generates partial correlations between the statistical uncertainties in the different measurement bins of a given channel, but there are no statistical correlations across channels, lepton flavours or centre-of-mass energies.
+
+The uncertainties in the electron and muon calibration and efficiency corrections are fully correlated across each measured distribution, and across all channels of a given lepton flavour. As these corrections are measured separately in the 5~and 13~TeV datasets, there are no correlations between these samples.
+
+The recoil calibration primarily uses $Z$ boson events to measure response and resolution corrections. The associated uncertainties are fully correlated across each measured distribution, between $W^+$, $W^-$ and $Z$ measurements, and lepton flavours. But the 5~and 13~TeV calibrations are still independent. A sub-dominant component of the recoil calibration corrects for data/MC discrepancies in the \setue distributions, separately for $W^+$, $W^-$ and $Z$ events; this component is thus uncorrelated between the processes and centre-of-mass energies, but identical in the electron and muon channels.
+
+Uncertainties in the backgrounds from electroweak and top-production processes are estimated from variations of the corresponding cross-section predictions, and are assumed fully correlated across the measuremed distributions, $W^+$, $W^-$ and $Z$ measurements, lepton flavours and centre-of-mass energies. The multijet background determination has two main uncertainty components : a statistical component which is uncorrelated, and variations in the methodology (e.g cut variations) which, following the studies presented in Ref.~\cite{Xu:2657146}, are assumed fully correlated between $W^+$ and $W^-$ measurements in both channels. The $Z$-channels use a different method and are considered uncorrelated with the $W$ channels.
+
+Uncertainties associated to the unfolding bias are defined from data-driven fits in the different measurement channels; for each of the $W^+$, $W^-$ and $Z$ processes, similar features are observed in the electron and muon channels. These uncertainties are thus taken fully correlated across each measured distribution and between the electron and muon channels of a given process, but assumed uncorrelated between the three processes at both energies. Finally, the generator systematic is taken fully correlated across all measurements.
+
+\begin{table}
+  \centering
+  \begin{tabular}{lcccccc}
+    \toprule
+    Source of uncertainty & Spectrum & $W^+$ vs. $W^-$ & $W$ vs. $Z$ & $e$ vs. $\mu$ & 5 vs. 13~TeV \\
+    \midrule
+    Data \& MC statistics & Partial & No & No  & No & No \\
+    Lepton calibration \& efficiencies & Full& Full & Full  & No & No \\
+    Recoil calibration ($Z$-based) & Full & Full & Full & Full & No \\
+    Recoil calibration (\setue) & Full & No & No & Full & No \\
+    EW \& top backgrounds & Full & Full & Full & Full & Full \\
+    Multijet background (statistics)     & No & No & No & No & No \\
+    Multijet background (method) & Full & Full & No & Full & Full \\
+    Unfolding bias & Full & No & No & Full & No \\
+    Generator systematic & Full & Full & Full & Full & Full \\
+    \bottomrule
+  \end{tabular}
+  \caption{Simplified description of the correlation model considered when combining channels and calculating ratios or integrals. Correlations assumptions for $W^+$ vs. $W^-$ and $W$ vs. $Z$ are listed for a given lepton flavour; $e$ vs. $\mu$ refers to a given channel.\label{tab:correl}}
+\end{table}
+
+
+The complete correlation matrix of the ensemble of measurements discussed in this note is shown in Figure~\ref{fig:corrfull}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figure/placeholder.pdf}
+  \caption{Correlations between the measurements presented in this note.}
+  \label{fig:corrfull}
+\end{figure}
+
+
+\subsection{Channel combinations}
+
+The combination results are shown in Figures~\ref{fig:combiWp} and~\ref{fig:combiWm}, for the $W^+$ and $W^-$ channels at 5~and~13~TeV respectively. Figure~\ref{fig:combiW} shows the same for the \Wboson, $i.e$ summed over the two charges. Figure~\ref{fig:combiZ} illustrates the combination of the $Z\to ee$ and $Z\to\mu\mu$ channels at 5~and 13~TeV. As summary of the compatibility between the different channels is given in Table~\ref{tab:combichi2}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.49\textwidth]{{figure/combination/emu/Wplus5TeV_iter15_20210504_bin5_emu_0-64.root_v1}.pdf}
+  \includegraphics[width=.49\textwidth]{{figure/combination/emu/Wplus13TeV_iter15_20210504_bin7_emu_0-63.root_v1}.pdf}
+  \caption{Combination of the $W^+$ measurements at 5~TeV (left) and 13~TeV (right). The bands of the separate channels include uncorrelated uncertainties across the channels, whereas the band of the combined result includes correlated uncertainties across the channels. {\color{red}The bias uncertainty is not included for now, and the number of iterations/binning needs to be updated}}
+  \label{fig:combiWp}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.49\textwidth]{{figure/combination/emu/Wminus5TeV_iter15_20210504_bin5_emu_0-64.root_v1}.pdf}
+  \includegraphics[width=.49\textwidth]{{figure/combination/emu/Wminus13TeV_iter15_20210504_bin7_emu_0-63.root_v1}.pdf}
+  \caption{Combination of the $W^-$ measurements at 5~TeV (left) and 13~TeV (right). The bands of the separate channels include uncorrelated uncertainties across the channels, whereas the band of the combined result includes correlated uncertainties across the channels. {\color{red}The bias uncertainty is not included for now, and the number of iterations/binning needs to be updated}}
+  \label{fig:combiWm}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.49\textwidth]{{figure/combination/emu/W5TeV_iter15_20210504_bin5_emu_0-64.root_v1}.pdf}
+  \includegraphics[width=.49\textwidth]{{figure/combination/emu/W13TeV_iter15_20210504_bin7_emu_0-63.root_v1}.pdf}
+  \caption{Combination of the $W$ measurements at 5~TeV (left) and 13~TeV (right). The bands of the separate channels include uncorrelated uncertainties across the channels, whereas the band of the combined result includes correlated uncertainties across the channels. {\color{red}The bias uncertainty is not included for now, and the number of iterations/binning needs to be updated}}
+  \label{fig:combiW}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.49\textwidth]{figure/placeholder.pdf}
+  \includegraphics[width=.49\textwidth]{figure/placeholder.pdf}
+  \caption{Combination of the $Z$ measurements at 5~TeV (left) and 13~TeV (right).}
+  \label{fig:combiZ}
+\end{figure}
+
+
+\begin{table}
+  \centering
+  \begin{tabular}{cccc}
+    \toprule
+    \multicolumn{2}{c}{Channels} & $\sqrt{s}$ & $\chi^2$ / d.o.f \\
+    $W^+\to e\nu$ & $W^+\to \mu\nu$ & 5~TeV &  \textcolor{red}{XYZ / N} \\
+    $W^-\to e\nu$ & $W^-\to \mu\nu$ & 5~TeV &  \textcolor{red}{XYZ / N} \\
+    $Z\to ee$ & $Z\to \mu\mu$ & 5~TeV &  \textcolor{red}{XYZ / N} \\
+    $W^+\to e\nu$ & $W^+\to \mu\nu$ & 13~TeV &  \textcolor{red}{XYZ / N} \\
+    $W^-\to e\nu$ & $W^-\to \mu\nu$ & 13~TeV &  \textcolor{red}{XYZ / N} \\
+    $Z\to ee$ & $Z\to \mu\mu$ & 13~TeV &  \textcolor{red}{XYZ / N} \\
+    \bottomrule
+  \end{tabular}
+  \caption{$\chi^2$ values and numbers of degrees of freedom for the combinations of the measurements presented in this note.\label{tab:combichi2}}
+\end{table}
+
+
+\subsection{Cross-section ratios and integrals}
+
+This section presents ratios between the measured $W^+$, $W^-$ and $Z$ production cross sections at given centre-of-mass energy, and ratios between the 5~TeV and 13~TeV cross sections for a given process.
+Total fidicual cross section are also given for all processes, as integrals over the measured transverse momentum distributions. Such ratios are of physical interest to discriminate between different theoretical calculations or PDFs, and benefit from the cancellation of certain classes of systematic uncertainties.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.49\textwidth]{{figure/combination/emu/WpWmRatio5TeV_iter15_20210504_bin5_emu_0-64.root_v1}.pdf}
+  \includegraphics[width=.49\textwidth]{{figure/combination/emu/WpWmRatio13TeV_iter15_20210504_bin7_emu_0-63.root_v1}.pdf}
+  \caption{Ratio between the $W^+$ and $W^-$ transverse-momentum distributions at 5~TeV (left) and 13~TeV (right). {\color{red}The bias uncertainty is not included for now, and the number of iterations/binning needs to be updated.}}
+  \label{fig:combiWp}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.49\textwidth]{figure/placeholder.pdf}
+  \includegraphics[width=.49\textwidth]{figure/placeholder.pdf}
+  \caption{Ratio between the $W^\pm$ and $Z$ transverse-momentum distributions at 5~TeV (left) and 13~TeV (right).}
+  \label{fig:combiWp}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.6\textwidth]{figure/placeholder.pdf}
+  \includegraphics[width=.6\textwidth]{figure/placeholder.pdf}
+  \includegraphics[width=.6\textwidth]{figure/placeholder.pdf}
+  \caption{Ratio between 13 and 5~TeV cross sections for $W^+$- (top), $W^-$- (middle) and $Z$-boson production (bottom).}
+  \label{fig:combiWp}
+\end{figure}
+
+\begin{table}
+  \centering
+  \begin{tabular}{cccc}
+    \toprule
+    Process & Cross section at $\sqrt{s}=5$~TeV & Cross section at $\sqrt{s}=13$~TeV & Ratio  \\
+    $W^+\to \ell\nu$ & &  \\
+    $W^-\to \ell\nu$ & &  \\
+    $Z\to \ell\ell$  & &  \\
+    \bottomrule
+  \end{tabular}
+  \caption{Integrated fiducial cross sections for $W^+$, $W^-$ and $Z$ production.\label{tab:fidxsec}}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{ccc}
+    \toprule
+    Processes & Cross-section ratio at $\sqrt{s}=5$~TeV & Cross-section ratio at $\sqrt{s}=13$~TeV  \\
+    $W^+/W^-$ & &  \\
+    $W^+/Z$ & &  \\
+    $W^-/Z$  & &  \\
+    $W^\pm/Z$  & &  \\
+    \bottomrule
+  \end{tabular}
+  \caption{Integrated cross-section ratios.\label{tab:fidratios}}
+\end{table}

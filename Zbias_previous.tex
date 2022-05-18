@@ -1,0 +1,243 @@
+
+% MB : all of this moved to appendix
+% keep 1st paragraph below in section 7
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Physics modelling / unfolding bias}
+\label{ss:ZpT_bias}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\color{blue}  SOME of the description NEED to be USED for the main TEXT }
+
+
+The uncertainty on an unfolded result of a given variable due to the regularization parameter for the iterative unfolding methods (also called \emph{prior hypothesis bias} or simply \emph{unfolding bias}) is estimated using a procedure recommended by the Standard Model group called the data-driven closure test. It is described as follows:
+\begin{itemize}
+\item the MC events are reweighted at the truth level to get the best agreement between the corresponding data and MC distributions' shapes at the reconstructed level for the physics observable of interest. This reweighting is usually inferred by using the initial data to MC ratio of reco-level distributions (see below).
+\item the corresponding reconstructed-level MC distribution is unfolded (as pseudo-data) using the migration matrix from the unreweighted MC (including efficiencies and acceptance corrections as well)
+\item the unfolded result is compared to the reweighted truth distribution, thus providing an estimate of the bias uncertainty.
+\end{itemize}
+
+The unfolding bias uncertainty on the unfolded \ptz spectrum is estimated for both the dilepton \pt and the hadronic recoil measurements, using four different inputs to the MC truth reweighting:
+\begin{itemize}
+\item[--] a smooth function defined by fitting the ratio of data to MC shapes of the observable (\ptdilep or \ut) at the reconstructed level for each channel separately, or averaging the channels. This corresponds to 'method 1' in the \Wboson\ case.
+\item[--] an alternative prediction (Sherpa, DYRES) (only available at $\sqrt{s} = 5 \textrm{ TeV}$)
+\item[--] the unfolded \ptz distributions from the dilepton \pt measurements
+\item[--] several data-driven truth reweightings using various generators as starting points, as described in Section~\ref{sec:janfunc}. This is 'method 2' of the \Wboson\ bias estimate.
+\end{itemize}
+
+The baseline estimate for the bias is the one using smooth functions, defined separately for each channel and observable. \textbf{This is still to be discussed.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Reweighting using smooth functions} The comparisons between data and MC at reconstruction level before and after reweighting, together with the corresponding fit functions, are shown for the \ptdilep and \ut distributions using a 2~\GeV\ binning on figures~\ref{fig:fits_5_2GeV} ($\sqrt{s} = 5$~\TeV\ dataset) and~\ref{fig:fits_13_2GeV} ($\sqrt{s} = 13$~\TeV\ dataset). The same comparisons but with a coarser binning, 5~\GeV, can be found in Appendix~\ref{sec:zpt_bias} (Figures~\ref{fig:fits_pt_5_5GeV} to~\ref{fig:fits_ut_13_5GeV}).
+
+%------------------------------ 5 TeV fits -----------------------------
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_fit_pT_Unfolding_5TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_fit_pT_Unfolding_5TeV_Zmumu_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_fit_uT_Unfolding_5TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_fit_uT_Unfolding_5TeV_Zmumu_2GeVBin.pdf}}\\
+\caption{Comparison between data and MC simulation at reconstruction level of the dilepton \pt (a, b) and \ut (c, d) distributions before (blue) and after (red) reweighting for \Zee and \Zmm channels using  2~\GeV\ binning at $\sqrt{s} = 5$~\TeV\. The corresponding ratios of data to MC are also shown. The black curve corresponds to the polynomial fit performed in the range of $0<\ptz<60$~\GeV. }
+\label{fig:fits_5_2GeV}
+\end{figure}
+
+%------------------------------ 13 TeV fits -----------------------------
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/13TeV/Bias_fit_bias_tests_pT_Unfolding_13TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/13TeV/Bias_fit_bias_tests_pT_Unfolding_13TeV_Zmumu_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/13TeV/Bias_fit_bias_tests_uT_Unfolding_13TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/13TeV/Bias_fit_bias_tests_uT_Unfolding_13TeV_Zmumu_2GeVBin.pdf}}\\
+\caption{Comparison between data and MC simulation at reconstruction level of the dilepton \pt (a, b) and \ut (c, d) distributions before (blue) and after (red) reweighting for \Zee and \Zmm channels using  2~\GeV\ binning at $\sqrt{s} = 13$~\TeV\. The corresponding ratios of data to MC are also shown.  The black curve corresponds to the polynomial fit performed in the range of $0<\ptz<60$~\GeV for the dilepton \pt and in the range of $0<\ptz<35$~\GeV\ for \ut. }
+\label{fig:fits_13_2GeV}
+\end{figure}
+
+As can be seen, the agreement between data and MC after the reweighting for \ptz with 2~\GeV\ bins is much better at $\sqrt{s} = 13$~\TeV\ than at $\sqrt{s} = 5$~\TeV. \textbf{TODO : this non-closure will have to be improved.} Since the reweighting functions are defined separately for each channel and   observable, some differences in the evaluated bias uncertainty are observed between the two decay channels and also between the measurements using \ut\ and \ptdilep.
+%see Figures~\ref{fig:bias_dd_pt_5_2GeV} to ~\ref{fig:bias_dd_ut_5_2GeV}.
+
+The results with the 2~\GeV\ binning at $\sqrt{s} = 5$~\TeV\ show a higher bias uncertainty for the electron channel than in the muon channel for the \ptdilep\ measurement (0.2\% after 2 iterations in the first bin). This can be seen on fig.~\ref{fig:bias_dd_5_2GeV}, and is due to a fit feature, which moves the MC further from unity after reweighing in the electron channel than in the muon channel. \textbf{This is maybe why we might want to use an alternative method as the baseline, to be discussed}. Given the high purity of the \ptz measurement from the dilepton \pt distribution, the bias on the unfolded \ptz from \ptdilep becomes negligible after four iterations. The bias uncertainty on the \ut measurement is much higher than the bias on the \ptdilep measurement and is larger in the muon channel ($>2\%$ in the first bin).
+The results using a bin width of 5~\GeV\ (see Figure~\ref{fig:bias_dd_5_5GeV}) show a similar bias uncertainty for the \ptdilep measurement in each of the two \Zboson decay channels, which becomes negligible after two iterations ($\sim 0.1\%$ in the first bins). The bias uncertainty for the \ut measurement in the first bins is larger in the muon channel ($\sim 0.7\%$) than in the electron channel ($\sim 0.3\%$) after four iterations.
+%------------------------------ 5 TeV bias dd -----------------------------
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_pT_Unfolding_5TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_pT_Unfolding_5TeV_Zmumu_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_uT_Unfolding_5TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_uT_Unfolding_5TeV_Zmumu_2GeVBin.pdf}}\\
+\caption{Bias uncertainty on \ptz using dilepton \pt (a, b) and \ut (c, d) measurements estimated with a data-driven closure test for different numbers of unfolding iterations with 2~\GeV\ bins for the \Zee and \Zmm channels at $\sqrt{s} = 5$~\TeV\ .}
+\label{fig:bias_dd_5_2GeV}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_pT_Unfolding_5TeV_Zee_5GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_pT_Unfolding_5TeV_Zmumu_5GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_uT_Unfolding_5TeV_Zee_5GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_uT_Unfolding_5TeV_Zmumu_5GeVBin.pdf}}\\
+\caption{Bias uncertainty on \ptz using dilepton \pt (a, b) and \ut (c, d) measurements estimated with a data-driven closure test for different numbers of unfolding iterations with 5~\GeV\ bins for the \Zee and \Zmm channels at $\sqrt{s} = 5$~\TeV\ .}
+\label{fig:bias_dd_5_5GeV}
+\end{figure}
+
+The uncertainties at $\sqrt{s} = 13$~\TeV\ show again similar behaviour for the dilepton \pt measurement, where the two \Zboson decay channels differ and indicate a sensitivity of the results to the fit (see Figures~\ref{fig:bias_dd_13_2GeV},~\ref{fig:bias_dd_13_5GeV}).
+Using 2~\GeV\ bins width, an uncertainty of 1\% (\Zee) and 0.4\% (\Zmm) is found in the first bin after two iterations for the \ptdilep measurement, while amounting to 1.3\% (\Zee) and 0.7\% (\Zmm) for the \ut measurement in the first bin after four iterations. Using 5~\GeV\ bins width, an uncertainty of 0.3\% is found for the dilepton \pt measurement in the first bin after two iterations, and 0.1\% for the \ut measurement in the first bin after four iterations for both channels. Compared to the $\sqrt{s} = 5$~\TeV\ results, the bias uncertainty for $\sqrt{s} = 13$~\TeV\ is higher This is due to a higher initial data to MC discrepancy (and hence a larger impact of the reweighting) ; in the case of \ut\ the worse bias uncertainty also comes from a worse hadronic recoil resolution than at 5~\TeV, leading to lower purities.
+
+%------------------------------ 13 TeV bias dd -----------------------------
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/13TeV/Bias_bias_tests_pT_Unfolding_13TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/13TeV/Bias_bias_tests_pT_Unfolding_13TeV_Zmumu_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/13TeV/Bias_bias_tests_uT_Unfolding_13TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/13TeV/Bias_bias_tests_uT_Unfolding_13TeV_Zmumu_2GeVBin.pdf}}\\
+\caption{Bias uncertainty on \ptz using dilepton \pt (a, b) and \ut (c, d) measurements estimated with a data-driven closure test for different numbers of unfolding iterations with 2~\GeV\ bins for the \Zee and \Zmm channels at $\sqrt{s} = 13$~\TeV\ .}
+\label{fig:bias_dd_13_2GeV}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/13TeV/Bias_bias_tests_pT_Unfolding_13TeV_Zee_5GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/13TeV/Bias_bias_tests_pT_Unfolding_13TeV_Zmumu_5GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/13TeV/Bias_bias_tests_uT_Unfolding_13TeV_Zee_5GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/13TeV/Bias_bias_tests_uT_Unfolding_13TeV_Zmumu_5GeVBin.pdf}}\\
+\caption{Bias uncertainty on \ptz using dilepton \pt (a, b) and \ut (c, d) measurements estimated with a data-driven closure test for different numbers of unfolding iterations with 5~\GeV\ bins for the \Zee and \Zmm channels at $\sqrt{s} = 13$~\TeV\ .}
+\label{fig:bias_dd_13_5GeV}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Reweighting using a fit from averaged muon and electron channels}
+In this check, the smooth functions are defined by fitting the ratio of data to MC distributions averaged over the two decay channels. For both physics observables, the comparison of the dsitributions between data and MC before and after reweighting, together with the corresponding fits, using the two considered binnings, are shown for the $\sqrt{s} = 5$~\TeV\ dataset in Appendix~\ref{subsec:bias_common} on Figures~\ref{fig:bias_commonfit_pt_5} and~\ref{fig:bias_commonfit_ut_5}. The same plots for the $\sqrt{s} = 13$~\TeV\ dataset are displayed on Figures~\ref{fig:bias_commonfit_pt_13} and~\ref{fig:bias_commonfit_ut_13}.
+
+At $\sqrt{s} = 5$~\TeV, with the 2~\GeV\ binning, the method gives a bias uncertainty for the dilepton \pt measurement of $\sim0.4\%$ in the first bin after two iterations and of $\sim0.9\%$ for the \ut measurement after four iterations. Using the 5~\GeV\ binning, the bias uncertainty for the dilepton \pt measurement is estimated to be approximately $>0.1\%$ in the first bin after two iterations and approximately $<0.1\%$ for the \ut measurement after four iterations (see Figure~\ref{fig:bias_unc_commonfit_pt_5} and~\ref{fig:bias_unc_commonfit_ut_5} in Appendix~\ref{subsec:bias_common}).
+
+At $\sqrt{s} = 13$~\TeV, with the 2~\GeV\ binning, the method gives a bias uncertainty for the dilepton \pt measurement of $\sim 0.6\%$ in the first bin after two iterations and of $\sim0.1\%$ for the \ut measurement after four iterations. Using the 5~\GeV\ binning , the bias uncertainty for the dilepton \pt measurement is estimated to be approximately $0.3\%$ in the first bin after two iterations and approximately $<0.1\%$ for the \ut measurement after four iterations (see Figure~\ref{fig:bias_unc_commonfit_pt_13} and~\ref{fig:bias_unc_commonfit_ut_13} in Appendix~\ref{subsec:bias_common}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Reweighting using the unfolded \ptz dsitributions}
+As an additional check, the unfolded \ptz distributions from the dilepton \pt measurements (after two iterations) presented in Section~\ref{sec:Zresult} are used as an estimate of the bias uncertainty on the \ut measurements. The checks are done using the unfolded \ptz distribution at each centre of mass energy, averaging the results from the electron and muon channels.
+
+The results from the averaged unfolded \ptz distribution show similar uncertainties between the channels with 2~\GeV\ and 5~\GeV\ bins at $\sqrt{s} = 5$~\TeV\ (see Figure~\ref{fig:bias_unfoldzptcomb_5} in Appendix~\ref{subsec:bias_ut_unfoldzpt}). Using this procedure, the 5~\GeV\ bin results are consistent with those found using a smooth function for the reweighting (see Figure~\ref{fig:bias_dd_5_5GeV}).
+The larger bias is found at $\sqrt{s} = 13$~\TeV\ with an uncertainty in the first bin of 4\% with 2~\GeV\ bins and $>2\%$ with 5~\GeV\ bins. This is expected, given the large discrepancy between the nominal Powheg MC and the reweighted truth which follows the data-unfolded distribution, and given the worse resolution on \ut. The data-unfolded distribution differs from the MC prediction by around 5\% in the first bin (see Figure~\ref{f:unf_pT_Zmm13} and Figure~\ref{fig:bias_unfoldzptcomb_13} in Appendix~\ref{subsec:bias_ut_unfoldzpt}).
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/checks/unfoldedZpT/Bias_bias_unfoldzpt_uT_Unfolding_5TeV_Zmumu_5GeVBin_usingZptufoldComb.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/checks/commonFit/Bias_bias_combfit_uT_Unfolding_5TeV_Zmumu_5GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/checks/unfoldedZpT/Bias_bias_unfoldzpt_uT_Unfolding_13TeV_Zmumu_5GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/checks/commonFit/Bias_bias_combfit_uT_Unfolding_13TeV_Zmumu_5GeVBin.pdf}}\\
+\caption{Bias uncertainty on \ptz using the \ut measurement estimated with a data-driven closure test by using the averaged unfolded \ptz (a, c) and the fit from the averaged ratios of data to MC distributions at reco level (b, d) for the different number of unfolding iterations in 5~\GeV\ bins for the \Zmm channel at $\sqrt{s} = 5$~\TeV\ (a, b) and $\sqrt{s} = 13$~\TeV\ (c, d).}
+\label{fig:bias_checks_13_5GeV}
+\end{figure}
+
+Summarizing these first two methods, the bias uncertainty on \ptz using the \ut measurement estimated using the unfolded \ptz spectrum from the dilepton \pt measurement and the smooth function defined from the fit of the averaged ratios of data to MC reco distributions are shown on Figure~\ref{fig:bias_checks_13_5GeV}. The results found using the averaged unfolded \ptz suffer from limited statistics in the unfolded \ptz data at $\sqrt{s} = 5$~\TeV\ .
+
+\subsubsection{Reweighting to the \SHERPA\ and DYRES predictions}
+The alternative reweightings of the \POWHEG+\PYTHIA\ MC truth spectra to the \SHERPA\ and DYRES predictions are performed at $\sqrt{s} = 5$~\TeV\. The comparison between the data and \POWHEG+\PYTHIA\ (at reconstructed level) before and after the reweighting to \SHERPA\ is shown in Appendix~\ref{subsec:bias_sherpa}, while a similar plot using DYRES can be found in Appendix~\ref{subsec:bias_dyturbo}. The reweighted \POWHEG+\PYTHIA\ MC displays large differences with respect to the data at reconstructed level.
+The difference in the truth \ptz distribution, using bin sizes of 2~\GeV\ and 5~\GeV, between the reweighted and non-reweighted samples after fiducial cuts is shown in Figure~\ref{fig:truth_fid}.
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Truth_fid_sherpa_bias_Histmaker02_uT_Unfolding_5TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Truth_fid_DYTurboNNL_bias_Histmaker02_pT_Unfolding_5TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Truth_fid_sherpa_bias_Histmaker02_uT_Unfolding_5TeV_Zee_5GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Truth_fid_DYTurboNNL_bias_Histmaker02_pT_Unfolding_5TeV_Zee_5GeVBin.pdf}}\\
+\caption{Difference between the true \ptz distribution with 2~\GeV\ bins for Powheg and Powheg reweighted to Sherpa (a) and DYRES (b) and with 5~\GeV\ bins (c, d) after fiducial cuts at $\sqrt{s} = 5$~\TeV\ . }
+\label{fig:truth_fid}
+\end{figure}
+
+As usual, the nominal migration matrix and correction factors (efficiencies, acceptance) is used to unfold the reweighted samples. The resulting unfolded spectra are subsequently compared to their initial (truth-reweighted) predictions.
+The resulting bias uncertainties are found to be similar between the decay channels, but are larger than when using the previous methods. This is largely due to strong differences between the considered predictions (DYRES, \SHERPA) and the baseline MC, which are indeed larger than the data to baseline MC differences. The results are shown on Figures~\ref{fig:bias_pt_predictions} and~\ref{fig:bias_ut_predictions}.
+For the 2~\GeV\ bin size results, the bias uncertainty increases up to $6-8\%$ for the \ut measurement for four to eight iterations, indicating that more iterations are needed for the measurement. The bias uncertainty for the dilepton \pt measurement is around 2\% in the first bin after two iterations. For the 5~\GeV\ bin results, the bias uncertainty is around $2\%$ for the \ut measurement after four to eight iterations and less than 0.4\% for the dilepton \pt measurement after two iterations.
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_event_sherpapT_Unfolding_5TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_DYTurboNNL_bias_Histmaker02pT_Unfolding_5TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_sherpa_pT_Unfolding_5TeV_Zee_5GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_DYTurboNNL_bias_Histmaker02pT_Unfolding_5TeV_Zee_5GeVBin.pdf}}\\
+\caption{The bias uncertainty on the dilepton \pt measurement using reweighting to Sherpa (a, c) and DYRES (b, d) for different numbers of unfolding iterations with 2~\GeV\ and 5~\GeV\ bins for the \Zee channel at $\sqrt{s} = 5 \textrm{ TeV}$.}
+\label{fig:bias_pt_predictions}
+\end{figure}
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_sherpa_bias_Histmaker02uT_Unfolding_5TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_DYTurboNNL_bias_Histmaker02uT_Unfolding_5TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_sherpa_uT_Unfolding_5TeV_Zee_5GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/5TeV/Bias_DYTurboNNL_bias_Histmaker02uT_Unfolding_5TeV_Zee_5GeVBin.pdf}}\\
+\caption{The bias uncertainty on the hadronic recoil measurement using reweighting to Sherpa (a, c) and DYRES (b, d) for different numbers of unfolding iterations with 2~\GeV\ and 5~\GeV\ bins for the \Zee channel at $\sqrt{s} = 5 \textrm{ TeV}$.}
+\label{fig:bias_ut_predictions}
+\end{figure}
+
+The comparison of the bias uncertainty evaluations for the first bin of the unfolded \ptz using the different reweighting methods discussed above, for both observables (\ptdilep\ and \ut), is shown in Table~\ref{tab:bias_first_bin_5TeV} for $\sqrt{s} = 5$ \TeV\ and in Table~\ref{tab:bias_first_bin_13TeV} for $\sqrt{s} = 13$ \TeV.
+
+\begin{table}[htpb]
+\centering
+\scalebox{0.8}{%
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+\toprule
+			 &\multicolumn{4}{c|}{\textbf{2~\GeV\ bins}}				  & \multicolumn{4}{c|}{\textbf{5~\GeV\ bins}}	\\  \hline
+		     & \multicolumn{2}{c|}{\pt} &	\multicolumn{2}{c|}{\ut}  &\multicolumn{2}{c|}{\pt} &\multicolumn{2}{c|}{\ut}  \\ \hline
+Input	    & {\Zee} & {\Zmm} 			    &  {\Zee} & {\Zmm} 			& {\Zee} & {\Zmm} 			&  {\Zee} & {\Zmm}\\
+for reweighting& [ \%]    & [\% ]     		& [ \%]    &  [\% ]          		 &  [ \%]    &   [\% ]   			&  [ \%]    &       [\% ]   \\
+\midrule
+{Smooth function}				     & 0.4 & 0.2 & 0.4 & 2.5 					  & 0.2 & 0.1 & 0.3 & 0.8 \\
+{Smooth function (averaged)}& 0.3& 0.3 &0.9& 0.9						 & 0.1  & 0.1  & $<$0.1 &$<$0.1\\
+{Sherpa}								 & $>2$&$>2$ &5.5 &5.5					  & 0.3 & 0.3 & 0.2 &0.2 \\
+{DYRES	}							     &$>2$& $>2$&8 &8							  & 0.2 &0.2 &1.5 &1.5\\
+{Unfolded \ptz (averaged)}    &$-$&$-$ & 0.2 & 0.3					      & $-$ &$-$ & 0.9 & 0.9  \\
+\bottomrule
+\end{tabular}}
+\caption{Approximate numbers for the bias uncertainty in the first bin of the unfolded \ptz distribution using \ptdilep\ (two iterations) and \ut\ (four iterations) with 2~\GeV\ and 5~\GeV\ bins at $\sqrt{s} = 5$~\TeV\. The uncertainty is shown for different inputs used for the reweighting of truth MC distributions. }
+\label{tab:bias_first_bin_5TeV}
+\end{table}
+
+\begin{table}[htpb]
+\centering
+\scalebox{0.8}{%
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+\toprule
+			 &\multicolumn{4}{c|}{\textbf{2~\GeV\ bins}}				  & \multicolumn{4}{c|}{\textbf{5~\GeV\ bins}}	\\  \hline
+		     & \multicolumn{2}{c|}{\pt} &	\multicolumn{2}{c|}{\ut}  &\multicolumn{2}{c|}{\pt} &\multicolumn{2}{c|}{\ut}  \\ \hline
+Input	    & {\Zee} & {\Zmm} 			    &  {\Zee} & {\Zmm} 			& {\Zee} & {\Zmm} 			&  {\Zee} & {\Zmm}\\
+for reweighting& [ \%]    & [\% ]     		& [ \%]    &  [\% ]          		 &  [ \%]    &   [\% ]   			&  [ \%]    &       [\% ]   \\
+\midrule
+{Smooth function}				     & 1 & 0.5 & 1.3 & 0.7 					  & 0.3 & 0.3 & $<$0.1 & 0.2 \\
+{Unfolded \ptz (averaged)}    &$-$&$-$ & 3.3 & 3					      & $-$ &$-$ & 2.2 & 2.2  \\
+{Smooth function (averaged)}& 0.6& 0.6 &0.1& 0.1						 & 0.2  & 0.3  & 0.1 &0.1\\
+\bottomrule
+\end{tabular}}
+\caption{Approximate numbers for the bias uncertainty in the first bin of the unfolded \ptz distribution using \ptdilep\ (two iterations) and \ut\ (four iterations) with 2~\GeV\ and 5~\GeV\ bins at $\sqrt{s} = 13$~\TeV\ . The uncertainty is shown for different inputs used for the reweighting of truth MC distributions. }
+\label{tab:bias_first_bin_13TeV}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%            JAN method                    %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Data-driven truth reweightings using various generators}
+In the following section, a similar truth reweighting as described in Section~\ref{sec:janfunc} for W events is studied. The effect of the reweighting can be seen in Appendix~~\ref{subsec:bias_jan}).
+The bias uncertainty obtained with four iterations for \ut and two iterations for \ptdilep\ using the various truth reweighting functions are compared to the results where the bias uncertainty was obtained using the data driven approach from a smooth fit function (Figures~\ref{fig:bias_comtojan_2_5TeV} and~\ref{fig:bias_comtojan_2_13TeV}).
+As expected, the level of bias uncertainty obtained from these truth reweighting functions shows a consistent trend for the electron and muon channels and a large uncertainty for the \ut distribution due to its high number of bin to bin migrations.
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/checks/JanRewFunctions/BiasComp_pT_Unfolding_5TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/checks/JanRewFunctions/BiasComp_pT_Unfolding_5TeV_Zmumu_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/checks/JanRewFunctions/BiasComp_uT_Unfolding_5TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/checks/JanRewFunctions/BiasComp_uT_Unfolding_5TeV_Zmumu_2GeVBin.pdf}}\\
+\caption{Comparison of the bias uncertainty on \ptz using the dilepton \pt (a, b) and \ut (c, d) measurements estimated with a data-driven closure test using different inputs for the reweighting: generator's predictions varied as described in section~\ref{sec:janfunc} (black), fit functions derived for each channel separately (red line), and fit functions derived from averaging both channels (dashed red line), with 2~\GeV\ bins for the \Zee and \Zmm channel at $\sqrt{s} = 5$~\TeV\ .}
+\label{fig:bias_comtojan_2_5TeV}
+\end{figure}
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/checks/JanRewFunctions/BiasComp_pT_Unfolding_13TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/checks/JanRewFunctions/BiasComp_pT_Unfolding_13TeV_Zmumu_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/checks/JanRewFunctions/BiasComp_uT_Unfolding_13TeV_Zee_2GeVBin.pdf}}
+\subfloat[]{\includegraphics[width=.25\textwidth]{figure/ZpT_bias/checks/JanRewFunctions/BiasComp_uT_Unfolding_13TeV_Zmumu_2GeVBin.pdf}}\\
+\caption{Comparison of the bias uncertainty on \ptz using the dilepton \pt (a, b) and \ut (c, d) measurements estimated with a data-driven closure test using different inputs for the reweighting: generator's predictions varied as described in section~\ref{sec:janfunc} (black), fit functions derived for each channel separately (red line), and fit functions derived from averaging both channels (dashed red line), with 2~\GeV\ bins for the \Zee and \Zmm channel at $\sqrt{s} = 13$~\TeV\ .}
+\label{fig:bias_comtojan_2_13TeV}
+\end{figure}

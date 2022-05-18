@@ -1,0 +1,63 @@
+\subsection{Bin-by-bin unfolding}
+\label{sec:Zunfolding}
+
+%LAB - commented out we show only "purity" matrix to Harmonise with  W .
+%\begin{figure}[h]
+%\centering
+%\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_Zunfolding/mig_matrix_Zmumu_13TeV_2GeVbins.pdf}\label{f:migmatrix_pTZmm13}}
+%\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_Zunfolding/mig_matrix_uT_Zmumu_13TeV_5GeVbins.pdf}\label{f:migmatrix_uTZmm13}}\\
+%\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_Zunfolding/mig_matrix_Zmumu_5TeV_2GeVbins.pdf}\label{f:migmatrix_pTZmm5}}
+%\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_Zunfolding/mig_matrix_uT_Zmumu_5TeV_5GeVbins.pdf}\label{f:migmatrix_uTZmm5}}
+%\caption{Migration matrices for the \Zmm channel at 13 (top) and 5 (bottom) TeV for \ptdilep (left) and \ut (right).}
+%  \label{f:migmatrixZ}
+%\end{figure}
+
+% MB - removed (redundant)
+%As described in section~\ref{sec:unfolding}, the unfolding procedure used for the Z analysis is based on the iterative bayesian regularized unfolding approach, described in \cite{DAgostini:1994fjx,DAgostini:2010hil}.
+%As in the W analysis case, the implementation of the D'Agostini iterative scheme is taken from RooUnfold. A number of iterations has to be chosen. This number is optimised to result in a minimal sum (in quadrature) of the smallest statistical error and of the bias induced by the unfolding. %The bias estimation is discussed in section~\ref{ss:ZpT_bias}, whilst the optimisation of the number of iterations is discussed in section~\ref{ss:ZpT_stat_sys_unc}.
+
+% MB - moved to previous section
+%In \Zboson\ events, both the \ptdilep\ and \ut\ distributions are unfolded to extract the \ptz\ spectra.
+%Figures~\ref{f:migmatrix_pTZmm13} - ~\ref{f:migmatrix_uTZmm5} show examples of migration matrices for both observables at 13 and 5~\TeV. The migration matrix is determined using the baseline Monte Carlo samples, and is defined as a two-dimensional histogram for all selected events passing the $T\&R$ criteria (see also section~\ref{sec:unfolding}).
+%The purity in a given bin, that is bin-width dependent, is defined as the fraction of events in a given reconstructed bin which are also from the corresponding truth bin. It can be studied by normalising the distribution of truth \ptz\ in each reconstructed \pt\ bin to their integral.
+%The resulting 2D histogram is shown for \Zmm on Figure~\ref{fig:purityZ}, where, looking at the bins along the diagonal, one can observe a \ptdilep distribution purity higher than 70\%, whereas the \ut distribution purity being lower (about 20\%), reflecting the different energy resolutions between the leptons and the recoil.
+
+For the Z analysis the \ptdilep\ and \ut\ distributions are also unfolded using the standard bin-by-bin unfolding method to compare with Bayesian unfolding and to help determine the number of unfolding iterations to be used in this latter case (more details in Appendix~\ref{sec:uncComparison}). In the case of bin-by-bin unfolding, the following steps are followed:
+\begin{enumerate}
+\item Find $T_{i}$, the number of events in bin $i$ of the truth-level MC distribution, and $R_{i}$, the number of events in the same bin $i$ of the reconstructed-level MC distribution.
+\item Define the correction factor $C_{i} = T_{i}/R_{i}$.
+\item Unfold the data such that the unfolded spectrum that estimates $T_{i}$ is $U_{i} = C_{i} \times (D_{i} - B_{i})$, where $D_{i}$ is the measured data events in in bin $i$, and $B_{i}$ is the predicted background contribution in bin $i$.
+\end{enumerate}
+The statistical error on the bin-by-bin unfolded result is the combination of the statistical (``$\sqrt{N}$'') errors on the measured spectrum and on the MC distributions. The systematic error comes from the $C$ factor and is the same as the Bayesian unfolding systematic error at reconstructed-level.
+
+% MB - moved to previous section
+%\begin{figure}[h]
+%\centering
+%\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_Zunfolding/migMatrix_pT_Zmumu_13TeV_2GeVbins.pdf}\label{f:migmatrix_pTZmm13}}
+%\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_Zunfolding/migMatrix_uT_Zmumu_13TeV_2GeVbins.pdf}\label{f:migmatrix_uTZmm13}}
+%\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_Zunfolding/migMatrix_pT_Zmumu_5TeV_2GeVbins.pdf}\label{f:migmatrix_pTZmm5}}
+%\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_Zunfolding/migMatrix_uT_Zmumu_5TeV_2GeVbins.pdf}\label{f:migmatrix_uTZmm5}}
+%\caption{Migration matrices for the \Zmm channel at 13 (top) and 5 (bottom) TeV for \ptdilep (left) and \ut (right).}\end{figure}
+
+
+
+Bin-by-bin unfolding accurately accounts for correlation between measured bins only if the purity of the response matrix is high. %Figures~\ref{f:purity_pTZmm13} to \ref{f:purity_uTZmm5} show the purity for the \Zmm channel for 13 and 5 TeV distribution respectively.
+A comparison of the \ptz\ distributions unfolded using both bin-by-bin unfolding and Bayesian unfolding are shown in figures \ref{f:binunfold_pTZmm13} to \ref{f:binunfold_uTZmm5}.
+% LAB futher description not really needed
+% we would expect bin-by-bin unfolding to be consistent with Bayesian unfolding for the \ptdilep\ distribution due to its high purity, whereas in the case of \ut, only Bayesian unfolding is expected to lead to reasonable estimate of \ut, due to its low purity. Indeed, in this latter case, the bin-by-bin unfolding will suffer from large bin migrations.
+%As expected, the two different unfolding methods produce completely compatible results for \ptdilep due to its high purity, but this is not the case for \ut due to its low purity.
+Note that the results presented in this set of figures simply illustrates the difference between the two unfolding methods, as the results themselves are from February 2020 when the decision was made to move entirely to Bayesian unfolding for both \ptdilep\ and \ut observables.
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_Zunfolding/binunf_cross_section_old_pT_Zmumu_13TeV_2GeVbins_2iters.pdf}\label{f:binunfold_pTZmm13}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_Zunfolding/binunf_cross_section_old_uT_Zmumu_13TeV_5GeVbins_8iters.pdf}\label{f:binunfold_uTZmm13}}\\
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_Zunfolding/binunf_cross_section_old_pT_Zmumu_5TeV_2GeVbins_2iters.pdf}\label{f:binunfold_pTZmm5}}
+\subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_Zunfolding/binunf_cross_section_old_uT_Zmumu_5TeV_5GeVbins_8iters.pdf}\label{f:binunfold_uTZmm5}}
+\caption{\ptz\ Unfolded cross-sections comparing bin-by-bin unfolding (black) with Bayesian unfolding (blue) along with the nominal  \textsc{Powheg} + \textsc{Pythia8} MC described in Ref.~\cite{Kretzschmar:2657141} (red). %These plots illustrate the impact of large bin migrations for \ut compared to \ptdilep;
+The distributions themselves are results from February, 2020, and so are just shown to compare the two unfolding methods. \ptz\ differencial cross-sections are shown for the \Zmm channel at 13 (top) and 5 (bottom) TeV using \ptdilep (left) and \ut (right) distributions for the unfolding respectively.}
+\end{figure}
+
+%This appendix is apparently outdated
+%Appendix~\ref{app:unfoldMeth} provides a few more details about the unfolding methodologies uses in Z events.
+\clearpage

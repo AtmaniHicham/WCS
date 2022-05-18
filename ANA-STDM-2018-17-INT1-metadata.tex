@@ -1,0 +1,55 @@
+%-------------------------------------------------------------------------------
+% This file contains the title, author and abstract.
+% It also contains all relevant document numbers used for an ATLAS note.
+%-------------------------------------------------------------------------------
+
+% Title
+\AtlasTitle{Measurement of the W boson production, single and double differential cross sections with low the ATLAS detector at the LHC}
+
+% Draft version:
+% Should be 1.0 for the first circulation, and 2.0 for the second circulation.
+% If given, adds draft version on front page, a 'DRAFT' box on top of each other page,
+% and line numbers.
+% Comment or remove in final version.
+\AtlasVersion{0.2}
+
+% Abstract - % directly after { is important for correct indentation
+\AtlasAbstract{}
+
+% Author - this does not work with revtex (add it after \begin{document})
+\author{The ATLAS Collaboration}
+
+% Authors and list of contributors to the analysis
+% \AtlasAuthorContributor also adds the name to the author list
+% Include package latex/atlascontribute to use this
+% Use authblk package if there are multiple authors, which is included by latex/atlascontribute
+\usepackage{authblk}
+% Use the following 3 lines to have all institutes on one line
+\makeatletter
+\renewcommand\AB@affilsepx{, \protect\Affilfont}
+\makeatother
+\renewcommand\Authands{, } % avoid ``. and'' for last author
+\renewcommand\Affilfont{\itshape\small} % affiliation formatting
+%\AtlasAuthorContributor{Nancy Andari}{a}{}
+%\AtlasAuthorContributor{Fabrice Balli}{a}{Hadronic recoil reconstruction and calibration, Analysis framework development}
+%\AtlasAuthorContributor{Ludovica Aperio Bella}{b}{}
+%\AtlasAuthorContributor{Maarten Boonekamp}{a}{}
+%\AtlasAuthorContributor{Mykola Khandoga}{a}{}
+%\AtlasAuthorContributor{Jan Kretzschmar}{e}{}
+%\AtlasAuthorContributor{Alexander Sydorenko}{c}{Muon performance, Analysis framework development}
+%\AtlasAuthorContributor{Mengran Li}{d}{Hadronic Recoil Studies}
+%\AtlasAuthorContributor{Harry Lyons}{e}{Analysis framework development}
+%\AtlasAuthorContributor{Benjamin Davis-Purcell}{f}{}
+%\AtlasAuthorContributor{Nataliia Zakharchuk}{f}{}
+%\affil[a]{CEA Saclay/IRFU}
+%\affil[b]{CERN}
+%\affil[c]{Mainz University}
+%\affil[d]{IHEP Beijing}
+%\affil[e]{University of Liverpool}
+%\affil[f]{Carleton University}
+
+% ATLAS reference code, to help ATLAS members to locate the paper
+\AtlasRefCode{ANA-STDM-2018-17}
+
+% ATLAS note number. Can be an COM, INT, PUB or CONF note
+\AtlasNote{ANA-STDM-2018-17-INT1}

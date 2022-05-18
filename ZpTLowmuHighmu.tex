@@ -1,0 +1,113 @@
+\subsubsection{Compatibility study of the low-$\mu$ $p_{T}^{Z}$ measurements between the low-$\mu$ and the high-$\mu$ analysis}
+\label{sssec:compatibilityHighmu}
+
+Here we present the comparison of the low pile-up $p_{\mathrm{T}}^{Z}$ measurement at 13~TeV (\ref{sec:physcorr}) to the recently published ATLAS measurement of $p_{\mathrm{T}}^{Z}$ at 13~TeV using the full high pile-up dataset Ref~\cite{Aad:2019wmn}.
+The high-$\mu$ $p_{\mathrm{T}}^{Z}$ distribution from~Ref~\cite{Aad:2019wmn}  is shown in \Fig{\ref{f:highmuZpT}}.
+The electron and muon channels are compared separately. Since the fiducial phase spaces in the two analyses are different~(\Tab{\ref{tab:fiducial}}), corresponding corrections must be taken into account.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=.79\textwidth]{figure/ZpT_highmu_compatibility/Plot_TheoryComparison_PTZ.pdf}
+\caption{Unfolded p$_{T}^{Z}$ results in the high-$\mu$ analysis.}
+\label{f:highmuZpT}
+\end{figure}
+
+The only difference in fiducial phase space is the lepton $p_\mathrm{T}$ cut, which is 25~GeV in the low-$\mu$ analysis and 27~GeV in the high-$\mu$ analysis because in high-$\mu$ data, the trigger for $p_\mathrm{T}^l$ is 27GeV.
+A corresponding correction factor is applied to the high-$\mu$ distribution before comparison~(\Fig{\ref{f:Correction}}). This correction factor is derived from the ratio of events in low-mu fiducial phase space to high-mu fiducial phase space, obtained from MC estimation.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Fiducial & Low-$\mu$ Analysis & High-$\mu$ Analysis \\
+\hline
+$\eta_l$  & $|\eta_{l}| < 2.5$ & $|\eta_{l}| < 2.5$ \\
+\hline
+$p_{T}^{l}$  & $p_{T}^{l}>25\textrm{ GeV}$ &  $p_{T}^{l}>27\textrm{ GeV}$ \\
+\hline
+$m_{ll}$ &  $66 \textrm{ GeV} < m_{ll} < 116 \textrm{ GeV}$ & $66 \textrm{ GeV} < m_{ll} <116 \textrm{ GeV}$ \\
+\hline
+\end{tabular}
+\caption{Comparison of fiducial phase space between low-$\mu$ and high-$\mu$ p$_{\mathrm{T}}^{Z}$ measurements.}
+\label{tab:fiducial}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=.69\textwidth]{figure/ZpT_highmu_compatibility/Correction_2GeVBin.pdf}
+\caption{Correction factor as a function of $p_{T}$ accounting for the different fiducial phase spaces in the low-$\mu$ and high-$\mu$ analyses.}
+\label{f:Correction}
+\end{figure}
+
+
+To calculate the compatibility between the high-$\mu$ and low-$\mu$ measurements, a bin-by-bin $\chi^2$ can be calculated using \Eqn{\ref{eq:generalchi2}}:
+
+\begin{equation}
+\chi^2 = \sum_{i} \frac{(p_{\mathrm{T}, low-\mu}^{i} - p_{\mathrm{T}, high-\mu}^{i})^2}{\sigma^2 (p_{\mathrm{T}, low-\mu}^{i} )+\sigma^2 (p_{\mathrm{T},
+high-\mu}^{i} )+2\times Corr\left(\sigma (p_{\mathrm{T}, high-\mu}^{i} ),\sigma (p_{\mathrm{T}, high-\mu}^{i} )\right)}
+\label{eq:generalchi2}
+\end{equation}
+
+Generally, some of the uncertainties such as the lepton performance systematics will be correlated.
+However, in the low-$\mu$ analysis calibrations and corrections are mostly derived directly using the low-$\mu$ dataset itself, (details in~Refs \cite{Xu:2657152}, \cite{Sydorenko:2657116}) while in the high-$\mu$ analysis, the calibrations and corrections are derived using standard ATLAS high-$\mu$ dataset, thus the uncertainties are treated approximately as uncorrelated.
+Therefore, the combined uncertainty equals to the sum of uncertainties from each analysis in quadrature.
+The bin-by-bin $\chi^2$ is calculated using \Eqn{\ref{eq:chi2highmu}}:
+\begin{equation}
+\chi^2 = \sum_{i} \frac{(p_{\mathrm{T}, low-\mu}^{i} - p_{\mathrm{T}, high-\mu}^{i})^2}{\sigma^2 (p_{\mathrm{T}, low-\mu}^{i} )+\sigma^2 (p_{\mathrm{T}, high-\mu}^{i} )} \textrm{,}
+\label{eq:chi2highmu}
+\end{equation}
+where the uncertainties of the low-$\mu$ and high-$\mu$ measurements are the quadratic sums of their statistical and systematic uncertainties as is show in \Eqn{\ref{eq:sigmalowmu} and \ref{eq:sigmahighmu}}.
+
+\begin{equation}
+\sigma^2 (p_{\mathrm{T}, low-\mu}^{i}) = \sqrt{ \sigma^2(low-\mu, stat.) + \sigma^2(low-\mu, syst.) }
+\label{eq:sigmalowmu}
+\end{equation}
+
+\begin{equation}
+\sigma^2 (p_{\mathrm{T}, high-\mu}^{i}) = \sqrt{ \sigma^2(high-\mu, stat.) + \sigma^2(high-\mu, syst.) }
+\label{eq:sigmahighmu}
+\end{equation}
+
+The $p_{T}^{Z}$ distribution must also be re-binned in order to compare the two measurements because different binning was used in each analysis.
+The $p_{T}^{Z}$ bins in the high-$\mu$ analysis are
+$$[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22.5, 25, 27.5, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 61, 65, 70, 75, 80, 85,$$
+$$95, 105, 125, 150, 175, 200, 250, 300, 350, 400, 470, 550, 650, 900, 2500]$$
+while for the low-$\mu$ analysis, the binning is
+$$[0, 2, 4, 6, 8, 10, 12, 14, 17, 20, 23, 26, 29, 33, 37, 41, 47, 53, 60, 70, 80, 100, 150, 200, 600]$$
+
+To account for this difference, the high-$\mu$ $p_{T}^{Z}$ distribution is re-binned to the low-$\mu$ binning.
+Whenever the rebinning is not allowed, the bin values in the new re-binned comparison histograms are weighted by bin width,
+and the relative uncertainty is the error of the bin in old binning which contains the center of the low-$\mu$ binning.
+E.G. while re-binning 14,16,18,20 (in high-mu binning)  to  14,17,20 (in low-mu binning):
+
+$$\frac{d\sigma}{dp_\mathrm{T}}_{bin (14,17)}^{high-\mu, rebinned} = \frac{ \frac{d\sigma}{dp_\mathrm{T}}_{bin(14,16)}^{high-\mu} \times 2GeV + \frac{d\sigma}{dp_\mathrm{T}}_{bin(16,18)}^{high-\mu} \times 1GeV }{3GeV}$$
+
+The relative error is taken from the bin where the center of new bin locates. E.G. for low-$\mu$ bin (14,17) GeV, the center is 15.5 GeV, which is in the high-$\mu$ bin (14,16) GeV, the relative error of bin (14,16)~GeV for the re-binned bin (14,17)~GeV.
+
+This rebinning method is only approximate as it assumes the cross-section to be flat within a bin, but allows to consider more bins than just taking the smallest common binning, which would force us to $e.g.$ have a big bin between 14 and 20~\GeV.
+
+Comparisons between high-$\mu$ and low-$\mu$ ~\ref{sec:physcorr} measurements of $p_{T}^{Z}$ distributions are shown in \Fig{\ref{f:CompatibilityHighLowMuRew}}. Good agreement is observed between the high-$\mu$ measurement in cyan and the low-$\mu$ measurement in black. In most of the bins, the ratio is within 1~$\sigma$.
+$\chi^2$ in the $Z\rightarrow ee$ channel is measured to be $\chi^2$/dof =  0.676 and $\chi^2$/dof = 0.96 in the $Z\rightarrow \mu\mu$ channel~(\Tab{\ref{tab:chi2highmuRew}}).
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.45\textwidth]{figure/ZpT_highmu_compatibility/XSec_Compare_highmu_13TeV_ee_2GeVBin_Rew.pdf}
+   \includegraphics[width=.45\textwidth]{figure/ZpT_highmu_compatibility/XSec_Compare_highmu_13TeV_mumu_2GeVBin_Rew.pdf}
+  \caption{Compatibility of the $p_{T}^{Z}$ measurement between the high-$\mu$ and low-$\mu$ analyses at the unfolded level. The left plot is the $Z\rightarrow ee$ channel and the right plot is the $Z\rightarrow \mu\mu$ channel.}
+    \label{f:CompatibilityHighLowMuRew}
+\end{figure}
+
+\begin{table}[h]
+ \centering
+\begin{tabular}{|c|c|c|}
+\hline
+  & $Z\rightarrow ee$ & $Z\rightarrow \mu\mu$\\
+ \hline
+ $\chi^2$ & 15.55 & 22.09 \\
+ \hline
+$\chi^2/$ dof & 0.676 & 0.96\\
+\hline
+\end{tabular}
+\caption{$\chi^2$ results of $p_{T}^{Z}$ measurements between the high-$\mu$ and low-$\mu$  analyses.}
+\label{tab:chi2highmuRew}
+\end{table}

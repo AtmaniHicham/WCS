@@ -1,0 +1,185 @@
+\section{Measurement of the \ptz\ spectrum\label{sec:ptwuncert}}
+\label{sec:Zptmeasurement}
+
+In this section we present the \pTZ cross section measurement. Subsection \ref{ss:ZpT_reco_unc} describes the statistical and experimental systematic uncertainties at reconstructed level as well as the bin-to-bin correlations between them, for the \ptdilep and \ut spectra. Subsection \ref{ss:ptzbias} introduces the procedure to estimate unfolding bias uncertainty and optimisation. Subsection \ref{ss:ZpT_gen_unc} discusses the uncertainty due to the choice of MC generator, namely the generator systematic uncertainty. Subsection \ref{ss:ZpT_all_unc} shows the overall uncertainties for the \pTZ measurement, using both the \ptdilep and \ut methods. The last subsection \ref{sec:Zresult} shows the final cross section measurement results in the \pTZ spectrum, compared to various MC predictions. Two additional compatibility checks are also performed at the end of this section. Specifically,~\ref{sssec:compatibilityHighmu} shows the compatibility of the 13~TeV results to the previous ATLAS \pTZ paper.
+\ref{ssec:pTZcompatibility} shows the compatibility of the unfolded \pTZ measurements using the \ptdilep and \ut methods, which is a crucial validation for $p_{\mathrm{T}}^{W}$ measurements. The compatibility between the two decay channels is given in the next section~(\ref{sec:combination}) {\color{red} to be done/documented}.
+%\ref{sssec:compatibilityEEMuMu} shows the compatibility between \Zee and \Zmm channels.
+%This section is split into four subsections. The first section,~\ref{sec:Zunfolding}, discusses the \pTZ unfolding strategy. The second section, \ref{ss:ZpT_bias} presents the studies performed to evaluate the \pTZ unfolding bias for both the \ptdilep\ and \ut\ measurements ; a third section,~\ref{ss:ZpT_stat_sys_unc}, contains a comparison of the statistical and systematic uncertainties between the bin-by-bin and the Bayesian unfoldings to determine the number of required iterations for the latter method. Finally, a complete summary of each unfolding uncertainty in the measurement can be found in section~\ref{ss:ZpT_all_unc}.
+
+%% MB : moved to common unfolding section
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\input{unfoldingZ}
+%%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% MB : moved to appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%\input{Zbias}
+%%%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Reconstructed level uncertainties}
+\label{ss:ZpT_reco_unc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The breakdown of the statistical and experimental systematic uncertainties at reconstructed-level for the \Zboson analysis are shown in \Fig{\ref{f:Zunc_reco}} and \Fig{\ref{f:Zunc_reco5TeV}} at 13 and 5 TeV, respectively. The uncertainty breakdown is followed by the reconstructed-level statistical correlation in data, shown in Figures \ref{f:Zreco_corr13} and \ref{f:Zreco_corr5}. A full breakdown of the systematic uncertainties after unfolding is shown in section~\ref{ss:ZpT_all_unc}.
+
+ \begin{figure}[h]
+\centering
+\subfloat[\Zee, \ptll.]{\includegraphics[width=.47\textwidth]{figure/Z_Plots_uncertainties/Unc_Reco_v20210511/UncReco_v20210511_13TeV_Zee_2GeVBin.pdf}\label{f:uncZee_13TeV_Reco}}
+\subfloat[\Zee, \ut.]{\includegraphics[width=.47\textwidth]{figure/Z_Plots_uncertainties/Unc_Reco_v20210511/UncReco_v20210511_13TeV_Zee_5GeVBin_uT.pdf}\label{f:uncZee_13TeV_uT_Reco}}
+
+\subfloat[\Zmm, \ptll.]{\includegraphics[width=.47\textwidth]{figure/Z_Plots_uncertainties/Unc_Reco_v20210511/UncReco_v20210511_13TeV_Zmumu_2GeVBin.pdf}\label{f:uncZmumu_13TeV_Reco}}
+\subfloat[\Zmm, \ut.]{\includegraphics[width=.47\textwidth]{figure/Z_Plots_uncertainties/Unc_Reco_v20210511/UncReco_v20210511_13TeV_Zmumu_5GeVBin_uT.pdf}\label{f:uncZmumu_13TeV_uT_Reco}}
+
+
+\caption{
+ Total statistical and systematic uncertainties at reconstructed-level for the electron and muon channels at 13~TeV. The uncertainties are shown as a percentage with respect to the number of reconstructed data events in each bin of \ptdilep and $u_{T}$, respectively. }
+ \label{f:Zunc_reco}
+ \end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee, \ptll.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/13TeV/Reco_corr_matrix_Zee_13TeV_2GeVbins.pdf}\label{f:RecoCorrMatrixZee_pT13TeV}}
+\subfloat[\Zmm, \ptll.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/13TeV/Reco_corr_matrix_Zmumu_13TeV_2GeVbins.pdf}\label{f:RecoCorrMatrixZmm_pT13TeV}}
+
+\subfloat[\Zee, \ut.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/13TeV_coarse/Reco_corr_matrix_uT_Zee_5uTiters_13TeV_5GeVbins.pdf}\label{f:RecoCorrMatrixZee_uT13TeV}}
+\subfloat[\Zmm, \ut.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/13TeV_coarse/Reco_corr_matrix_uT_Zmumu_5uTiters_13TeV_5GeVbins.pdf}\label{f:RecoCorrMatrixZmm_uT13TeV}}
+\caption{Bin to bin reconstructed-level statistical correlation in data of the two observables for both \Zboson decay channels for the $\sqrt{s} = 13$~\TeV\ dataset.}
+\label{f:Zreco_corr13}
+\end{figure}
+
+ \begin{figure}[h]
+\centering
+\subfloat[\Zee, \ptll.]{\includegraphics[width=.47\textwidth]{figure/Z_Plots_uncertainties/Unc_Reco_v20210511/UncReco_v20210511_5TeV_Zee_2GeVBin.pdf}\label{f:uncZee_5TeV_Reco}}
+\subfloat[\Zee, \ut.]{\includegraphics[width=.47\textwidth]{figure/Z_Plots_uncertainties/Unc_Reco_v20210511/UncReco_v20210511_5TeV_Zee_5GeVBin_uT.pdf}\label{f:uncZee_5TeV_uT_Reco}}
+
+\subfloat[\Zmm, \ptll.]{\includegraphics[width=.47\textwidth]{figure/Z_Plots_uncertainties/Unc_Reco_v20210511/UncReco_v20210511_5TeV_Zmumu_2GeVBin.pdf}\label{f:uncZmumu_5TeV_Reco}}
+\subfloat[\Zmm, \ut.]{\includegraphics[width=.47\textwidth]{figure/Z_Plots_uncertainties/Unc_Reco_v20210511/UncReco_v20210511_5TeV_Zmumu_5GeVBin_uT.pdf}\label{f:uncZmumu_5TeV_uT_Reco}}
+\caption{
+ Total statistical and systematic uncertainties at reconstructed-level for the electron and muon channels at 5~TeV. The uncertainties are shown as a percentage with respect to the number of reconstructed data events in each bin of \ptdilep and $u_{T}$, respectively. }
+ \label{f:Zunc_reco5TeV}
+ \end{figure}
+
+ \begin{figure}[h]
+\centering
+\subfloat[\Zee, \ptll.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/5TeV/Reco_corr_matrix_Zee_5TeV_2GeVbins.pdf}\label{f:RecoCorrMatrixZee_pT5TeV}}
+\subfloat[\Zmm, \ptll.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/5TeV/Reco_corr_matrix_Zmumu_5TeV_2GeVbins.pdf}\label{f:RecoCorrMatrixZmm_pT5TeV}}
+
+\subfloat[\Zee, \ut.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/5TeV_coarse/Reco_corr_matrix_uT_Zee_2uTiters_5TeV_5GeVbins.pdf}\label{f:RecoCorrMatrixZee_uT5TeV}}
+\subfloat[\Zmm, \ut.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/5TeV_coarse/Reco_corr_matrix_uT_Zmumu_2uTiters_5TeV_5GeVbins.pdf}\label{f:RecoCorrMatrixZmm_uT5TeV}}
+\caption{Bin to bin reconstructed-level statistical correlation in data of the two observables for both \Zboson decay channels for the $\sqrt{s} = 5$~\TeV\ dataset.}
+\label{f:Zreco_corr5}
+\end{figure}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Unfolding bias and optimization\label{ss:ptzbias}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Zbias}
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Generator systematic uncertainty\label{ss:ZpT_gen_unc}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{ZgenUncertainty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Final uncertainty breakdown at unfolded level}
+\label{ss:ZpT_all_unc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In the following subsection, the complete breakdown of the unfolded statistical, systematic, and luminosity uncertainties for the 13 and 5 TeV datasets are presented. The first uncertainty breakdown plots are shown for the unnormalised results only. And the "shape uncertainty", which is calculated with "normalized variations", are also shown in the last part of this section. For statistical and experimental systematic (excluding the unfolding bias) "shape uncertainty" estimation, all the unfolded toys or systematic variations are normalized to the nominal \pt distribution after efficiency and acceptance corrections. Multijet uncertainties are included as part of the background uncertainties. The unfolded-level statistical correlation matrices in data for \ptdilep and \ut are also shown. Results for \ptdilep are shown with `2 GeV' bins, while the results for \ut are shown with `5 GeV' bins at 5~TeV and `7 GeV` bins at 13~TeV. The same \ptdilep unfolded results but re-binned to `5 GeV` bins are shown in appendix \ref{sec:zpt_coarse_bin}. The results for \ut with alternative binning~(7 and 8 GeV bins for 5~TeV results, 5 and 8 GeV bins for 13~TeV results)~are shown in appendix section~\ref{ss:Z_result_alterbin}. 
+
+%%%%%%%%%%%%%%
+%%%%% 13 TeV %%%%%
+%%%%%%%%%%%%%%
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee, \ptll unfolding.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/Unc_breakdown_v20210511/UncBreakDown_v20210511_13TeV_Zee_2GeVBin_2iters.pdf}\label{f:AlluncZee_pT13TeV}}
+\subfloat[\Zmm, \ptll unfolding.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/Unc_breakdown_v20210511/UncBreakDown_v20210511_13TeV_Zmumu_2GeVBin_2iters.pdf}\label{f:AlluncZmm_pT13TeV}}
+
+
+
+
+\subfloat[\Zee, \ut unfolding. 7GeV binning]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/Unc_breakdown_v20210511/UncBreakDown_v20210511_13TeV_Zee_finerT_Rebin7_uT_10iters.pdf}\label{f:AlluncZee_uT13TeV_7GeV}}
+\subfloat[\Zmm, \ut unfolding. 7GeV binning]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/Unc_breakdown_v20210511/UncBreakDown_v20210511_13TeV_Zmumu_finerT_Rebin7_uT_10iters.pdf}\label{f:AlluncZmm_uT13TeV_7GeV}}
+
+
+\caption{Complete uncertainty breakdown for both \Zboson decay channels and both observables for the $\sqrt{s} = 13$~\TeV\ dataset. The uncertainties are shown as a percentage of the unfolded data per \pT bin. Each uncertainty has been unfolded using Bayesian unfolding with the chosen number of iterations: two for the $p_{T}^{ll}$ measurement and five for $u_{T}$.}\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee, \ptll unfolding.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/13TeV/corr_matrix_Zee_13TeV_2GeVbins.pdf}\label{f:corrMatrixZee_pT13TeV}}
+\subfloat[\Zmm, \ptll unfolding.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/13TeV/corr_matrix_Zmumu_13TeV_2GeVbins.pdf}\label{f:corrMatrixZmm_pT13TeV}}
+
+\subfloat[\Zee, \ut unfolding.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/13TeV_coarse/corr_matrix_uT_Zee_5uTiters_13TeV_5GeVbins.pdf}\label{f:corrMatrixZee_uT13TeV}}
+\subfloat[\Zmm, \ut unfolding.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/13TeV_coarse/corr_matrix_uT_Zmumu_5uTiters_13TeV_5GeVbins.pdf}\label{f:corrMatrixZmm_uT13TeV}}
+\caption{Bin to bin unfolded-level statistical correlation in data of the two observables for both \Zboson decay channels for the $\sqrt{s} = 13$~\TeV\ dataset.}\end{figure}
+
+%%%%%%%%%%%%%%
+%%%%% 5 TeV %%%%%
+%%%%%%%%%%%%%%
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee, \ptll unfolding.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/Unc_breakdown_v20210511/UncBreakDown_v20210511_5TeV_Zee_2GeVBin_2iters.pdf}\label{f:AlluncZee_pT5TeV}}
+\subfloat[\Zmm, \ptll unfolding.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/Unc_breakdown_v20210511/UncBreakDown_v20210511_5TeV_Zmumu_2GeVBin_2iters.pdf}\label{f:AlluncZmm_pT5TeV}}
+
+\subfloat[\Zee, \ut unfolding.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/Unc_breakdown_v20210511/UncBreakDown_v20210511_5TeV_Zee_5GeVBin_uT_5iters.pdf}\label{f:AlluncZee_uT5TeV}}
+\subfloat[\Zmm, \ut unfolding.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/Unc_breakdown_v20210511/UncBreakDown_v20210511_5TeV_Zmumu_5GeVBin_uT_5iters.pdf}\label{f:AlluncZmm_uT5TeV}}
+\caption{Complete uncertainty breakdown for both \Zboson decay channels and both observables for the $\sqrt{s} = 5$~\TeV\ dataset. The uncertainties are shown as a percentage of the unfolded data per \pT bin. Each uncertainty has been unfolded using Bayesian unfolding with the chosen number of iterations: two for both the $p_{T}^{ll}$ and $u_{T}$ measurements.}\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee, \ptll unfolding.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/5TeV/corr_matrix_Zee_5TeV_2GeVbins.pdf}\label{f:corrMatrixZee_pT5TeV}}
+\subfloat[\Zmm, \ptll unfolding.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/5TeV/corr_matrix_Zmumu_5TeV_2GeVbins.pdf}\label{f:corrMatrixZmm_pT5TeV}}
+
+\subfloat[\Zee, \ut unfolding.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/5TeV_coarse/corr_matrix_uT_Zee_5TeV_5GeVbins.pdf}\label{f:corrMatrixZee_uT5TeV}}
+\subfloat[\Zmm, \ut unfolding.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/5TeV_coarse/corr_matrix_uT_Zmumu_5TeV_5GeVbins.pdf}\label{f:corrMatrixZmm_uT5TeV}}
+\caption{Bin to bin unfolded-level statistical correlation in data of the two observables for both \Zboson decay channels for the $\sqrt{s} = 5$~\TeV\ dataset.}\end{figure}
+
+"shape uncertainty" breakdown plots are shown in \ref{f:AlluncZee_pT13TeV_shape} for 13~TeV and in \ref{f:AlluncZee_pT5TeV_shape} for 5~TeV.
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee, \ptll unfolding. "Shape"]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/Unc_breakdown_Shape_v20210511/UncBreakDown_v20210511_13TeV_Zee_2GeVBin_2iters_norm.pdf}\label{f:AlluncZee_pT13TeV_shape}}
+\subfloat[\Zmm, \ptll unfolding. "Shape"]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/Unc_breakdown_Shape_v20210511/UncBreakDown_v20210511_13TeV_Zmumu_2GeVBin_2iters_norm.pdf}\label{f:AlluncZmm_pT13TeV_shape}}
+
+\subfloat[\Zee, \ut unfolding. "Shape". 7GeV binning]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/Unc_breakdown_Shape_v20210511/UncBreakDown_v20210511_13TeV_Zee_finerT_Rebin7_uT_10iters_norm.pdf}\label{f:AlluncZee_uT13TeV_7GeV_shape}}
+\subfloat[\Zmm, \ut unfolding. "Shape". 7GeV binning]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/Unc_breakdown_Shape_v20210511/UncBreakDown_v20210511_13TeV_Zmumu_finerT_Rebin7_uT_10iters_norm.pdf}\label{f:AlluncZmm_uT13TeV_7GeV_shape}}
+
+\caption{"Shape" uncertainty breakdown plots for both \Zboson decay channels and both observables for the $\sqrt{s} = 13$~\TeV\ dataset. The uncertainties are shown as a percentage of the unfolded data per \pT bin. Each uncertainty has been unfolded using Bayesian unfolding with the chosen number of iterations: two for the $p_{T}^{ll}$ measurement and five for $u_{T}$. All variations are normalized to the nominal \pT distribution after efficiency and acceptance corrections.}\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee, \ptll unfolding. "Shape"]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/Unc_breakdown_Shape_v20210511/UncBreakDown_v20210511_5TeV_Zee_2GeVBin_2iters_norm.pdf}\label{f:AlluncZee_pT5TeV_shape}}
+\subfloat[\Zmm, \ptll unfolding. "Shape"]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/Unc_breakdown_Shape_v20210511/UncBreakDown_v20210511_5TeV_Zmumu_2GeVBin_2iters_norm.pdf}\label{f:AlluncZmm_pT5TeV_shape}}
+
+\subfloat[\Zee, \ut unfolding. "Shape". 7GeV binning.]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/Unc_breakdown_Shape_v20210511/UncBreakDown_v20210511_5TeV_Zee_5GeVBin_uT_5iters_norm.pdf}\label{f:AlluncZee_uT5TeV_5GeV_shape}}
+\subfloat[\Zmm, \ut unfolding. "Shape". 7GeV binning]{\includegraphics[width=.49\textwidth]{figure/Z_Plots_uncertainties/Unc_breakdown_Shape_v20210511/UncBreakDown_v20210511_5TeV_Zmumu_5GeVBin_uT_5iters_norm.pdf}\label{f:AlluncZmm_uT5TeV_5GeV_shape}}
+
+\caption{"Shape" uncertainty breakdown plots for both \Zboson decay channels and both observables for the $\sqrt{s} = 13$~\TeV\ dataset. The uncertainties are shown as a percentage of the unfolded data per \pT bin. Each uncertainty has been unfolded using Bayesian unfolding with the chosen number of iterations: two for the $p_{T}^{ll}$ measurement and five for $u_{T}$. All variations are normalized to the nominal \pT distribution after efficiency and acceptance corrections.}\end{figure}
+
+Both datasets show similar statistical correlation trends between observables: \ptdilep has low correlation between bins, while \ut has high correlation between bins (see Figures~\ref{f:corrMatrixZee_pT13TeV} to~\ref{f:corrMatrixZmm_uT13TeV} for the correlation at 13 TeV, and Figures~\ref{f:corrMatrixZee_pT5TeV} to~\ref{f:corrMatrixZmm_uT5TeV}) for the correlation at 5 TeV. This strong bin-to-bin statistical correlation in \ut is propagated to the unfolded \ut distribution.
+
+
+\clearpage

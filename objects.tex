@@ -1,0 +1,60 @@
+
+\section{Objects definitions}
+\label{sec:objects}
+
+In this analysis, electrons or muons are considered as leptons. Electrons are reconstructed from energy clusters in the calorimeter associated to a track, while muons are reconstructed as a track that crosses the muon chambers. Both objects are required to have $\pT>25~\GeV$. Additionally, electrons should have $|\eta|<2.47$ (excluding the crack region:$1.37<|\eta|<1.52$). Muons should fulfills $|\eta|<2.4$.
+The electrons candidates must satisfy the Medium LH identification criteria and are also required to be isolated, satisfying $\texttt{ptvarcone20}<0.1\times \pT$ track isolation criteria.
+%Electrons are also required to satisfy the $\texttt{ptvarcone20}<0.1\times \pT$ track isolation criteria.
+%\item [-] Electrons are also required to satisfy the FCLoose isolation criteria : the track isolation must satisfy $\texttt{ptcone20\_TightTTVA\_pt1000}<0.15\times \pT$; the calorimeter isolation must satisfy $\texttt{topoetcone20}<0.20\times \pT$, using a cone of $\Delta R=0.20$.
+ The Muons candidates  must satisfy the Medium identification criteria and are also required to be isolated, satisfying $\texttt{ptvarcone20}<0.1\times \pT$ track isolation criteria.
+%\item [-] Muons are also required to satisfy the FCLoose\_FixedRad isolation criteria : the track isolation must satisfy $\texttt{ptcone30\_TightTTVA\_pt1000}<0.15\times \pT$ for muons with $\pT<50~\GeV$, and $\texttt{ptcone20\_TightTTVA\_pt1000}<0.15\times \pT$ otherwise; the calorimeter isolation must satisfy $\texttt{topoetcone20}<0.30\times \pT$, using a cone of $\Delta R=0.20$.
+
+Leptons are required to originate from the primary vertex. The longitudinal impact parameter of each lepton track, defined as the distance between the track and the primary vertex along the beam line multiplied by the sine of the track $\theta$ angle, is required to be less than $0.5$ mm ( $\Delta z_{0}\times \sin(\theta) <0.5$). Furthermore, the significance of the
+transverse impact parameter, defined by the transverse impact parameter ($d_{0}$ ) of a lepton track with respect
+to the beam line, divided by its estimated uncertainty ($\sigma(d_{0})$ ), is required to satisfy for electrons  $\sigma(d_{0}) < 5$ and for muons  $\sigma(d_{0}) < 3$.
+
+Dedicated lepton calibrations and efficiency corrections are applied to the data and the MC used in the analysis following the Reference~\cite{Xu:2657152,Sydorenko:2657116} respectively for electrons and muons. A short summary of the calibration strategy and the corresponding resulting uncertainties for the electrons and muons is described in Section~\ref{sec:elCorr} and ~\ref{sec:muCorr} respectively.
+
+In the context of W boson production the need of a high precision computation of the neutrino kinematics is mandatory, and this is done with the help of the \textit{hadronic recoil}. In proton-proton collisions there is a non-zero transverse momentum for vector boson production which is originated by initial (gluon/quark) state radiation in the transverse plane, \textit{i.e.}, described by the relation:
+\begin{equation}
+\vec{p}_{T}(W/Z)=\vec{p}_{T}^{\mathrm{lepton1}}+\vec{p}_{T}^{\mathrm{lepton2}}=-\sum \vec{p}_{T}^{\mathrm{ISR quark,gluons}} = -\vec{\ut},
+\end{equation}
+
+where $p_{T}(W/Z)$ denotes the transverse momentum of the W or Z boson and $p_{T}^{\mathrm{lepton}}$ denote the transverse momenta decay leptons. The  \textit{hadronic recoil}, $\sum \vec{p}_{T}^{\mathrm{ISR quark,gluons}}$,  is the quantity which accounts for all transverse momenta of the partons from initial state radiation, and is denoted as $\vec{\ut}$.
+The  \textit{hadronic recoil} has been used successfully for the W mass measurement, where it was proven to be a powerful tool to determine the neutrino transverse momentum in a more precise way w.r.t. the TST based algorithm~\cite{Aaboud:2017svj}. An improvement brought in this analysis, as compared to this RunI measurement, is the use of \emph{particle flow objects} (PFOs) as input constituents to the building of \ut, which used to be recontructed from the vector sum of all topo-clusters in~\cite{Aaboud:2017svj}.
+
+It is possible to determine indirectly the neutrino $\nu$ transverse momentum using the following expression:
+
+\begin{equation}\label{eq:METandNeutrino}
+\vec{E}^{miss}_{T}:=\vec{p}_{T}^{\nu}=-(\vec{u}+p_{T} ^{l^{\pm}})
+\end{equation}
+
+where $\vec{E}^{miss}_{T}$ is the missing transverse energy. The transverse momenta of additional muons with $\pT>5~\GeV$ and satisfying the medium identification is added at the definition of \MET{} while their calorimeter energy deposit is subtracted from the event.
+
+A critical quantity is \set, that represents the total event
+activity and is related to the resolution of the \ut\
+measurement. \set\ is defined as the scalar sum of the \pt of all
+PFOs. Naturally \set\ will be strongly dependent on the vector boson
+dynamics and grow with $\ptv=\ut$. To disentangle these effects, an
+even more important quantity is defined by $\setue = \set -
+\ut$. \setue\ may be thought of the event activity corrected for the
+``directed'' recoil activity and thus represents the activity from
+underlying event, pileup, and emissions beyond first (hard)
+emission.~\footnote{E.g. a $V+1$ jet event has $\setue \sim 0$ on
+  parton level for any jet \pt and thus a finite $\setue > 0$ is due to additional
+  activity.}
+
+
+The detailed description of the \textit{hadronic recoil} definition and calibration is done in reference~\cite{Li:2657182} and also summarised briefly in Section~\ref{sec:recoilCorr}.
+
+\subsection{Association of the signal leptons to the primary vertex}\label{sec:pvcorr}
+\input{PVCorrection}
+
+\subsection{Electrons calibration and correction}\label{sec:elCorr}
+\input{ElecCalib}
+
+\subsection{Muons calibration and correction}\label{sec:muCorr}
+\input{MuonCalib}
+
+\subsection{Hadronic Recoil calibration and correction}\label{sec:recoilCorr}
+\input{RecoilCalib}

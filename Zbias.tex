@@ -1,0 +1,218 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{ss:ZpT_bias_rew}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+The unfolding bias uncertainty on the unfolded \ptz spectrum is estimated following the data driven procedure described in Section~\ref{sec:zbias}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Unfolding bias uncertainty at $\sqrt{s} = 13$~\TeV }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+After the baseline \POWHEG signal MC is corrected with the data-driven correction described in Section~\ref{sec:zbias} (see also section~\ref{sec:physcorrWpTrew}), the reweighting procedure is repeated to estimate the remaining bias (that should be negligible by construction), as well as its related uncertainty.
+Figure~\ref{fig:fits_13_1GeV} shows the central fit function and its associated variations used to estimate the corresponding fit uncertainties.
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/nonClosureBias/RewFactorWithVariations_13TeV_Zee_v20210511_BiasCorrOn_checknonclosure_finerT.pdf}}
+\subfloat[\Zmm.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/nonClosureBias/RewFactorWithVariations_13TeV_Zmumu_v20210511_BiasCorrOn_checknonclosure_finerT.pdf}}\\
+\caption{Fitted reweighting function with its independent variations obtained from propagating the fit uncertainties to the four parameters at $\sqrt{s} = 13$~\TeV, taking into account the correlation between the fit parameters. The black curve corresponds to the central fit, and the colored curves correspond to the variations of fit function. }
+\label{fig:fits_13_1GeV}
+\end{figure}
+
+The estimated bias correction and bias uncertainty are shown in Figure~\ref{fig:biasunc_13}. The bias uncertainty is calculated as the quadratic sum of the results from varied fit functions.
+For the \ptdilep measurement, an uncertainty of $<0.1\%$ is found in the first bin after two iterations. For the \ut measurement (with $5$~\GeV\ bin width), an uncertainty of $\sim 0.3\% -0.4\%$  is found after five unfolding iterations.
+The bias correction is estimated using the central fit function and is negligible by construction.
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee, \ptll.]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/nonClosureBias/Bias_var_ZpT_Unfolding_v20210511_13TeV_Zee_2GeVBin_2pTiters_5uTiters_pTll.pdf}}
+\subfloat[\Zmm, \ptll.]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/nonClosureBias/Bias_var_ZpT_Unfolding_v20210511_13TeV_Zmumu_2GeVBin_2pTiters_5uTiters_pTll.pdf}}\\
+\subfloat[\Zee, \ut.]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/nonClosureBias/Bias_var_ZpT_Unfolding_v20210511_13TeV_Zee_5GeVBin_2pTiters_5uTiters_uT.pdf}}
+\subfloat[\Zmm, \ut.]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/nonClosureBias/Bias_var_ZpT_Unfolding_v20210511_13TeV_Zmumu_5GeVBin_2pTiters_5uTiters_uT.pdf}}
+\caption{Bias correction and uncertainty (relative to the bias correction) on \ptz at $\sqrt{s} = 13$~\TeV. The results are shown after two unfolding iteration for the dilepton \pt\ measurement and five unfolding iterations for the \ut measurement. }
+\label{fig:biasunc_13}
+\end{figure}
+
+In addition to the uncertainty from the variations of the fit function (fit parameter uncertainty), the following sources of uncertainties are tested (as in the \Wboson\ case):
+\begin{itemize}
+\item the variation on the fit parametrisation, based on the testing of alternative fit functions (other than the baseline fit). Figure~\ref{fig:fit_nominalMC_diffFunc_13_1GeV} shows the set of all alternative fit functions that are tried.
+\item the variation over the initial (\ptz, $y$) distribution, based on the testing of different MC predictions to which the baseline truth-level (\ptz, $y$) distribution is reweighted in 2D. Figure~\ref{fig:fit_nominalMC_diffMC_13_1GeV} shows the fitted reweighting functions for different MC predictions: \textsc{Pythia}, \textsc{Sherpa}, \textsc{Herwig7}, DyTurbo using the CT10 and NNPDF3.0 PDFs.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/RewFunc_MCGen_13TeV_Zee_nonrewMC_v20210511_v3.pdf}}
+\subfloat[\Zmm.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/RewFunc_MCGen_13TeV_Zmumu_nonrewMC_v20210511_v3.pdf}}\\
+\caption{Fitted reweighting functions, $w_{T}$, using different MC predictions obtained after $\chi^2$ minimisation at $\sqrt{s} = 13$~\TeV.}
+\label{fig:fit_nominalMC_diffMC_13_1GeV}
+\end{figure}
+
+The reweighted versions of \POWHEG\ to different MC spectra display large differences with respect to the data at the reconstructed level. Therefore, different reweighting fit functions are used during the $\chi^{2}$ minimisation to get the best data-to-MC agreement in each case.
+Equation~\ref{ZeqRwfuncGP} is used as the best fit function for the reweighting of the predictions from \textsc{Pythia} and \textsc{DyTurbo} using the CT10 PDF set. A double gaussian added to a second-order polynomial is used for the spectra predicted by \textsc{Herwig7} and \textsc{DyTurbo} using the NNPDF3.0 PDF set, see equation~\ref{eq:Wdblgaus}.
+The reweighted baseline MC to the \Sherpa\ spectrum is discarded because it has unphysical jumps.
+The agreement between data and MC for all considered uncertainty variations after the data-driven \pt-reweighting using the best fitting function for each of them is shown in Figure~\ref{fig:fit_datamc_altunc_13_1GeV}.
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee, \ptll.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/DataMC_ZpT_Unfolding_v20210511_13TeV_Zee_2GeVBin_2pTiters_2uTiters_FullSetBiasv3Envelop_pTll.pdf}}
+\subfloat[\Zmm, \ptll.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/DataMC_ZpT_Unfolding_v20210511_13TeV_Zmumu_2GeVBin_2pTiters_2uTiters_FullSetBiasv3Envelop_pTll.pdf}}\\
+\subfloat[\Zee, \ut.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/DataMC_ZpT_Unfolding_v20210511_13TeV_Zee_5GeVBin_10pTiters_10uTiters_FullSetBiasv3Envelop_uT.pdf}}
+\subfloat[\Zmm, \ut.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/DataMC_ZpT_Unfolding_v20210511_13TeV_Zmumu_5GeVBin_10pTiters_10uTiters_FullSetBiasv3Envelop_uT.pdf}}\\
+\caption{Ratio of data to MC simulation at reconstructed level before (black dashed line) and after applying the data-driven \pt\ reweighting (colored line) for \ptll\ and \ut\ at $\sqrt{s} = 13$~\TeV, for all uncertainty variations. The dashed colored lines represent the functions that are not considered in the final bias uncertainty. }
+\label{fig:fit_datamc_altunc_13_1GeV}
+\end{figure}
+
+The bias uncertainty from each of these variations is calculated as a difference between the unfolded result with respect to the result using the baseline MC and fit function.
+These are shown using an optimized number of unfolding iterations in Figure~\ref{fig:bias_altunc_13}.
+An envelope, maximum from all considered contributions in each bin, is taken for the final bias uncertainty and added in a quadrature to the baseline fit parameters uncertainty, as in the \Wboson\ case.
+
+%\begin{figure}[h]
+%\centering
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_13TeV_Zee_2GeVBin_2pTiters_2uTiters_FullSetBiasv3Envelop_pTll.pdf}}
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_13TeV_Zmumu_2GeVBin_2pTiters_2uTiters_FullSetBiasv3Envelop_pTll.pdf}}\\
+%\caption{Bias uncertainty from the alternative sources on \ptz using \ptdilep measurement for the \Zee and \Zmm channels at $\sqrt{s} = 13$~\TeV. The results are shown after two unfolding iterations. Dashed line represent the uncertainties that are not included to the final uncertainty.}
+%\label{fig:bias_altunc_ptLL_13}
+%\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee, \ptll.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_13TeV_Zee_2GeVBin_2pTiters_2uTiters_FullSetBiasv3Envelop_pTll.pdf}}
+\subfloat[\Zmm, \ptll.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_13TeV_Zmumu_2GeVBin_2pTiters_2uTiters_FullSetBiasv3Envelop_pTll.pdf}}\\
+\subfloat[\Zee, \ut, 5~\GeV\ binning.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_13TeV_Zee_5GeVBin_15pTiters_15uTiters_FullSetBiasv3Envelop_uT.pdf}}
+\subfloat[\Zmm, \ut, 5~\GeV\ binning.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_13TeV_Zmumu_5GeVBin_15pTiters_15uTiters_FullSetBiasv3Envelop_uT.pdf}}\\
+\subfloat[\Zee, \ut, 7~\GeV\ binning.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_13TeV_Zee_finerT_Rebin7_10pTiters_10uTiters_FullSetBiasv3Envelop_uT.pdf}}
+\subfloat[\Zmm, \ut, 7~\GeV\ binning.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_13TeV_Zmumu_finerT_Rebin7_10pTiters_10uTiters_FullSetBiasv3Envelop_uT.pdf}}\\
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_13TeV_Zee_finerT_Rebin8_10pTiters_10uTiters_FullSetBiasv3Envelop_uT.pdf}}
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_13TeV_Zmumu_finerT_Rebin8_10pTiters_10uTiters_FullSetBiasv3Envelop_uT.pdf}}\\
+\caption{Bias uncertainty from the variations on the parametrisation and initial (\pt, y) spectrum on \ptz measurements at $\sqrt{s} = 13$~\TeV. The results are shown after two unfolding iterations for the \ptdilep\ measurement. The \ut\ measurement uses fifteen unfolding iterations for the $5$~\GeV\ binnning and ten unfolding iterations for the $7$~\GeV\ binning. The dashed lines represent the uncertainties that are not included in the final uncertainty.}
+\label{fig:bias_altunc_13}
+\end{figure}
+
+The number of iterations is optimised to minimise the quadratic sum of the bias and of the statistical uncertainties.
+The statistical, bias and total (statistical and bias) uncertainties as a function of the number of iterations in the first four bins are shown in Figure~\ref{fig:biasunc_min_ptll_13} and~\ref{fig:biasunc_min_uT5GeV_13} for the \ptdilep and \ut measurements, respectively.
+The optimization of the number of unfolding iterations for the \ut measurement using wider bins are given in Appendix~\ref{sec:zpt_bias_new}.
+Two unfolding iterations are selected for the \ptdilep measurement and fifteen ($5$~\GeV\ binning) or ten ($7$~\GeV\ and $8$~\GeV\ binnings) unfolding iterations are selected for the \ut measurement.
+In general, the bias uncertainty is $<1\%$ for both measurements, with the main contribution arising from the \textsc{Herwig7} or \textsc{DyTurbo NNPDF3.0} variations.
+
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee.]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/BiasVsIter/BiasUnc_Vs_Iter_13TeV_Zee_2GeVBin_pT_BinNumber_4.pdf}}
+\subfloat[\Zmm.]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/BiasVsIter/BiasUnc_Vs_Iter_13TeV_Zmumu_2GeVBin_pT_BinNumber_4.pdf}}\\
+\caption{Bias (red line), statistical (blue line) and total (black line) uncertainties as a function of the number of unfolding iterations for the \ptdilep measurement at $\sqrt{s} = 13$~\TeV\ . The uncertainties are shown for the first four bins.}
+\label{fig:biasunc_min_ptll_13}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee.]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/BiasVsIter/BiasUnc_Vs_Iter_13TeV_Zee_5GeVBin_uT_BinNumber_4.pdf}}
+\subfloat[\Zmm.]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/BiasVsIter/BiasUnc_Vs_Iter_13TeV_Zmumu_5GeVBin_uT_BinNumber_4.pdf}}\\
+\caption{Bias (red line), statistical (blue line) and total (black line) uncertainties as a function of the number of unfolding iterations for the \ut measurement at $\sqrt{s} = 13$~\TeV\ using the $5$~\GeV\ binning configuration. The uncertainties are shown for the first four bins.}
+\label{fig:biasunc_min_uT5GeV_13}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Unfolding bias uncertainty at $\sqrt{s} = 5$~\TeV}
+The unfolding bias uncertainty at $\sqrt{s} = 5$~\TeV\ is estimated in the same way as at $\sqrt{s} = 13$~\TeV.
+
+The central and varied fit functions are shown in Figure~\ref{fig:fits_5_1GeV}.
+The bias correction and bias uncertainties are shown after two unfolding iterations for \ptz using the \ptdilep\ and the \ut\ measurements in Figure~\ref{fig:biasunc_5}.
+An uncertainty of $\sim 0.01\% -0.02\%$ and of $\sim 0.2\% $ is found in the first bin after two iterations for the \ptdilep and \ut (with $5$~\GeV\ bin width) measurements, respectively.
+The bias correction is estimated using the central fit function and is negligible, by construction.
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/nonClosureBias/RewFactorWithVariations_5TeV_Zee_v20210511_BiasCorrOn_checknonclosure_finerT.pdf}}
+\subfloat[\Zmm.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/nonClosureBias/RewFactorWithVariations_5TeV_Zmumu_v20210511_BiasCorrOn_checknonclosure_finerT.pdf}}
+\caption{Fitted reweighting function with its independent variations obtained from propagating the fit uncertainties to the two parameters at $\sqrt{s} = 5$~\TeV, taking into account the correlation between the fit parameters. The black curve corresponds to the central fit, and the colored curves correspond to the variations of fit function.}
+\label{fig:fits_5_1GeV}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee, \ptll.]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/nonClosureBias/Bias_var_ZpT_Unfolding_v20210511_5TeV_Zee_2GeVBin_2pTiters_2uTiters_pTll.pdf}}
+\subfloat[\Zmm, \ptll.]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/nonClosureBias/Bias_var_ZpT_Unfolding_v20210511_5TeV_Zmumu_2GeVBin_2pTiters_2uTiters_pTll.pdf}}\\
+\subfloat[\Zee, \ut.]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/nonClosureBias/Bias_var_ZpT_Unfolding_v20210511_5TeV_Zee_5GeVBin_2pTiters_2uTiters_uT.pdf}}
+\subfloat[\Zmm, \ut.]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/nonClosureBias/Bias_var_ZpT_Unfolding_v20210511_5TeV_Zmumu_5GeVBin_2pTiters_2uTiters_uT.pdf}}
+\caption{Bias correction and uncertainty (relative to the bias correction) on \ptz at $\sqrt{s} = 5$~\TeV. The results are shown after two unfolding iteration for the \ptdilep and  \ut measurements. }
+\label{fig:biasunc_5}
+\end{figure}
+
+Similarly as at $\sqrt{s} = 13$~\TeV,  the following sources of uncertainties are tested (and similarly as in the \Wboson\ case, still):
+\begin{itemize}
+\item the variation on the fit parametrisation, based on the testing of alternative fit functions (other than the baseline fit). Figure~\ref{fig:fit_nominalMC_diffFunc_13_1GeV} shows the set of all alternative fit functions that are tried.
+\item the variation over the initial (\ptz, $y$) distribution, based on the testing of different MC predictions to which the baseline truth-level (\ptz, $y$) distribution is reweighted in 2D. Figure~\ref{fig:fit_nominalMC_diffMC_5_1GeV} shows the fitted reweighting functions for different MC predictions: \textsc{Pythia}, \textsc{Sherpa}, \textsc{Herwig7}, DyTurbo using the CT10 and NNPDF3.0 PDFs.
+\end{itemize}
+
+Equation~\ref{ZeqRwfuncP} is used as the best fit function for the reweighting starting from the spectrum reweighted to \textsc{Pythia}.  Equation~\ref{ZeqRwfuncGP} is used for the spectrum reweighted to DyTurbo using the CT10 PDF set.
+A double gaussian added to a second-order polynomial is used for the \textsc{Herwig7} and DyTurbo NNPDF3.0 predictions, see equation~\ref{eq:Wdblgaus}.
+\Sherpa\ is again discarded because of the presence of unphysical jumps in its \pttruthv\ spectrum.
+The DyTurbo prediction using the CT10 PDF set is discarded as well, because of a poor data-to-MC agreement after performing the reweighting.
+The agreement between data and MC for all considered variations after applying the reweighting using the best fitting function is shown in Figure~\ref{fig:fit_datamc_altunc_5_1GeV}.
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/RewFunc_MCGen_5TeV_Zee_nonrewMC_v20210511_v2.pdf}}
+\subfloat[\Zmm.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/RewFunc_MCGen_5TeV_Zmumu_nonrewMC_v20210511_v2.pdf}}
+\caption{Fitted reweighting functions, $w_{T}$, using different MC predictions obtained after $\chi^2$ minimisation at $\sqrt{s} = 5$~\TeV. }
+\label{fig:fit_nominalMC_diffMC_5_1GeV}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee, \ptll.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/DataMC_ZpT_Unfolding_v20210511_5TeV_Zee_2GeVBin_2pTiters_2uTiters_FullSetBiasv3Envelop_pTll.pdf}}
+\subfloat[\Zmm, \ptll.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/DataMC_ZpT_Unfolding_v20210511_5TeV_Zmumu_2GeVBin_2pTiters_2uTiters_FullSetBiasv3Envelop_pTll.pdf}}\\
+\subfloat[\Zee, \ut.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/DataMC_ZpT_Unfolding_v20210511_5TeV_Zee_5GeVBin_5pTiters_5uTiters_FullSetBiasv3Envelop_uT.pdf}}
+\subfloat[\Zmm, \ut.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/DataMC_ZpT_Unfolding_v20210511_5TeV_Zmumu_5GeVBin_5pTiters_5uTiters_FullSetBiasv3Envelop_uT.pdf}}\\
+\caption{Ratio of data to MC simulation at reconstructed level before (black dashed line) and after applying the data-driven \pt\ reweighting (colored line) for \ptll\ and \ut\ at $\sqrt{s} = 5$~\TeV, for all uncertainty variations. The dashed colored lines represent the functions that are not considered in the final bias uncertainty.}
+\label{fig:fit_datamc_altunc_5_1GeV}
+\end{figure}
+
+
+The bias uncertainty from each of these variations using an optimized number of unfolding iterations are shown in Figure~\ref{fig:bias_altunc_5}.
+An envelope, maximum from all considered contributions in each bin, is taken for the final bias uncertainty and added in a quadrature to the baseline fit parameters uncertainty, as in the \Wboson\ case.
+
+%\begin{figure}[h]
+%\centering
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_5TeV_Zee_2GeVBin_2pTiters_2uTiters_FullSetBiasv3Envelop_pTll.pdf}}
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_5TeV_Zmumu_2GeVBin_2pTiters_2uTiters_FullSetBiasv3Envelop_pTll.pdf}}\\
+%\caption{Bias uncertainty from the alternative sources on \ptz using \ptdilep measurement for the \Zee and \Zmm channels at $\sqrt{s} = 5$~\TeV. The results are shown after two unfolding iterations. Dashed line represent the uncertainties that are not included to the final uncertainty.}
+%\label{fig:bias_altunc_ptLL_5}
+%\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee, \ptll.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_5TeV_Zee_2GeVBin_2pTiters_2uTiters_FullSetBiasv3Envelop_pTll.pdf}}
+\subfloat[\Zmm, \ptll.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_5TeV_Zmumu_2GeVBin_2pTiters_2uTiters_FullSetBiasv3Envelop_pTll.pdf}}\\
+\subfloat[\Zee, \ut, 5~\GeV\ binning.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_5TeV_Zee_5GeVBin_5pTiters_5uTiters_FullSetBiasv3Envelop_uT.pdf}}
+\subfloat[\Zmm, \ut, 5~\GeV\ binning.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_5TeV_Zmumu_5GeVBin_5pTiters_5uTiters_FullSetBiasv3Envelop_uT.pdf}}\\
+\subfloat[\Zee, \ut, 7~\GeV\ binning.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_5TeV_Zee_finerT_Rebin7_5pTiters_5uTiters_FullSetBiasv3Envelop_uT.pdf}}
+\subfloat[\Zmm, \ut, 7~\GeV\ binning.]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_5TeV_Zmumu_finerT_Rebin7_5pTiters_5uTiters_FullSetBiasv3Envelop_uT.pdf}}\\
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_5TeV_Zee_finerT_Rebin8_5pTiters_5uTiters_FullSetBiasv3Envelop_uT.pdf}}
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_diffFits_ZpT_Unfolding_v20210511_5TeV_Zmumu_finerT_Rebin8_5pTiters_5uTiters_FullSetBiasv3Envelop_uT.pdf}}\\
+\caption{Bias uncertainty from the variations on the parametrisation and initial (\pt, y) spectrum on \ptz measurements at $\sqrt{s} = 5$~\TeV. The results are shown after two unfolding iterations for the \ptdilep\ measurement. The \ut\ measurement uses five unfolding iterations for both the $5$~\GeV\ and $7$~\GeV\ binnings. The dashed lines represent the uncertainties that are not included in the final uncertainty.}
+\label{fig:bias_altunc_5}
+\end{figure}
+
+The optimization of the number of unfolding iterations is shown in Figure~\ref{fig:biasunc_min_ptll_5} and~\ref{fig:biasunc_min_uT5GeV_5} for the \ptdilep and \ut measurements, respectively.
+The optimization of the number of unfolding iterations for the \ut measurement using wider bins are given in Appendix~\ref{sec:zpt_bias_new}.
+Two unfolding iterations are selected for the \ptdilep\ measurement and five unfolding iterations are selected for the \ut\ measurement.
+In general, the bias uncertainty is $\sim 1\%$ in the \ptdilep\ measurement and in the muon channel for \ut\  measurement, while it is larger in the electron channel for the \ut\ measurement.
+The main contribution comes from the variations using \textsc{Herwig7} or \textsc{DyTurbo NNPDF3.0}.
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee.]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/BiasVsIter/BiasUnc_Vs_Iter_5TeV_Zee_2GeVBin_pT_BinNumber_4.pdf}}
+\subfloat[\Zmm.]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/BiasVsIter/BiasUnc_Vs_Iter_5TeV_Zmumu_2GeVBin_pT_BinNumber_4.pdf}}\\
+\caption{Bias (red line), statistical (blue line) and total (black line) uncertainties as the function of the unfolding iteration for the \ptdilep measurement at $\sqrt{s} = 5$~\TeV. The uncertainties are shown for the first four bins.}
+\label{fig:biasunc_min_ptll_5}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[\Zee.]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/BiasVsIter/BiasUnc_Vs_Iter_5TeV_Zee_5GeVBin_uT_BinNumber_4.pdf}}
+\subfloat[\Zmm.]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/BiasVsIter/BiasUnc_Vs_Iter_5TeV_Zmumu_5GeVBin_uT_BinNumber_4.pdf}}\\
+\caption{Bias (red line), statistical (blue line) and total (black line) uncertainties as the function of the unfolding iteration for \ut measurement at $\sqrt{s} = 5$~\TeV\ using $5$~\GeV\ binning configuration. The uncertainties are shown for the first four bins.}
+\label{fig:biasunc_min_uT5GeV_5}
+\end{figure}

@@ -1,0 +1,174 @@
+\section{Unfolding strategy}
+\label{unfolding}
+
+
+In this chapter we will discuss the unfolding approach, used to calculate the Higgs boson differential and double differential cross setions. The need for unfolding stems from the fact that any quantity measured at the LHC detectors is affected by the not completely well known detector effects (like acceptance and resolution). The goal of the unfolding is to correct data distributions and estimate the true physical distributions of the observables of interest without detector effects \cite{ATLAS2021zxb}. In high energy physics, several unfolding methods are used \cite{blobel2002unfolding}, and in our analysis, the iterative Bayesian unfolding \cite{dagostini2010improved} is used.
+
+In high energy physics, we are interested in distributions of the observables of interest. In most of the cases, different distributions are affected by detector effects with different sizes. For example, the transverse momentum of the Higgs boson is more affected by detector effects than $\Delta \eta_{\ell \ell}$ in $H \rightarrow WW \rightarrow \ell \nu \ell \nu$. Figure 4.1 shows the comparison between simulated distributions without detector effects (particle level), with detector effects (reconstructed level).
+
+The reconstructed distributions are different from truth distributions because of two effects:
+\begin{itemize}
+  \item Limited acceptance: it reflects the fact that not all events are observed by the detector, it is called the detector acceptance and it is smaller than 1 \cite{MONK201317}.
+  \item Migration:  due to limited detector resolution, an event originating from bin i can be measured in another bin j. This effect is taken into account with the migration matrix, extracted from simulation.
+\end{itemize}
+
+For a mathematical presentation of the unfolding problem, let’s consider that we have just MC simulation vector $x$ ($y$) of dimension $N_{x}$ ($N_{y}$), where the elements $x_{i}$ ($y_{i}$) represent the number of events in bin $i$ in our distribution at the truth (reconstructed) level. Both vectors $x$ and $y$ are related with a matrix $R$, called response matrix:
+
+\begin{equation}
+R \times x = y.
+\end{equation}
+%
+The elements $R_{i,j}$ of the response matrix $R$ represent the probability that an event generated in bin $j$ is measured in bin $i$. The number of background events must be removed from the vector $y$. In a real case, the response matrix $R$ is calculated from the migration matrix $M$, where the $M_{i,j}$ are estimated using information from MC simulation:
+%
+\begin{equation}
+M_{i,j} = N_{i,j}^{\mathrm{rec} \land \mathrm{gen}},
+\end{equation}
+%
+where $N_{i,j}^{\mathrm{rec}  \land \mathrm{gen}}$ represents the number of event generated in truth bin $j$ and reconstructed in bin $i$. If {$N_{j}^\mathrm{{gen}}$} represents the number of event generated in truth bin {$j$},
+%zz The projection of the response matrix to {$y$ $(x)$} axis gives the reconstruction efficiency (acceptance efficiency). 
+the response matrix is then defined as:
+%
+\begin{equation}
+R_{i,j}=\frac{M_{i,j}}{N^\mathrm{gen}_{j}}.
+\end{equation}
+%
+In our case, we are using a slightly modified response matrix $R^\prime{i,j}$ defined as
+\begin{equation}
+    R^\prime_{i,j}=\frac{M_{i,j}}{N^{\mathrm{rec} \land \mathrm{gen}}_j}
+\end{equation}
+where $N^{\mathrm{rec} \land \mathrm{gen}}_j$ is the number of events generated and reconstructed in bin $j$.
+The ratio of $R$ by $R^\prime$ is a function of the truth bin $j$ and is equal to the acceptance correction (Sec.~\ref{MigrationRef})
+\begin{equation}
+    A_j=\frac{N^{\mathrm{rec} \land \mathrm{gen}}_j}{N_j^\mathrm{gen}}\,.
+\end{equation}
+Now let's take the case of real data, where we don't have any information about distributions at the truth level, the idea of unfolding is to apply the inverse of the response matrix calculated using MC simulation to real data to estimate the true physical distributions. At this moment, the unfolding problem is an inversion problem of the response matrix:
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{figure/Unfolding/UnfPlot1.pdf}
+\centering
+\label{fig1}
+\end{figure}
+%
+
+The use of the unfolding technique in high energy physics allows to obtain results which are independent from detector and reconstruction effects. Consequently, the unfolding results can be compared directly to theoretical predictions or to other experiments. On the other hand, there are some cases where the unfolding is not needed. Mainly, the unfolding is used for observables characterised by a large migration between truth and reconstruction distributions. In other words, for the observables with small migration between the truth and reco level, a bin-by-bin correction is sufficient to determine the true physical distributions of the observables of interest. Applying the inverse of the migration matrix to the reconstructed simulation distribution is considered as a closure test for the unfolding.
+
+\subsection{Migration matrix}
+
+
+The migration matrix is a matrix containing information from the truth and reconstructed level, with e.g. the x-axis corresponding to reconstructed bins and the y-axis to truth bins. The example in Figure 4.3 shows the migration matrix for two variables, $p_\mathrm{T}^{H}$ and $\Delta \eta_{\ell \ell}$ . Comparing both matrix, the transverse higgs momentum is characterised with a larger migration between the truth and reconstructed level because of the detector effects which affect more the $p_\mathrm{T}^{H}$.
+
+In addition to the migration and response matrix, there are two important factors, as shown in Figure~\ref{fig:chap2fig2}, that we apply before and after the unfolding, and will be used later especially for the measurement of the differential cross sections:
+
+\begin{description}
+\item[The efficiency correction:] It is defined as the fraction of events passing reconstructed and truth level selections ($N^\mathrm{reco, truth}$) to the number of events that meet the selection criteria at reconstruction level ($N^\mathrm{reco}$):
+\begin{equation}
+\epsilon_{i} = \frac{N^\mathrm{reco, truth}}{N^\mathrm{reco}}.
+\end{equation}
+It is defined as a function of the reconstructed bin number $i$. The efficiency correction is applied before unfolding to correct data distributions since the data events pass reconstructed selections only. 
+%
+\item[The acceptance correction:] It is defined as the fraction of events that passing reconstructed and truth level selections ($N^\mathrm{reco, truth}$) to the number of events that meet the selection criteria at truth level ($N^\mathrm{truth}$):
+\begin{equation}
+A_{i} = \frac{N^\mathrm{reco, truth}}{N^\mathrm{truth}}.
+\end{equation}
+%
+It is defined as a function of the truth bin number $i$. The inverse of the acceptance is applied to the unfolded distribution in order to extrapolate to the truth fiducial phase space. This has to be done because the unfolding is done with a response matrix $R^\prime$ obtained with events satisfying both truth and reconstructed criteria.
+\end{description}
+
+\noindent It is worth to note that the events passing $N^\mathrm{reco, truth}$ and $N^\mathrm{reco}$ selections receive both reconstructed and truth weights i.e.\ SF efficiency, hadronic recoil, calibration, polarisation, generator weights, while the events passing $N^\mathrm{truth}$ have only truth weights applied. 
+
+
+
+
+\subsection{Uncertainties with unfolding}
+
+The propagation of the statistical and systematic uncertainties through unfolding is a crucial technical aspect when the unfolding is applied to an analysis. In this part, we discuss the propagation of the uncertainties in the iterative Bayesian unfolding.
+
+\subsubsection{Propagation of the statistical uncertainty}
+
+
+
+The propagation of the statistical uncertainties through the unfolding is done using pseudo-data (toys). Basically, the idea is to fluctuate the unfolding inputs (data distributions) with Poisson variations~\cite{2002JHEP09060B} to generate toys. Then, for each toy we redo the unfolding procedure using the nominal (not modified) migration matrix. The covariance matrix for the statistical uncertainty is calculated by comparing the unfolded distributions for each toy using:
+%
+\begin{equation}
+\mathrm{Cov}(i,j)=\frac{1}{n-1} \sum_{k=1}^{n}\left(X^{\mathrm{k}}_{i}-\bar{X_{i}}\right)\left(X_{j}^{\mathrm{k}}-\bar{X_{j}}\right)^{\mathrm{T}},
+\end{equation}
+%
+\noindent where {$X_{i}^{k}$} ({$X_{j}^{k}$}) corresponds to the content of bin {$i$ ($j$)} of the unfolded toy $k$, {$\bar{X}_{i}$} ({$\bar{X}_{j}$}) corresponds to the content of bin $i$ ($j$) of the average of all toys. The correlation matrix between bins for the statistical uncertainty is calculated using the covariance matrix by the formula:
+\begin{equation}
+\mathrm{Corr}(i,j)=\frac{\mathrm{Cov}(i,j)}{ \sqrt{\mathrm{Cov}(i,i)} \times \sqrt{\mathrm{Cov}(j,j)} }.
+\end{equation}
+%
+\noindent Propagation of the statistical uncertainty for MC simulation is treated differently from data. In fact, the statistical uncertainty for simulation is treated as a systematic uncertainty, and the unfolding for simulation toys is done with a modified migration matrix instead of the nominal migration matrix. Figure~\ref{fig:chap2fig3} shows an example of the statistical uncertainty with the correlation matrix for the unfolded distribution.
+
+
+Because of the correlation between truth and reconstruction level for our variables of interest, the statistical uncertainty increases with the number of iterations, as shown in Figure~\ref{fig:chap2fig3}. Along with the increase of uncertainty with the number of iterations, the anti-correlation between bins increases also to ensure that the statistical uncertainty is independent of the number of iterations when we integrate over all the bins.
+
+\subsubsection{Propagation of systematic uncertainties}
+
+The estimation of systematic uncertainties at the unfolded level is based on simulated distributions. For a given systematic uncertainty, we varied the inputs distributions (reconstructed distributions and migration matrix) according to this systematic uncertainty. The propagation of the systematic uncertainty through unfolding is estimated as the the difference between the unfolding of the nominal distribution and the unfolding of the modified distribution. For the same reason of migration between bins, the systematic uncertainties increase with the number of iterations as seen in Sec.~\ref{fig:chap2fig4}.  After the unfolding, all the systematic uncertainties are assumed to be fully correlated between the bins, and the covariance matrix ($V$) is calculated as:
+%
+\begin{equation}
+V_{i,j}=\sigma_{i} \times \sigma_{j},
+\end{equation}
+%
+\noindent where {$\sigma_{i}$} ({$\sigma_{j}$}) is the systematic uncertainty in bin {$i$}({$j$}). Figure~\ref{fig:chap2fig4} shows as an example the calibration systematic uncertainty as a function of iteration and the corresponding correlation matrix. 
+In fact, the systematic uncertainties must be independent of the number of iterations, and the variation with the number of iterations is related to statistical fluctuations in the systematic variations. For the choice of the number of iterations, the systematic uncertainties are not included in the optimisation study described in Sec.~\ref{optimisation}.
+
+
+
+\subsubsection{Bias uncertainty with unfolding}
+\label{biasref}
+In addition to the statistical and systematic uncertainties, there is the unfolding bias that we have to take into account. This bias is related mainly to the unfolding method and can be estimated with different approaches. The approach used in this chapter is a simple one used for the unfolding of a variable with small migration between reconstruction and truth level, like for $p_\mathrm{T}^\ell$ and $\eta_\ell$. For the unfolding of a variable with larger migration like $p_\mathrm{T}^W$, a more involved approach is used and will be described later. The procedure to estimate the bias, through a "data-driven closure test" using the data/MC shape differences for the unfolded observable, can be summarised in two steps: (Figure~\ref{fig:chap2fig5})~\cite{Unfoldingtwikipage}:
+%
+\begin{itemize}
+\sloppy
+\item Reweight the MC distribution at truth level with the fitted ratio of data over simulation, in such a way that the reconstructed distribution after the reweighting matches the data in which the background has been subtracted. As shown in Figure~\ref{fig:chap2fig6}, as we expect, the ratio data/MC is closer to 1 for the reconstruction-weighted distribution. 
+%
+\item The bias is estimated as the difference between the unfolding of the reconstruction-weighted distribution
+      and the truth-weighted distribution.
+\end{itemize}
+
+
+%\noindent 
+In general, the unfolding bias decreases with the number of iterations, as shown in Figure~\ref{fig:chap2fig7}. Also, as the unfolding does not change the normalisation of the input distributions, the total integrated unfolding bias when we take the correlation (anti-correlation) between bins into account must be equal to 0. Contrary to other source of uncertainties, the bias decreases with the number of iterations and the anti-correlation between bins increases with the number of iterations to ensure that the integrated bias is zero.
+
+
+\subsection{Optimisation of the number of iterations}
+\label{optimisation}
+
+As discussed above, the statistical uncertainty increases with the number of iterations, whereas the unfolding bias, considered as a source of uncertainty, decreases with the number of iterations, as seen in Figure~\ref{fig:chap2fig8}. 
+%The goal is to determine how many iterations are needed. The idea behind this optimization is to determine the number of iterations which minimizes the sum of the statistical and bias uncertainties. 
+Therefore, it is possible to optimise the number of iterations by minimising the combined statistical and bias uncertainties.
+The other systematic uncertainties are not included in the optimisation as they should be independent of the number of iterations as mentioned earlier. Also, the optimisation should be performed for a selected region of the unfolded distribution since we can not use the whole range of the unfolded distribution (the bias is zero). The example in Figure~\ref{fig:chap2fig8} shows the information that can be used for the bin-by-bin optimisation around the peak region:
+
+
+
+\noindent For our example shown in Figure~\ref{fig:chap2fig9}, as the bias is very small comparing to other source of uncertainties, the best choice is to use the first iteration. But to avoid the fluctuation/bias in the first iteration, see Figure~\ref{fig:chap2fig7}, the 2$^\mathrm{nd}$ iteration is chosen instead.
+%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,199 @@
+\section{Uncertainty propagation}
+\label{sec:errprop}
+
+\subsection{Statistical uncertainty estimation through the Bootstrap method}
+The bootstrap method~\cite{efron1979} is used to propagate statistical fluctuations through a resampling of the distributions in the analysis. All distributions (in both data and simulation) are produced with a finite number of events, and as such are subject to fluctuations.
+
+The impact of statistical fluctuations on the analysis is evaluated by creating ensembles of pseudo-data sets, both for data and simulation, where the number of events with given characteristics is fluctuated around the actually observed (or generated) number of such events, within the expected statistical uncertainty. For low-dimensional histograms, the boostrap can be performed by fluctuating the histogram bin contents around their nominal values, within the statistical uncertainty. For higher-dimensional problems this method can not be applied, and a weighting method is used instead. Technically, for each pseudo-data set, each event is assigned a random weight defined as follows:
+\begin{equation}
+w = {\cal P}(n,1)
+\end{equation}
+where $n$ is randomly generated according to the Poisson distribution of unit mean, and ${\cal P}(n,1)$ is the value of the Poisson probability to observe $n$ events while expecting an average of 1.
+
+This procedure naturally accounts for the correlated effect of statistical fluctuations across all observables and distributions of relevance for the analysis. It is repeated a large number of times, to produce an ensemble of data sets that mimics the expected fluctuations with sufficient precision. In practice, 100 pseudo-data sets are often enough for a proper evaluation of statistical uncertainties. In this analysis, 400 pseudo-data sets are used.
+
+\subsection{Data statistical uncertainties}
+\label{subsec:datastatunc}
+Data statistical uncertainties result from fluctuations in the observed spectrum $D$. These are propagated to the measurement using the bootstrap method described above, applied to the observed
+distribution. For each pseudo-data sample $\alpha$, the unfolded spectrum is
+\begin{equation}
+\Tilde{U}_j^\alpha = \sum_{i}  U_{ij} (D_i^\alpha - B_i)
+\end{equation}
+When estimating the uncertainty on the normalised cross-section, each $\Tilde{U}_j^\alpha$ is scaled such that the total number of events is the same as that of the nominal unfolded spectrum.
+Assuming $N_{bs}$ pseudo-data samples, the corresponding covariance is estimated as
+\begin{equation}
+C_{kl}^{\textrm stat,Data} = \frac{1}{N_{bs}-1} \sum_{\alpha=1}^{N_{bs}} (\tilde{U}^\alpha_k-\avg{\tilde{U}}_k) \, (\tilde{U}^\alpha_l-\avg{\tilde{U}}_l)
+\label{eq:covexpr}
+\end{equation}
+where $\avg{U}_{k,l}$ denotes the average over the bootstrap samples, and the diagonal uncertainty is
+\begin{equation}
+\delta \tilde{U_k} = \sqrt{C_{kk}^{\textrm stat,Data}}
+\end{equation}
+
+Figure~\ref{fig:corrStatData} shows the statistical correlation matrix in data at the reconstructed level (a) and at the unfolded level (b). Figure~\ref{fig:unfDataStat} shows the data statistical uncertainty at the unfolded level.
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/RecoCorrData.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/UnfCorrData.pdf}}
+  \caption{ Example of statistical correlation matrix in data for $W^{-}\rightarrow e\nu$ channel at 13 TeV at the reconstruction level (a) and unfolded level (b).}
+  \label{fig:corrStatData}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[\Wmenu, 5~\TeV.]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/StatData_5TeV_Wminusenu.pdf}\label{f:}}
+  \subfloat[\Wpenu, 5~\TeV.]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/StatData_5TeV_Wplusenu.pdf}\label{f:}}
+  
+  \subfloat[\Wmenu, 13~\TeV.]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/StatData_13TeV_Wminusenu.pdf}\label{f:}}
+  \subfloat[\Wpenu, 13~\TeV.]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/StatData_13TeV_Wplusenu.pdf}\label{f:}}
+  \caption{Unfolded data statistical uncertainty for $W\rightarrow e\nu$ channels.}
+  \label{fig:unfDataStat}
+\end{figure}
+
+\subsection{Monte Carlo statistical uncertainties}
+
+Monte Carlo statistical uncertainties result from the finite statistics of the simulation sample used to determine the efficiency correction and the migration matrix. These are propagated to the measurement using the bootstrap method described above as follows: for each fluctuated MC sample $\alpha$, the unfolded spectrum is
+
+\begin{equation}
+\tilde{U}_j^\alpha =  \sum_{i} U_{ij}^\alpha (D_i - B_i)
+\end{equation}
+\noindent and assuming $N_{bs}$ fluctuated MC samples, the corresponding covariance is estimated as above:
+\begin{equation}
+C_{kl}^{\textrm stat,MC} = \frac{1}{N_{bs}-1} \sum_{\alpha=1}^{N_{bs}} (\tilde{U}^\alpha_k-\avg{\tilde{U}}_k) \, (\tilde{U}^\alpha_l-\avg{\tilde{U}}_l)
+\end{equation}
+
+When estimating the uncertainty on the normalised cross-section, each $\tilde{U}_j^\alpha$ is scaled such that the total number of events is the same as that of the nominal unfolded spectrum.
+Note that in this case the migration matrix as well as the efficiency and purity corrections are changed, contrary to section~\ref{subsec:datastatunc} where the reconstructed spectrum is varied.
+Figure~\ref{fig:corrStatMC} shows the statistical correlation matrix in simulation at the reconstructed level (a) and at the unfolded level (b). Figure~\ref{fig:unfMCStat} shows the MC statistical uncertainty at the unfolded level. In this channel (\Wmenu\ at 13~\TeV), its size is approximately 40\% of that of the data statistical uncertainty. 
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/RecoCorrMC.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/UnfCorrMC.pdf}}
+  \caption{ Example of statistical correlation matrix in MC for $W^{-}\rightarrow e\nu$ channel at 13 TeV at the reconstruction level (a) and unfolded level (b).}
+  \label{fig:corrStatMC}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[\Wmenu, 5~\TeV.]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/StatMC_5TeV_Wminusenu.pdf}\label{f:}}
+  \subfloat[\Wpenu, 5~\TeV.]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/StatMC_5TeV_Wplusenu.pdf}\label{f:}}
+  
+  \subfloat[\Wmenu, 13~\TeV.]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/StatMC_13TeV_Wminusenu.pdf}\label{f:}}
+  \subfloat[\Wpenu, 13~\TeV.]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/StatMC_13TeV_Wplusenu.pdf}\label{f:}}
+  \caption{Unfolded MC statistical uncertainty for $W\rightarrow e\nu$ channels.}
+  \label{fig:unfMCStat}
+\end{figure}
+
+
+\subsection{Systematic uncertainties}
+
+Systematic uncertainties are decomposed into a large set of uncorrelated sources of uncertainty, induced by uncertainties in the lepton and recoil calibration corrections, lepton efficiency
+corrections, the background subtraction, and the physics description of the signal process.
+
+Under a given change in the calibration, efficiency or physics modelling corrections, the unfolding result is
+\begin{equation}
+\tilde{U}_j^a = \sum_{i}  U_{ij}^a (D_i - B_i)
+\end{equation}
+\noindent where $a$ labels the correction uncertainties (e.g a specific efficiency scale factor or calibration bin).
+
+Background subtraction uncertainties are propagated through variations of $B$:
+\begin{equation}
+\tilde{U}_j^a = \sum_{i} U_{ij} (D_i - B_i^a)
+\end{equation}
+where $B^a$ represents varied estimates of the total background, under variations of the various background process cross sections and the integrated luminosity.
+
+When estimating the uncertainty on the normalised cross-section, each $\tilde{U}_j^a$ is scaled such that the total number of events is the same as that of the nominal unfolded spectrum.
+
+Since each change reflects the variation of a single parameter, its effect is fully correlated across the measured spectrum and the corresponding covariance is written as
+\begin{eqnarray}
+\delta \tilde{U}_k^a &=& \tilde{U}_k^a - \tilde{U}_k^{\textrm Nom};\\
+C_{kl}^a &=& \delta \tilde{U}_k^a \, \delta \tilde{U}_l^a
+\end{eqnarray}
+
+Figures~\ref{fig:ElID},~\ref{fig:ElReco},~\ref{fig:ElIso} and~\ref{fig:ElTrig} show the correlation matrices and the uncertainty due to the electron identification, reconstruction, isolation and trigger efficiences respectively at the reconstructed and the unfolded level (for the absolute cross-sections). Figures~\ref{fig:ElCalib}, ~\ref{fig:RecoilCalib} and ~\ref{fig:BkgSys} show the correlation matrices and the uncertainty due to the electron and recoil calibration, and the background respectively at the reconstructed and the unfolded level (again for the absolute cross-sections).
+
+It should be noted that each of these matrices is the sum of many components grouped into categories. For example, the electron ID scale factor uncertainty is a sum of many individual NPs.
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/RecoCorrElIDSys.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/UnfCorrElIDSys.pdf}} \\
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/RecoElIDSys.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/UnfElIDSys.pdf}}
+  \caption{ Example of correlation matrices for the electron identification efficiency in $W^{-}\rightarrow e\nu$ channel at 13 TeV at the reconstruction level (a) and unfolded level (b). The corresponding uncertainty is shown at the reconstructed level (c) and unfolded level (d).}
+  \label{fig:ElID}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/RecoCorrElRecoSys.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/UnfCorrElRecoSys.pdf}} \\
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/RecoElRecoSys.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/UnfElRecoSys.pdf}}
+  \caption{ Example of correlation matrices for the electron reconstruction efficiency in $W^{-}\rightarrow e\nu$ channel at 13 TeV at the reconstruction level (a) and unfolded level (b). The corresponding uncertainty is shown at the reconstructed level (c) and unfolded level (d).}
+  \label{fig:ElReco}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/RecoCorrElIsoSys.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/UnfCorrElIsoSys.pdf}} \\
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/RecoElIsoSys.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/UnfElIsoSys.pdf}}
+  \caption{ Example of correlation matrices for the electron isolation efficiency in $W^{-}\rightarrow e\nu$ channel at 13 TeV at the reconstruction level (a) and unfolded level (b). The corresponding uncertainty is shown at the reconstructed level (c) and unfolded level (d).}
+  \label{fig:ElIso}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/RecoCorrElTrigSys.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/UnfCorrElTrigSys.pdf}} \\
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/RecoElTrigSys.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/UnfElTrigSys.pdf}}
+  \caption{ Example of correlation matrices for the electron trigger efficiency in $W^{-}\rightarrow e\nu$ channel at 13 TeV at the reconstruction level (a) and unfolded level (b). The corresponding uncertainty is shown at the reconstructed level (c) and unfolded level (d).}
+  \label{fig:ElTrig}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/RecoCorrElCalibSys.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/UnfCorrElCalibSys.pdf}} \\
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/RecoElCalibSys.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/UnfElCalibSys.pdf}}
+  \caption{ Example of correlation matrices for the electron energy calibration in $W^{-}\rightarrow e\nu$ channel at 13 TeV at the reconstruction level (a) and unfolded level (b). The corresponding uncertainty is shown at the reconstructed level (c) and unfolded level (d).}
+  \label{fig:ElCalib}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/RecoCorrCalibRecoilSys.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/UnfCorrCalibRecoilSys.pdf}} \\
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/RecoCalibRecoilSys.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/UnfCalibRecoilSys.pdf}}
+  \caption{ Example of correlation matrices for the recoil calibration in $W^{-}\rightarrow e\nu$ channel at 13 TeV at the reconstruction level (a) and unfolded level (b). The corresponding uncertainty is shown at the reconstructed level (c) and unfolded level (d).}
+  \label{fig:RecoilCalib}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/RecoCorrBkgSys.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/UnfCorrBkgSys.pdf}} \\
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/RecoBkgSys.pdf}}
+  \subfloat[]{\includegraphics[width=.49\textwidth]{figure/Plots_unfolding/UnfBkgSys.pdf}}
+  \caption{ Example of correlation matrices for the background uncertainties in $W^{-}\rightarrow e\nu$ channel at 13 TeV at the reconstruction level (a) and unfolded level (b). The corresponding uncertainty is shown at the reconstructed level (c) and unfolded level (d).}
+  \label{fig:BkgSys}
+\end{figure}
+
+
+\subsection{Uncertainty categories and total uncertainty}
+\label{subsec:uncsummary}
+The total covariance matrix is
+\begin{equation}
+C_{kl}^{\textrm tot} = C_{kl}^{\textrm stat,Data} + C_{kl}^{\textrm stat,MC} + \sum_a C_{kl}^a
+\end{equation}
+where $a$ runs over all sources of uncertainty. The covariance corresponding to given category of sources of uncertainty can be calculated by restricting $a$ accordingly.
+
+
+

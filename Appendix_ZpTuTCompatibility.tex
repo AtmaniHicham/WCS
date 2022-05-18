@@ -1,0 +1,241 @@
+\section{Compatibility for measuring $p_{T}^{Z}$ using Non-reweighted MC}
+\label{App:compatibility}
+
+This Appendix compiles a work where all compatibility studies presented in sections~\ref{compatibilityHighmu}~and~\ref{ssec:pTZcompatibility} were done again, this time not using the \pt-correction described in section~\ref{sec:physcorrWpTrew}.
+
+\subsection{Compatibility study of the $p_{T}^{Z}$ measurements between the low-$\mu$ and the high-$\mu$ analysis using non-reweighted MC}
+\label{App:compatibility_lowhighMu}
+
+Comparisons between high-$\mu$ and low-$\mu$ measurements of $p_{T}^{Z}$ distributions using non-reweighted MC are shown in \Fig{\ref{f:CompatibilityHighLowMu}}. Good agreement is observed between the high-$\mu$ measurement in cyan and the low-$\mu$ measurement in black. In most of the bins, the ratio is within 1~$\sigma$.
+$\chi^2$ in the $Z\rightarrow ee$ channel is measured to be $\chi^2$/dof =  0.65 and $\chi^2$/dof = 1.01 in the $Z\rightarrow \mu\mu$ channel~(\Tab{\ref{tab:chi2highmu}}).
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.45\textwidth]{figure/ZpT_highmu_compatibility/v20201127/XSec_Compare_highmu_13TeV_ee_2GeVBin.pdf}
+   \includegraphics[width=.45\textwidth]{figure/ZpT_highmu_compatibility/v20201127/XSec_Compare_highmu_13TeV_mumu_2GeVBin.pdf}
+  \caption{Compatibility of the $p_{T}^{Z}$ measurement between the high-$\mu$ and low-$\mu$ analyses. The left plot is the $Z\rightarrow ee$ channel and the right plot is the $Z\rightarrow \mu\mu$ channel.}
+    \label{f:CompatibilityHighLowMu}
+\end{figure}
+
+\begin{table}[h]
+ \centering
+\begin{tabular}{|c|c|c|}
+\hline
+  & $Z\rightarrow ee$ & $Z\rightarrow \mu\mu$\\
+ \hline
+ $\chi^2$ & 15.14 & 23.78 \\
+ \hline
+$\chi^2/$ dof & 0.658 & 1.034\\
+\hline
+\end{tabular}
+\caption{$\chi^2$ results of $p_{T}^{Z}$ measurements between the high-$\mu$ and low-$\mu$ analyses.}
+\label{tab:chi2highmu}
+\end{table}
+
+\subsection{Compatibility study of the $p_{T}^{Z}$ measurements between dilepton and had-recoil methods using non-reweighted MC}
+\label{App:compatibility_pTuT}
+
+Here we present the study on the compatibility between $p_{\mathrm{T}}^{Z}$ measurements using the dilepton method and hadronic recoil method with non-reweighted MC.
+
+
+
+
+
+
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.4\textwidth]{figure/ZpTuT_compatibility_NonRew_v20200828/pTuT_5TeV_ee_acc_5GeVBin_2uTiters.pdf}
+  \includegraphics[width=.4\textwidth]{figure/ZpTuT_compatibility_NonRew_v20200828/pTuT_5TeV_mumu_acc_5GeVBin_2uTiters.pdf}
+  \includegraphics[width=.4\textwidth]{figure/ZpTuT_compatibility_NonRew_v20200828/pTuT_13TeV_ee_acc_5GeVBin_20uTiters.pdf}
+  \includegraphics[width=.4\textwidth]{figure/ZpTuT_compatibility_NonRew_v20200828/pTuT_13TeV_mumu_acc_5GeVBin_20uTiters.pdf}
+  \caption{
+ Comparison of $p_{\mathrm{T}}^{Z}$ measurements between the $p_{\mathrm{T}}^{ll}$ and $u_{T}$ methods using only statistical uncertainty. }
+  \label{f:DirCompTuT}
+\end{figure}
+
+
+\subsubsection{Covariance Matrices}
+
+\clearpage
+
+\paragraph{Covariance Matrices for $Z\rightarrow ee$ at 5~TeV}
+Covariance matrices in the $Z\rightarrow ee$ channel at 5~TeV are shown in \Fig{\ref{f:CovMatrix5TeVZee}}.
+
+
+
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_dataStat_5TeV_ee_5GeVbin_2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_MCStat_5TeV_ee_5GeVbin_2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_recoil_5TeV_ee_5GeVbin_2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_elcalib_5TeV_ee_5GeVbin_2uTiters_acc.pdf}}\\
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_ElID_5TeV_ee_5GeVbin_2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_ElReco_5TeV_ee_5GeVbin_2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_ElTrig_5TeV_ee_5GeVbin_2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_ElIso_5TeV_ee_5GeVbin_2uTiters_acc.pdf}}
+\caption{Covariance matrices for each uncertainty in the $Z\rightarrow ee$ channel at 5~TeV. (a) data statistics. (b) MC statistics. (c) recoil calibtration. (d) electron calibration. (e)Electron ID efficiency. (f)Electron reconstruction efficiency. (g)Electron trigger efficiency (h) Electron isolation efficiency }
+\label{f:CovMatrix5TeVZee}
+\end{figure}
+
+Correlation matrices in the $Z\rightarrow ee$ channel at 5~TeV are shown in \Fig{\ref{f:CorrMatrix5TeVZee}}.
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_dataStat_5TeV_ee_5GeVbin2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_MCStat_5TeV_ee_5GeVbin2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_recoil_5TeV_ee_5GeVbin2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_elcalib_5TeV_ee_5GeVbin2uTiters_acc.pdf}}\\
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_ElID_5TeV_ee_5GeVbin2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_ElReco_5TeV_ee_5GeVbin2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_ElTrig_5TeV_ee_5GeVbin2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_ElIso_5TeV_ee_5GeVbin2uTiters_acc.pdf}}
+\caption{Correlation matrices for each uncertainty in the $Z\rightarrow ee$ channel at 5~TeV. (a) data statistics. (b) MC statistics. (c) recoil calibtration. (d) electron calibration. (e)Electron ID efficiency. (f)Electron reconstruction efficiency. (g)Electron trigger efficiency (h) Electron isolation efficiency }
+\label{f:CorrMatrix5TeVZee}
+\end{figure}
+
+\paragraph{Covariance Matrices for $Z\rightarrow \mu\mu$ at 5~TeV}
+Covariance matrices for the $Z\rightarrow \mu\mu$ channel at 5~TeV are shown in \Fig{\ref{f:CovMatrix5TeVZmumu}}.
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_dataStat_5TeV_mumu_5GeVbin_2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_MCStat_5TeV_mumu_5GeVbin_2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_recoil_5TeV_mumu_5GeVbin_2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_mucalib_5TeV_mumu_5GeVbin_2uTiters_acc.pdf}}\\
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_MuReco_5TeV_mumu_5GeVbin_2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_MuTrig_5TeV_mumu_5GeVbin_2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_MuIso_5TeV_mumu_5GeVbin_2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_MuTTVA_5TeV_mumu_5GeVbin_2uTiters_acc.pdf}}
+\caption{Covariance matrices for each uncertainty in the $Z\rightarrow \mu\mu$ channel at 5~TeV. (a) data statistics. (b) MC statistics. (c) recoil calibtration. (d) muon calibration. (e)muon reconstruction efficiency. (f)muon trigger efficiency. (g)muon isolation efficiency (h) muon TTVA efficiency }
+\label{f:CovMatrix5TeVZmumu}
+\end{figure}
+
+
+Correlation matrices in the $Z\rightarrow \mu\mu$ channel at 5~TeV are shown in \Fig{\ref{f:CorrMatrix5TeVZmumu}}.
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_dataStat_5TeV_mumu_5GeVbin2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_MCStat_5TeV_mumu_5GeVbin2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_recoil_5TeV_mumu_5GeVbin2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_mucalib_5TeV_mumu_5GeVbin2uTiters_acc.pdf}}\\
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_MuReco_5TeV_mumu_5GeVbin2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_MuTrig_5TeV_mumu_5GeVbin2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_MuIso_5TeV_mumu_5GeVbin2uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_MuTTVA_5TeV_mumu_5GeVbin2uTiters_acc.pdf}}
+\caption{Correlation matrices for each uncertainty in the $Z\rightarrow \mu\mu$ channel at 5~TeV. (a) data statistics. (b) MC statistics. (c) recoil calibtration. (d) muon calibration. (e)muon reconstruction efficiency. (f)muon trigger efficiency. (g)muon isolation efficiency (h) muon TTVA efficiency }
+\label{f:CorrMatrix5TeVZmumu}
+\end{figure}
+
+\paragraph{Covariance Matrices for $Z\rightarrow ee$ at 13~TeV}
+Covariance matrices for the $Z\rightarrow ee$ channel at 13~TeV are shown in \Fig{\ref{f:CovMatrix13TeVZee}}.
+
+   \begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_dataStat_13TeV_ee_5GeVbin_20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_MCStat_13TeV_ee_5GeVbin_20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_recoil_13TeV_ee_5GeVbin_20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_elcalib_13TeV_ee_5GeVbin_20uTiters_acc.pdf}}\\
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_ElID_13TeV_ee_5GeVbin_20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_ElReco_13TeV_ee_5GeVbin_20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_ElTrig_13TeV_ee_5GeVbin_20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_ElIso_13TeV_ee_5GeVbin_20uTiters_acc.pdf}}
+\caption{Covariance matrices for each uncertainty in the $Z\rightarrow ee$ channel at 13~TeV. (a) data statistics. (b) MC statistics. (c) recoil calibtration. (d) electron calibration. (e)Electron ID efficiency. (f)Electron reconstruction efficiency. (g)Electron trigger efficiency (h) Electron isolation efficiency }
+\label{f:CovMatrix13TeVZee}
+\end{figure}
+
+
+Correlation matrices in the $Z\rightarrow ee$ channel at 13~TeV are shown in \Fig{\ref{f:CorrMatrix13TeVZee}}.
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_dataStat_13TeV_ee_5GeVbin20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_MCStat_13TeV_ee_5GeVbin20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_recoil_13TeV_ee_5GeVbin20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_elcalib_13TeV_ee_5GeVbin20uTiters_acc.pdf}}\\
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_ElID_13TeV_ee_5GeVbin20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_ElReco_13TeV_ee_5GeVbin20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_ElTrig_13TeV_ee_5GeVbin20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_ElIso_13TeV_ee_5GeVbin20uTiters_acc.pdf}}
+\caption{Correlation matrices for each uncertainty in the $Z\rightarrow ee$ channel at 13~TeV. (a) data statistics. (b) MC statistics. (c) recoil calibtration. (d) electron calibration. (e)Electron ID efficiency. (f)Electron reconstruction efficiency. (g)Electron trigger efficiency (h) Electron isolation efficiency }
+\label{f:CorrMatrix13TeVZee}
+\end{figure}
+
+\paragraph{Covariance Matrices for $Z\rightarrow \mu\mu$ at 13~TeV}
+Covariance matrices for the $Z\rightarrow \mu\mu$ channel at 13~TeV are shown in \Fig{\ref{f:CovMatrix13TeVZmumu}}.
+
+
+ 
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_dataStat_13TeV_mumu_5GeVbin_20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_MCStat_13TeV_mumu_5GeVbin_20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_recoil_13TeV_mumu_5GeVbin_20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_mucalib_13TeV_mumu_5GeVbin_20uTiters_acc.pdf}}\\
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_MuReco_13TeV_mumu_5GeVbin_20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_MuTrig_13TeV_mumu_5GeVbin_20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_MuIso_13TeV_mumu_5GeVbin_20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CovMatrix_MuTTVA_13TeV_mumu_5GeVbin_20uTiters_acc.pdf}}
+\caption{Covariance matrices for each uncertainty in the $Z\rightarrow \mu\mu$ channel at 13~TeV. (a) data statistics. (b) MC statistics. (c) recoil calibtration. (d) muon calibration. (e)muon reconstruction efficiency. (f)muon trigger efficiency. (g)muon isolation efficiency (h) muon TTVA efficiency }
+\label{f:CovMatrix13TeVZmumu}
+\end{figure}
+
+Correlation matrices in the $Z\rightarrow \mu\mu$ channel at 13~TeV are shown in \Fig{\ref{f:CorrMatrix13TeVZmumu}}.
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_dataStat_13TeV_mumu_5GeVbin20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_MCStat_13TeV_mumu_5GeVbin20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_recoil_13TeV_mumu_5GeVbin20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_mucalib_13TeV_mumu_5GeVbin20uTiters_acc.pdf}}\\
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_MuReco_13TeV_mumu_5GeVbin20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_MuTrig_13TeV_mumu_5GeVbin20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_MuIso_13TeV_mumu_5GeVbin20uTiters_acc.pdf}}
+\subfloat[]{\includegraphics[width=.2\linewidth]{figure/ZpTuT_compatibility_NonRew_v20200828/CorrMatrix_MuTTVA_13TeV_mumu_5GeVbin20uTiters_acc.pdf}}
+\caption{Correlation matrices for each uncertainty in the $Z\rightarrow \mu\mu$ channel at 13~TeV. (a) data statistics. (b) MC statistics. (c) recoil calibtration. ((d) muon calibration. (e)muon reconstruction efficiency. (f)muon trigger efficiency. (g)muon isolation efficiency (h) muon TTVA efficiency  }
+\label{f:CorrMatrix13TeVZmumu}
+\end{figure}
+
+\clearpage
+\subsubsection{$\chi^2$ Results}
+
+The overall covariance matrix is the sum of the covariance from each uncertainty.
+$$Cov(i,j) = Cov_{stat.}(i,j) + \sum_{k} Cov_{syst.}^{k}(i,j)$$
+where $k$ sums over all systematic uncertainties. $\chi^2$ is then calculated using the equation
+$\chi^2 = \Delta^T Cov^{-1}  \Delta$, where $\Delta$ is the difference between the $p_{\mathrm{T}}^{ll}$ and $u_\mathrm{T}$ measurements:
+$\Delta = p_{\mathrm{T}}^{ll} - u_\mathrm{T}$. The calculated $\chi^2$ values are shown in \Tab{\ref{tab:chi2}}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$\chi^2$ & 5~TeV $Z\rightarrow ee$ & 5~TeV $Z\rightarrow \mu\mu$ & 13~TeV $Z\rightarrow ee$ & 13~TeV $Z\rightarrow \mu\mu$\\
+\hline
+Stat. Uncertainty & 26.3 & 17.6 & 14.6 & 75.4 \\
+\hline
+Stat. + Sys. Uncertainty & 18.0 & 14.5 & 8.9 & 38.5 \\
+\hline
+\end{tabular}
+\caption{$\chi^2$ results in all channels.}
+\label{tab:chi2}
+\end{table}
+
+The $\chi^2/dof$ values are shown in \Tab{\ref{tab:chi2OverDOF}}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$\chi^2$/dof & 5~TeV $Z\rightarrow ee$ & 5~TeV $Z\rightarrow \mu\mu$ & 13~TeV $Z\rightarrow ee$ & 13~TeV $Z\rightarrow \mu\mu$\\
+\hline
+Stat. Uncertainty & 1.88 & 1.26 & 1.04 & 5.32 \\
+\hline
+Stat. + Sys. Uncertainty & 1.29 & 1.04 & 0.636 & 2.75 \\
+\hline
+\end{tabular}
+\caption{$\chi^2/$dof results in all channels.}
+\label{tab:chi2OverDOF}
+\end{table}

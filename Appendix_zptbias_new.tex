@@ -1,0 +1,235 @@
+\section{\ptz bias studies}
+\label{sec:zpt_bias_new}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Physics modelling / unfolding bias}
+%\label{ss:ZpT_biasN}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%Nataliia: commented out, since described in the main text
+%The uncertainty on an unfolded result of a given variable due to the regularization parameter for the iterative unfolding methods (also called \emph{prior hypothesis bias} or simply \emph{unfolding bias}) is estimated using a procedure recommended by the Standard Model group %called the data-driven closure test. It is described as follows:
+%\begin{itemize}
+%\item the MC events are reweighted at the truth level to get the best agreement between the corresponding data and MC distributions' shapes at the reconstructed level for the physics observable of interest. This reweighting is usually inferred by using the initial data to MC ratio of reco-level distributions (see below).
+%\item the corresponding reconstructed-level MC distribution is unfolded (as pseudo-data) using the migration matrix from the unreweighted MC (including efficiencies and acceptance corrections as well)
+%\item the unfolded result is compared to the reweighted truth distribution, thus providing an estimate of the bias uncertainty.
+%\end{itemize}
+
+The unfolding bias uncertainty on the unfolded \ptz spectrum is estimated following a data driven procedure described in Section~\ref{sec:bias}.
+
+\subsection{PDF ratio used in the fit functions}
+The ratio, $r_\mathrm{NNPDF/CT10}(p_{T}^{W})$, of the generator-level \pt distributions obtained using NNPDF3.0 and CT10nlo in the full phase space.  
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/NonRewMC/UsingPDF/ratioPDF_nnpdfToCT10_dyturbo_13TeV.pdf}}
+\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/NonRewMC/UsingPDF/ratioPDF_nnpdfToCT10_dyturbo_5TeV.pdf}}
+\caption{Ratio of NNPDF to CT10 from DYTURBO used in the fitting function at $\sqrt{s} = 13$~\TeV\ (a) and $\sqrt{s} = 5$~\TeV\ (b)}
+\label{fig:ct10NNPDF_ratios}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Bias using nominal MC at $\sqrt{s} = 13$~\TeV\ }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Bias correction and bias uncertainty using the nominal MC (without data-driven) reweighting. 
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_13TeV_Zee_2GeVBin_2pTiters_15uTiters_pTll.pdf}}
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_13TeV_Zmumu_2GeVBin_2pTiters_15uTiters_pTll.pdf}}\\
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_13TeV_Zee_5GeVBin_2pTiters_15uTiters_uT.pdf}}
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_13TeV_Zmumu_5GeVBin_2pTiters_15uTiters_uT.pdf}}
+\caption{Comparison between ratio of data and MC simulation at reconstruction level of the dilepton \pt (a, b) and \ut (c, d) distributions before (black line) and after reweighting (red line) for the \Zee and \Zmm channels at $\sqrt{s} = 13$~\TeV. }
+\label{fig:datamc_nominalMC_13}
+\end{figure}
+
+%chi2 plots need to be understand
+%begin{figure}[h]
+%\centering
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/chi2_13TeV/Zee_chi2smooth_reco.png}}
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/chi2_13TeV/Zmumu_chi2smooth_reco.png}}\\
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/chi2_13TeV/Zee_uT_chi2smooth_reco.png}}
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/chi2_13TeV/Zmumu_uT_chi2smooth_reco.png}}
+%\caption{ $\chi^2$ comparison between data and MC simulation after reweighting of the dilepton \pt (a, b) and \ut (c, d) distributions for \Zee (left) and \Zmm (right) channels at $\sqrt{s} = 13$~\TeV\ using baseline binning. }
+%\label{fig:chi2_nominalMC_13}
+%\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/Bias_var_ZpT_Unfolding_v20200828_pTZvariations_Merged_13TeV_Zee_2GeVBin_2pTiters_15uTiters_pTll.pdf}}
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/Bias_var_ZpT_Unfolding_v20200828_pTZvariations_Merged_13TeV_Zmumu_2GeVBin_2pTiters_15uTiters_pTll.pdf}}\\
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/Bias_var_ZpT_Unfolding_v20200828_pTZvariations_Merged_13TeV_Zee_5GeVBin_2pTiters_15uTiters_uT.pdf}}
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/Bias_var_ZpT_Unfolding_v20200828_pTZvariations_Merged_13TeV_Zmumu_5GeVBin_2pTiters_15uTiters_uT.pdf}}
+\caption{Bias correction and uncertainty on \ptz using dilepton \pt (a, b) and \ut (c, d) for the \Zee and \Zmm channels at $\sqrt{s} = 13$~\TeV. The results are shown after two unfolding iteration for the dilepton \pt and fifteen unfolding iterations for \ut measurements. }
+\label{fig:biasunc_nominalMC_13}
+\end{figure}
+
+%\begin{figure}[h]
+%\centering
+%\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/RewMC/UncComp_ZpT_Unfolding_v20201120_13TeV_Zee_2GeVBin_2pTiters_15uTiters_biasRewMC.pdf}}
+%\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/RewMC/UncComp_ZpT_Unfolding_v20201120_13TeV_Zee_5GeVBin_2pTiters_15uTiters_biasRewMC.pdf}}\\
+%\caption{Bias uncertainty on \ptz using dilepton \pt (a) and \ut (c) for the \Zee (black )and \Zmm (red) channels before (dashed line) and after (solid line) \ptz reweighting at $\sqrt{s} = 13$~\TeV\ . The results are shown after two unfolding iteration for the dilepton \pt and fifteen unfolding iterations for \ut measurements. }
+%\label{fig:biasunc_comparison_13}
+%\end{figure}
+
+% not used at the end (after we apply reweighitng) Nataliia
+%\begin{figure}[h]
+%\centering
+%\subfloat[]{\includegraphics[width=.52\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/BiasCorr_Vs_Iter_uT_13TeV_Zee_5GeVBin_BinNumber_6.pdf}} 
+%\subfloat[]{\includegraphics[width=.52\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/BiasCorr_Vs_Iter_uT_13TeV_Zmumu_5GeVBin_BinNumber_6.pdf}} \\
+%\caption{Bias correction (red line) and statistical (black line) uncertainties as the function of the unfolding iteration for \ut measurement in the \Zee (a) and \Zmm (b) channels at $\sqrt{s} = 13$~\TeV\ . The uncertainties are shown in the first six bins. }
+%\label{fig:biasunc_vsiter_beforeRew_13}
+%\end{figure}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Bias using nominal MC at $\sqrt{s} = 5$~\TeV\ }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_5TeV_Zee_2GeVBin_2pTiters_4uTiters_pTll.pdf}}
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_5TeV_Zmumu_2GeVBin_2pTiters_4uTiters_pTll.pdf}}\\
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_5TeV_Zee_5GeVBin_2pTiters_4uTiters_uT.pdf}}
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/DataMC_ZpT_Unfolding_v20200828_pTZvariations_Merged_5TeV_Zmumu_5GeVBin_2pTiters_4uTiters_uT.pdf}}
+\caption{Comparison between ratio of data and MC simulation at reconstruction level of the dilepton \pt (a, b) and \ut (c, d) distributions before (dashed line) and after reweighting (solid line) for the \Zee and \Zmm channels at $\sqrt{s} = 5$~\TeV\ using baseline binning. }
+\label{fig:datamc_nominalMC_5}
+\end{figure}
+
+%chi2 plots need to be understand
+%\begin{figure}[h]
+%\centering
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/chi2_5TeV/Zee_chi2smooth_reco.png}}
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/chi2_5TeV/Zmumu_chi2smooth_reco.png}}\\
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/chi2_5TeV/Zee_uT_chi2smooth_reco.png}}
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/chi2_5TeV/Zmumu_uT_chi2smooth_reco.png}}
+%\caption{ $\chi^2$ comparison between data and MC simulation after reweighting of the dilepton \pt (a, b) and \ut (c, d) distributions for \Zee (left) and \Zmm (right) channels at $\sqrt{s} = 5$~\TeV\ using baseline binning. }
+%\label{fig:chi2_nominalMC_5}
+%\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/Bias_var_ZpT_Unfolding_v20200828_pTZvariations_Merged_5TeV_Zee_2GeVBin_2pTiters_4uTiters_pTll.pdf}}
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/Bias_var_ZpT_Unfolding_v20200828_pTZvariations_Merged_5TeV_Zmumu_2GeVBin_2pTiters_4uTiters_pTll.pdf}}\\
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/Bias_var_ZpT_Unfolding_v20200828_pTZvariations_Merged_5TeV_Zee_5GeVBin_2pTiters_4uTiters_uT.pdf}}
+\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/Bias_var_ZpT_Unfolding_v20200828_pTZvariations_Merged_5TeV_Zmumu_5GeVBin_2pTiters_4uTiters_uT.pdf}}
+\caption{Bias correction and uncertainty on \ptz using dilepton \pt (a, b) and \ut (c, d) for the \Zee and \Zmm channels at $\sqrt{s} = 5$~\TeV\ . The results are shown after two unfolding iteration for the dilepton \pt and four unfolding iterations for \ut measurements. }
+\label{fig:biasunc_nominalMC_5}
+\end{figure}
+
+%\begin{figure}[h]
+%\centering
+%\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/RewMC/UncComp_ZpT_Unfolding_v20201120_5TeV_Zee_2GeVBin_2pTiters_4uTiters_biasRewMC.pdf}}
+%\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/RewMC/UncComp_ZpT_Unfolding_v20201120_5TeV_Zee_5GeVBin_2pTiters_4uTiters_biasRewMC.pdf}}\\
+%\caption{Bias uncertainty on \ptz using dilepton \pt (a) and \ut (c) for the \Zee (black )and \Zmm (red) channels before (dashed line) and after (solid line) \ptz reweighting at $\sqrt{s} = 5$~\TeV\ . The results are shown after two unfolding iteration for the dilepton \pt and four unfolding iterations for \ut measurements. }
+%\label{fig:biasunc_comparison_5}
+%\end{figure}
+
+%\begin{figure}[h]
+%\centering 
+%\subfloat[]{\includegraphics[width=.52\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/BiasCorr_Vs_Iter_uT_5TeV_Zee_5GeVBin_BinNumber_6.pdf}} 
+%\subfloat[]{\includegraphics[width=.52\textwidth]{figure/ZpT_bias_rew/NonRewMC/BaselineFit/BiasCorr_Vs_Iter_uT_5TeV_Zmumu_5GeVBin_BinNumber_6.pdf}} \\
+%\caption{Bias correction (red line) and statistical (black line) uncertainties as the function of the unfolding iteration for \ut measurement in the \Zee (a) and \Zmm (b) channels at $\sqrt{s} = 5$~\TeV\ . The uncertainties are shown in the first six bins. }
+%\label{fig:biasunc_vsiter_beforeRew_5}
+%\end{figure}
+
+\subsection{Envelop from the alternative sources for the bias uncertainty}
+Figure~\ref{fig:envelop_altunc_uT_13} and~\ref{fig:envelop_altunc_uT_5} shows the bias uncertainties from the fit function and envelop of the alternative sources together with the total bias uncertainty for the optimized number of iterations.
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_envelop_ZpT_Unfolding_v20210511_13TeV_Zee_5GeVBin_15pTiters_15uTiters_FullSetBiasv3Envelop_uT.pdf}}
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_envelop_ZpT_Unfolding_v20210511_13TeV_Zmumu_5GeVBin_15pTiters_15uTiters_FullSetBiasv3Envelop_uT.pdf}}\\
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_envelop_ZpT_Unfolding_v20210511_13TeV_Zee_finerT_Rebin7_10pTiters_10uTiters_FullSetBiasv3Envelop_uT.pdf}}
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_envelop_ZpT_Unfolding_v20210511_13TeV_Zmumu_finerT_Rebin7_10pTiters_10uTiters_FullSetBiasv3Envelop_uT.pdf}}\\
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_envelop_ZpT_Unfolding_v20210511_13TeV_Zee_finerT_Rebin8_10pTiters_10uTiters_FullSetBiasv3Envelop_uT.pdf}}
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_envelop_ZpT_Unfolding_v20210511_13TeV_Zmumu_finerT_Rebin8_10pTiters_10uTiters_FullSetBiasv3Envelop_uT.pdf}}\\
+\caption{Bias uncertainty from alternative sources on \ptz using \ut measurement for the \Zee and \Zmm channels at $\sqrt{s} = 13$~\TeV. The results are shown after fifteen unfolding iterations for $5$~\GeV\ bins (a, b) and ten unfolding unfolding iterations for $7$~\GeV\ (c, d) and $8$~\GeV\ (e, f) bins.}
+\label{fig:envelop_altunc_uT_13}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_envelop_ZpT_Unfolding_v20210511_5TeV_Zee_5GeVBin_5pTiters_5uTiters_FullSetBiasv3Envelop_uT.pdf}}
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_envelop_ZpT_Unfolding_v20210511_5TeV_Zmumu_5GeVBin_5pTiters_5uTiters_FullSetBiasv3Envelop_uT.pdf}}\\
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_envelop_ZpT_Unfolding_v20210511_5TeV_Zee_finerT_Rebin7_5pTiters_5uTiters_FullSetBiasv3Envelop_uT.pdf}}
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_envelop_ZpT_Unfolding_v20210511_5TeV_Zmumu_finerT_Rebin7_5pTiters_5uTiters_FullSetBiasv3Envelop_uT.pdf}}\\
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_envelop_ZpT_Unfolding_v20210511_5TeV_Zee_finerT_Rebin8_5pTiters_5uTiters_FullSetBiasv3Envelop_uT.pdf}}
+\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/alternativeBiasUnc/Bias_envelop_ZpT_Unfolding_v20210511_5TeV_Zmumu_finerT_Rebin8_5pTiters_5uTiters_FullSetBiasv3Envelop_uT.pdf}}\\
+\caption{Bias uncertainty from alternative sources on \ptz using \ut measurement for the \Zee and \Zmm channels at $\sqrt{s} = 13$~\TeV. The results are shown after fifteen unfolding iterations for $5$~\GeV\  (a, b). $7$~\GeV\ (c, d) and $8$~\GeV\ (e, f) bins after five unfolding iterations. Dashed line represent the uncertainties that are not included to the final uncertainty.}
+\label{fig:envelop_altunc_uT_5}
+\end{figure}
+
+\subsection{Optimization of the number of unfolding iteration for \ut measurement}
+Figure~\ref{fig:biasunc_min_uT7GeV_13} and~\ref{fig:biasunc_min_uT8GeV_13} shows the optimization of the number of unfolding iterations for \ut measurement using $7$~\GeV\ and $8$~\GeV\ binning configuration at $\sqrt{s} = 13$~\TeV. 
+
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/BiasVsIter/BiasUnc_Vs_Iter_13TeV_Zee_finerT_Rebin7_uT_BinNumber_4.pdf}}
+\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/BiasVsIter/BiasUnc_Vs_Iter_13TeV_Zmumu_finerT_Rebin7_uT_BinNumber_4.pdf}}\\
+\caption{Bias (red line), statistical (blue line) and total (black line) uncertainties as the function of the unfolding iteration for \ut measurement for the \Zee (a) and \Zmm (b) channels at $\sqrt{s} = 13$~\TeV\ using $7$~\GeV\ binning configuration. The uncertainties are shown in the first four bins.}
+\label{fig:biasunc_min_uT7GeV_13}
+\end{figure}
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/BiasVsIter/BiasUnc_Vs_Iter_13TeV_Zee_finerT_Rebin8_uT_BinNumber_4.pdf}}
+\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/BiasVsIter/BiasUnc_Vs_Iter_13TeV_Zmumu_finerT_Rebin8_uT_BinNumber_4.pdf}}\\
+\caption{Bias (red line), statistical (blue line) and total (black line) uncertainties as the function of the unfolding iteration for \ut measurement for the \Zee (a) and \Zmm (b) channels at $\sqrt{s} = 13$~\TeV\ using $8$~\GeV\ binning configuration. The uncertainties are shown in the first four bins.}
+\label{fig:biasunc_min_uT8GeV_13}
+\end{figure}
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/BiasVsIter/BiasUnc_Vs_Iter_5TeV_Zee_finerT_Rebin7_uT_BinNumber_4.pdf}}
+\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/BiasVsIter/BiasUnc_Vs_Iter_5TeV_Zmumu_finerT_Rebin7_uT_BinNumber_4.pdf}}\\
+\caption{Bias (red line), statistical (blue line) and total (black line) uncertainties as the function of the unfolding iteration for \ut measurement for the \Zee (a) and \Zmm (b) channels at $\sqrt{s} = 5$~\TeV\ using $7$~\GeV\ binning configuration. The uncertainties are shown in the first four bins.}
+\label{fig:biasunc_min_uT7GeV_5}
+\end{figure}
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/BiasVsIter/BiasUnc_Vs_Iter_5TeV_Zee_finerT_Rebin8_uT_BinNumber_4.pdf}}
+\subfloat[]{\includegraphics[width=.5\textwidth]{figure/ZpT_bias_rew/BiasVsIter/BiasUnc_Vs_Iter_5TeV_Zmumu_finerT_Rebin8_uT_BinNumber_4.pdf}}\\
+\caption{Bias (red line), statistical (blue line) and total (black line) uncertainties as the function of the unfolding iteration for \ut measurement for the \Zee (a) and \Zmm (b) channels at $\sqrt{s} = 5$~\TeV\ using $8$~\GeV\ binning configuration. The uncertainties are shown in the first four bins.}
+\label{fig:biasunc_min_uT8GeV_5}
+\end{figure}
+
+
+% not relevant to the current version of the note (more studies in the main part of note) Nataliia
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Bias uncertainty due to the choice of fit function }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%{\color{blue} Captions to be synchronized with the W plots }
+%\begin{figure}[h]
+%\centering
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/DiffFunc/FuncComparison_13TeV_Zee.pdf}}
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/DiffFunc/FuncComparison_13TeV_Zmumu.pdf}}\\
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/DiffFunc/FuncComparison_5TeV_Zee.pdf}}
+%\subfloat[]{\includegraphics[width=.45\textwidth]{figure/ZpT_bias_rew/NonRewMC/DiffFunc/FuncComparison_5TeV_Zmumu.pdf}}
+%\caption{Fit function used for reweighting  in \Zee (left) and \Zmm (right) channels at $\sqrt{s} = 13$~\TeV\ (a, b) and $\sqrt{s} = 5$~\TeV\ (c, d). The red curve corresponds to the function of using PDF ratio and blue curve correspond to the baseline fit function fitted in the range of $0<\ptz<100$~\GeV\ . }
+%\label{fig:fitfunction_comparison}
+%\end{figure}
+%
+%\begin{figure}[h]
+%\centering
+%\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/DiffFunc/Bias_var_ZpT_Unfolding_v20201127_13TeV_Zee_2GeVBin_2pTiters_5uTiters_pTll.pdf}}
+%\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/DiffFunc/Bias_var_ZpT_Unfolding_v20201127_13TeV_Zmumu_2GeVBin_2pTiters_5uTiters_pTll.pdf}}\\
+%\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/DiffFunc/Bias_var_ZpT_Unfolding_v20201127_13TeV_Zee_5GeVBin_2pTiters_5uTiters_uT.pdf}}
+%\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/DiffFunc/Bias_var_ZpT_Unfolding_v20201127_13TeV_Zmumu_5GeVBin_2pTiters_5uTiters_uT.pdf}}
+%\caption{Bias uncertainty on \ptz using dilepton \pt (a, b) and \ut (c, d) for the \Zee and \Zmm channels at $\sqrt{s} = 13$~\TeV\ . The red line correspond to the uncertainty due to the choice of fit function, the blue line correspond to baseline uncertainty, and the dashed line to the total uncertainty. The results are shown after two unfolding iteration for the dilepton \pt and five unfolding iterations for \ut measurements. }
+%\label{fig:biasunc_difffunc_13}
+%\end{figure}
+%
+%\begin{figure}[h]
+%\centering
+%\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/DiffFunc/Bias_var_ZpT_Unfolding_v20201127_5TeV_Zee_2GeVBin_2pTiters_2uTiters_pTll.pdf}}
+%\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/DiffFunc/Bias_var_ZpT_Unfolding_v20201127_5TeV_Zmumu_2GeVBin_2pTiters_2uTiters_pTll.pdf}}\\
+%\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/DiffFunc/Bias_var_ZpT_Unfolding_v20201127_5TeV_Zee_5GeVBin_2pTiters_2uTiters_uT.pdf}}
+%\subfloat[]{\includegraphics[width=.4\textwidth]{figure/ZpT_bias_rew/NonRewMC/DiffFunc/Bias_var_ZpT_Unfolding_v20201127_5TeV_Zmumu_5GeVBin_2pTiters_2uTiters_uT.pdf}}
+%\caption{Bias uncertainty on \ptz using dilepton \pt (a, b) and \ut (c, d) for the \Zee and \Zmm channels at $\sqrt{s} = 5$~\TeV\ . The red line correspond to the uncertainty due to the choice of fit function, the blue line correspond to baseline uncertainty, and the dashed line to the total uncertainty. The results are shown after two unfolding iteration for the dilepton \pt and \ut measurements. }
+%\label{fig:biasunc_difffunc_5}
+%\end{figure}

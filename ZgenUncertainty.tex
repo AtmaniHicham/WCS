@@ -1,0 +1,39 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{ss:ZpT_genUnc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+An uncertainty due to the choice of MC generator on the unfolded result of the given variable is estimated using the following approach, similar as the one used in the \Wboson\ described in section~\ref{sec:genunc}, and reminded here:
+\begin{itemize}
+\item the MC distribution from the baseline \POWHEG+\PYTHIAV{8} signal MC sample is unfolded (as pseudo-data) using the migration matrix constructed from the \Sherpa\ sample. The unfolding efficiency and purity corrections are calculated using the \Sherpa\ generator as well.
+It should be noted that the truth-level (\ptz, $y$) distribution in \Sherpa\ is reweigthed in 2D to agree with the one in the signal MC. In addition, the polarisation coefficients, $A_i$s, are also reweigthed, and a specific hadronic recoil calibration is applied to match the baseline MC simulation.
+\item the unfolded result is compared with the corresponding truth-level distribution from the same \POWHEG+\PYTHIAV{8} sample and assigned as the generator systematic uncertainty.
+
+\end{itemize}
+
+The generator systematic uncertainty on \ptz\ using dilepton \pt\ and \ut\ measurement is shown in Figures~\ref{fig:z_gen_unc_13} and~\ref{fig:z_gen_unc_5} for the $\sqrt{s} = 13$~\TeV\ and  $\sqrt{s} = 5$~\TeV\ datasets.
+The effect of the hadronic recoil calibration on the uncertainty using dilepton \pt measurement is shown Figure~\ref{fig:z_gen_unc_13_recoilOff}, demonstrating that a smaller uncertainty can be achieved if the calibration is not applied.
+In the case of the \ptll\ measurement, the only impact of recoil calibration is through the reweighting of \setue. Due to limited statistics and other systematic uncertainties, it can lead to the observed imperfections on \ptll\ at few per mille level.
+\textcolor{red}{Just like for the \Wboson\, this uncertainty is for now not taken into account in the analysis. More work is needed to understand the high difference when using \SHERPA.}
+
+\begin{figure}[h]
+\centering
+\subfloat[\ptll\ unfolding.]{\includegraphics[width=.45\textwidth]{figure/ZpT_genUncertainty/GenSys_pT_Unfolding_13TeV_2GeVBin.pdf}}
+\subfloat[\ut\ unfolding.]{\includegraphics[width=.45\textwidth]{figure/ZpT_genUncertainty/GenSys_uT_Unfolding_13TeV_5GeVBin.pdf}}
+\caption{Generator uncertainty on \ptz using dilepton \pt and \ut measurements for the \Zee (black) and \Zmm (red) channels at $\sqrt{s} = 13$~\TeV.}
+\label{fig:z_gen_unc_13}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[\ptll\ unfolding.]{\includegraphics[width=.45\textwidth]{figure/ZpT_genUncertainty/GenSys_pT_Unfolding_5TeV_2GeVBin.pdf}}
+\subfloat[\ut\ unfolding.]{\includegraphics[width=.45\textwidth]{figure/ZpT_genUncertainty/GenSys_uT_Unfolding_5TeV_5GeVBin.pdf}}
+\caption{Generator uncertainty on \ptz using dilepton \pt (a) and \ut (b) measurement for the \Zee (black) and \Zmm (red) channels at $\sqrt{s} = 5$~\TeV\  }
+\label{fig:z_gen_unc_5}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfloat[\ptll\ unfolding.]{\includegraphics[width=.45\textwidth]{figure/ZpT_genUncertainty/GenSys_pT_Unfolding_13TeV_2GeVBin_recoilOff.pdf}}
+\caption{Generator uncertainty on \ptz using dilepton \pt measurement for the \Zee (black) and \Zmm (red) channels at $\sqrt{s} = 13$~\TeV\ without the hadronic recoil calibration. }
+\label{fig:z_gen_unc_13_recoilOff}
+\end{figure}

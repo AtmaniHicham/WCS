@@ -1,0 +1,91 @@
+%=======================================================
+% TODO List
+
+\clearpage
+
+\section*{TODO - 07/07/2021}
+
+\begin{itemize}
+  \item Finalise Generator uncertainty (sections~\ref{sec:genunc} and~\ref{ss:ZpT_gen_unc}), propagate to final results
+  \item Discard bias uncertainty variations that are too conservative, based on their data/MC (quantitative) agreement at low uT after reweighting, then propagate to final results (sections~\ref{sec:ptwbias_unc},~\ref{ss:ptzbias})
+  \item Improve fit convergence of double gaus (nominal MC) at 5 TeV for the parametrisation uncertainty (section~\ref{sec:ptwbias_unc})
+  \item Perform combinations and derived ratios (section~\ref{sec:combination})
+  \item Z analysis :
+  \begin{itemize}
+   \item try a joint electron-muon fit for the bias correction and uncertainties to improve fit stability
+   \item obtain the \ut\ bias correction and uncertainties independently of \ptll, for the \Wboson\ method cross-check
+   \item divide stat uncertainty by sqrt(2) in the optimisation process (section~\ref{ss:ptzbias})
+   \item add shape uncertainties after unfolding (section~\ref{ss:ZpT_all_unc})
+  \end{itemize}
+  \item Write a short conclusion once everything is finalised
+\end{itemize}
+
+
+
+\section*{Changelog \& {\color{red} TODO} - 25/09/2020}
+
+\begin{itemize}
+\item {\sout{\color{red} fill new section~\ref{sec:pvcorr} (association of lepton to primary vertex)}}
+\item {\color{red} fill new section~\ref{sec:physcorr} (summary of baseline physics corrections)}
+\item {\sout{ moved Z MJ section to INT6; added reference (as done for W) }}
+\item {\color{red} W control plots : add lepton $\phi$. Update all to final corrections.}
+\item {\sout {\color{red} Z control plots : $\phi$ plot for leading/subleading leptons is not very useful. However, add for $\eta$. Update all to final corrections. }}
+\item restructured section 7 to include all introductory text on unfolding (gathered from the W and Z sections):
+    \begin{itemize}
+    \item \sout{ moved section 7 to \ref{sec:fidvolume}; {\color{red} add there (provisional) pT binning definitions}}
+    \item  \sout{ renamed section~\ref{sec:iterunf} ``iterative unfolding''; {\color{red} Revisit text to improve notation}. Section~\ref{sec:Zunfolding} renamed ``Bin by bin unfolding'' and moved here}
+    \item then section on unfolding bias; keeping only the current fitting method (rest moved to appendix). \sout{\color{red} Introduce method}
+    \item then binning optimization {\color{red} Describe strategy and criteria here; results postponed to sections on W and Z results}
+    \end{itemize}
+\item Section~\ref{sec:Wuncertainties} (W channels)
+    \begin{itemize}
+    \item {\color{red} section~\ref{sec:ptwexp} : comment about the various contributions (typical size vs uT)}
+    \item {\color{red} section~\ref{sec:ptwbias} : results for the truth reweighting fits; corresponding bias; and optimization of iterations and binning.}
+    \item {\color{red} section~\ref{sec:result} : update to final results}
+    \end{itemize}
+\item Section~\ref{sec:Zptmeasurement} (Z channels)
+    \begin{itemize}
+    \item  {\sout{\color{red} section~\ref{ss:ZpT_stat_sys_unc} : Plot and comment uncertainties on the reco-level distributions. Remove bias from plot and postpone that item to the next section}}
+    \item  {\sout{\color{red} section~\ref{sec:ptzbias} : Results for the truth reweighting fits; corresponding bias; and optimization of iterations and binning.}}
+    \item  {\sout{\color{red} section~\ref{ss:ZpT_all_unc}: update to final results}}
+    \item  {\sout{\color{red} add section~\ref{sec:Zresult} to discuss the \ut / \ptdilep compatibility test.}}
+    \end{itemize}
+\end{itemize}
+
+
+\section*{TODO list - v0.2}
+
+\begin{itemize}
+\item Add more complete description of truth reweighting from various generators, section~\ref{sec:janfunc}
+\item Refine the truth reweighting of \Wplus\ at 13~\TeV\ for the bias estimation using various generators predictions. It is too conservative at the moment. See section~\ref{sec:janfunc}, figure~\ref{fig:BiasrewOverdataReco}
+\item Understand the large bias, choose the final method, to be the same for both analyses. Probably rebin the 13~\TeV\ \ut\ analyses to unfold in bins of similar size as the recoil resolution. See section~\ref{sec:bias}.
+\item Optimise the number of iterations more rigorously (see $e.g.$ section~\ref{ss:ZpT_stat_sys_unc}), over the total sum of stat+sys+bias uncertainties
+\item generator systematics -- Powheg vs Sherpa, for the same boson pT distribution
+\item Add the muon channel results in the \ptw\ analysis (section~\ref{sec:result})
+\item \ptz\ analysis : understand potential channel discrepancies, fig.~\ref{f:comp_ZeeZmm_pT13}, ~\ref{f:comp_ZeeZmm_uT13}. Add uncertainty band description for these figures and~\ref{f:comp_ZeeZmm_pT5} and ~\ref{f:comp_ZeeZmm_uT5}
+\item \ptz\ analysis : make compatibility tests (chi2...) of \ut\ and \ptdilep\ analyses
+\item Make a full combination of the results between electron and muon channels, with $\chi^2$ etc. for both \ptz and \ptw analyses
+\item Add tuning studies of Pythia8 if time allows
+\item If time allows, use SETUE categorisation, see Appendix~\ref{app:setuecategory}
+\item Update Appendix~\ref{sec:sensitivity}.
+\end{itemize}
+
+
+\section*{TODO list - v0.1}
+
+\begin{itemize}
+\item Add control plots of SETUE and SET in bins of \ut, see $e.g.$ fig.~\ref{f:SETUEmm13} and~\ref{f:SETUEmm5}.
+\item Add more complete description of truth reweighting from various generators, section~\ref{sec:janfunc}
+\item Refine the truth reweighting of \Wplus\ at 13~\TeV\ for the bias estimation using various generators predictions. It is too conservative at the moment. See section~\ref{sec:janfunc}, figure~\ref{fig:BiasrewOverdataReco}
+\item Understand the large bias, choose the final method, to be the same for both analyses. Probably rebin the 13~\TeV\ \ut\ analyses to unfold in bins of similar size as the recoil resolution. See section~\ref{sec:bias}.
+\item Optimise the number of iterations more rigorously (see $e.g.$ section~\ref{ss:ZpT_stat_sys_unc}), over the total sum of stat+sys+bias uncertainties
+\item hadronization systematics -- Powheg vs Sherpa, for the same boson pT distribution
+\item Add the muon channel results in the \ptw\ analysis (section~\ref{sec:result})
+\item \ptz\ analysis : understand potential channel discrepancies, fig.~\ref{f:comp_ZeeZmm_pT13}, ~\ref{f:comp_ZeeZmm_uT13}. Add uncertainty band description for these figures and~\ref{f:comp_ZeeZmm_pT5} and ~\ref{f:comp_ZeeZmm_uT5}
+\item \ptz\ analysis : add background uncertainties, section~\ref{ss:ZpT_all_unc}
+\item \ptz\ analysis : make compatibility tests (chi2...) of \ut\ and \ptdilep\ analyses
+\item Make a full combination of the results between electron and muon channels, with $\chi^2$ etc. for both \ptz and \ptw analyses
+\item Add tuning studies of Pythia8 if time allows
+\item If time allows, use SETUE categorisation, see Appendix~\ref{app:setuecategory}
+\item Update Appendix~\ref{sec:sensitivity}.
+\end{itemize}
